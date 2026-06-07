@@ -1,0 +1,169 @@
+\chapter{时空的整体因果结构}
+
+\begin{itemize}
+    \item 时间可定向时空：能连续地指定光锥未来部分的时空
+    \item 设$p$是4维时空$(M, g_{ab})$的点，$v^a, u^a \in V_{p}$是指向未来或过去的类时或类光矢量，$v^a \neq 0, u^a \neq 0$
+    \begin{gather*}
+        \begin{cases}
+            \text{若}v^a, u^a \text{不都类光，则}g_{ab} v^a u^b 
+            \begin{cases}
+                < 0 \iff v^a \text{与}u^a \text{有相同指向}\\
+                > 0 \iff v^a \text{与}u^a \text{有相反指向}
+            \end{cases}
+            \\
+            \text{若}v^a, u^a \text{都类光，则}g_{ab} v^a u^b
+            \begin{cases}
+                = 0 \iff \exists \beta \in \mathbb{R} \text{使} v^a = \beta u^a\\
+                < 0 \iff v^a \text{与}u^a \text{有相同指向，且}v^a \neq \beta u^a\\
+                > 0 \iff v^a \text{与}u^a \text{有相反指向，且}v^a \neq \beta u^a
+            \end{cases}
+        \end{cases}
+    \end{gather*}
+    \begin{itemize}
+        \item 类光超曲面上不存在切于超曲面的类时矢量
+        \item 类光超曲面上每点只有一个类光方向，即类光法矢$n^a$方向
+    \end{itemize}
+    \item 指向未来类时线：其上每点的切矢是指向未来类时矢量的$C^1$曲线\\
+    指向未来因果线：其上每点的切矢是指向未来类时矢量的$C^1$曲线
+    \item 光锥：$p\in M$处切空间$V_p$的子集$\{v^a \in V_p | g_{ab} v^a v^b = 0\}$
+    \item 编时未来：$I^+(p)=\{q\in M | \exists \text{从} p \text{到} q \text{的指向未来类时线}\}$\\
+    相对于$p \in M$的邻域$U$的编时未来：$I^+(p, U)=\{q \in U | \exists \text{从} p \text{到} q \text{的位于$U$内的指向未来类时线}\}$
+    \begin{itemize}
+        \item $I^+(p)=I^+(p, M)$
+        \item $\exists U, I^+(p, U) \neq I^+(p) \cap U$
+    \end{itemize}
+    \item 因果未来：$J^+(p)=\{q \in M | \exists \text{从} p \text{到} q \text{的指向未来因果线}\}$\\
+    相对于$p \in M$的邻域$U$的因果未来：$J^+(p, U)=\{q \in U | \exists \text{从} p \text{到} q \text{的位于$U$内的指向未来因果线}\}$
+    \item 凸邻域：$\forall q, r \in N$，有$N$内唯一测地线连接$q$与$r$\\
+    凸法邻域
+    \begin{itemize}
+        \item 凸法邻域是开子集
+        \item 任一时空任一点必有凸法邻域
+        \item 一点的法邻域不一定是域内其他点的法邻域，但一点的凸法邻域一定是域内其他点的凸法邻域
+    \end{itemize}
+    \item \begin{gather*}
+        \begin{cases}
+            p \in I^+(q),q \in I^+(r) \implies p \in I^+(r)\\
+            p \in J^+(q),q \in I^+(r) \implies p \in I^+(r)\\
+            p \in I^+(q),q \in J^+(r) \implies p \in I^+(r)\\
+        \end{cases}
+    \end{gather*}
+    \begin{itemize}
+        \item 旅程：有限段指向未来类时测地线连接成的连续曲线
+        \item 旅程代替指向未来类时线给出$I^+(p)$的等价定义
+        \item 因果旅程给出$J^+(p)$的等价定义
+    \end{itemize}
+    \item 对任意时空的任意点处的凸法邻域$N$，其中两点$p, q$
+    \begin{enumerate}
+        \item 若$q \in I^+(p, N)$，则$N$内从$p$到$q$的唯一测地线是指向未来类时线
+        \item 若$q \in J^+(p, N) - I^+(p, N)$，则$N$内从$p$到$q$的唯一测地线是指向未来类光线
+        \item 若$q \in J^+(p, N) - I^+(p, N)$，则$N$内从$p$到$q$的指向未来因果线必为类光测地线
+    \end{enumerate}
+    \item 对$p \in M$的凸法邻域赋予拓扑$\mathscr{S}$，$\mathscr{S}$是由$M$的拓扑$\mathscr{T}$诱导的拓扑，则$I^+(p, N)$是$M$的开集，$J^+(p, N)$是$N$的闭集
+    \item $\forall p \in M, I^+(p) \in \mathscr{T}$
+    \item 任意时空中，若$q \in J^+(p) - I^+(p)$，则从$p$到$q$的指向未来因果线必为类光测地线
+    \begin{itemize}
+        \item 逆命题不成立
+    \end{itemize}
+    \item 子集的编时未来
+    \begin{itemize}
+        \item 对子集$S \subset M$，$I^+(\bar{S})=I^+(S)$
+        \item $I^+(I^+(S))=I^+(S)$
+    \end{itemize}
+    \item 子集的因果未来
+    \begin{itemize}
+        \item $\forall S \subset M$，
+        \begin{gather*}
+            J^+(S) \subset \overline{I^+(S)}
+            \\
+            \overline{J^+(S)} = \overline{I^+(S)}
+            \\
+            I^+(S) = i(J^+(S))
+            \\
+            \dot{I}^+(S) = \dot{J}^+(S)
+        \end{gather*}
+    \end{itemize}
+    \item 非编时集$S \in M$：$\not \exists p, q \in S$使$q \in I^+(p)$，即$I^+(S) \cap S = \emptyset$
+    \item $\forall S \subset M$，若$\dot{I}^+(S) \neq \emptyset$，$\dot{I}^+(S)$是3维$C^0$非编时嵌入子流形
+\end{itemize}
+
+\begin{itemize}
+    \item 未来端点、过去端点:\\
+    区间$I \subset \mathbb{R}$，指向未来因果线$\lambda: I \to M$，未来端点$p$满足$\forall$邻域$O$，$\exists t_0 \in I$使$\lambda(t) \in O \quad \forall t \in I$且$t \geq t_0$
+    \begin{itemize}
+        \item 任意指向未来因果线最多有一个未来端点
+        \item 未来端点可以不在因果线上
+    \end{itemize}
+    \item 未来不可延因果线，过去不可延因果线
+    \begin{itemize}
+        \item 闭子集$C \subset M$，则$\forall q \in \dot{I}^+(C)$且$q \notin C$，$\exists$过$q$的一条类光测地母线$\lambda \subset \dot{I}^+(C)$，或是过去不可延的，或是过去端点在$C$上
+    \end{itemize}
+    \item 编时条件：不存在闭合类时线
+    \begin{itemize}
+        \item 闭合类时线会导致因果性疑难
+        \item 时序保护猜想：物理定律禁止闭合类时线存在
+    \end{itemize}
+    \item 因果条件：不存在闭合因果线（独点线除外）
+    \item 强因果条件：$\forall p \in M, \forall$邻域$O$，$\exists$邻域$V \subset O$使任何因果线与$V$的相交不多于一次
+    \begin{itemize}
+        \item 引理：类时矢量$t^a \in V_p$，则对$p$点，$\tilde{g}_{ab}=g_{ab}-t_a t_b$是Lorenz度规，且
+        \begin{gather*}
+            g_{ab} v^a v^b \leq 0 \implies \tilde{g}_{ab} v^a v^b < 0 \quad \forall v^a \in V_p, v^a \neq 0
+        \end{gather*}
+        直观上，$\tilde{g}_{ab}$的光锥比$g_{ab}$的光锥更“开”
+        \item 稳定因果时空：$\exists C^0$类时矢量场$t^a$使$(M, \tilde{g}_{ab}=g_{ab}-t_a t_b)$满足编时条件
+        \item 稳定因果时空必为强因果时空
+        \item 时空因果性条件由强到弱
+        \begin{gather*}
+            \text{稳定因果} \implies \text{强因果} \implies \text{因果} \implies \text{编时}
+        \end{gather*}
+    \end{itemize}
+    \item 未来影响域：因果未来
+    \item 未来依赖域、过去依赖域、总依赖域：\\
+    设$S$是非编时闭子集，未来依赖域
+    \begin{gather*}
+        D^+(S) = \{p \in M | \text{任一$p$点发出的过去不可延因果线与$S$相交}\}
+    \end{gather*}
+    \begin{itemize}
+        \item $D^+(S) \cap I^+(S) = \emptyset$
+        \item 过$p$的过去不可延因果线$\lambda$，$\forall p' \in I^+(p)$，$\exists$过$p'$的过去不可延类时线$\gamma \subset I^+(\lambda)$
+        \item $p \in \overline{D^+(S)} \iff$任一$p$点发出的过去不可延类时线与$S$相交
+        \item \begin{gather*}
+            i(D^+(S))=I^-(D^+(S)) \cap I^+(S)
+            \\
+            i(D(S))=I^-(D^+(S)) \cap I^+(D^-(S))
+        \end{gather*}
+    \end{itemize}
+    \item Cauchy面：非编时闭子集$\Sigma$，若$D(\Sigma)=M$，则$\Sigma$是Cauchy面
+    \begin{itemize}
+        \item $M=\Sigma \cup I^+(\Sigma) \cup I^-(\Sigma)$
+        \item 任一双向不可延因果线$\lambda$必与$\Sigma, I^+(\Sigma), I^-(\Sigma)$分别相交
+    \end{itemize}
+    \item 非编时闭集$S$的边缘
+    \begin{gather*}
+        \textrm{edge}(S)=\{p \in S \vert \text{对}p\text{的任一邻域}O, \exists q \in I^+(p, O), r \in I^-(p, O), 
+        \\
+        \exists\text{由}r\text{到}q\text{的指向未来类时线}\gamma \subset O \text{且} \gamma \cap S = \emptyset\}
+    \end{gather*}
+    \begin{itemize}
+        \item $\textrm{edge}(\Sigma)=\emptyset$
+    \end{itemize}
+    \item 未来Cauchy视界，过去Cauchy视界，总Cauchy视界：\\
+    设$S$是非编时闭子集，未来Cauchy视界
+    \begin{gather*}
+        H^+(S)=\overline{D^+(S)}-I^-(D^+(S))
+    \end{gather*}
+    \begin{itemize}
+        \item $H^+(S)$是非编时闭集
+        \item $H^+(S)=(I^+(S) \cup S) \cap \dot{I}^-(D^+(S))$
+        \item $\forall p \in H^+(S)$，$\exists$过$p$的类光测地线$\lambda \subset H^+(S)$，或是未来不可延的，或是过去端点在$S$上
+        \item $H(S)=\dot{D}(S)$
+        \item 非空非编时闭集$\Sigma$是Cauchy面$\iff H(\Sigma)=\emptyset$
+        \item 无边缘非编时闭集$\Sigma$是Cauchy面$\iff$任一双向不可延类光测地线必与$\Sigma, I^+(\Sigma), I^-(\Sigma)$分别相交
+    \end{itemize}
+    \item 整体双曲时空：存在Cauchy面
+    \begin{itemize}
+        \item 整体双曲时空必为稳定因果时空，但逆命题不成立
+        \item 存在整体时间函数$f$使每个等$f$面是Cauchy面，即整体双曲时空$M$同胚于$\mathbb{R} \times \Sigma$，其中$\Sigma$是任一Cauchy面
+    \end{itemize}
+\end{itemize}

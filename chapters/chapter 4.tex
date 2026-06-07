@@ -1,0 +1,137 @@
+\chapter{Lie导数、Killing场和超曲面}
+
+\section{流形间的映射}
+
+设$M$、$N$为流形，光滑映射$\phi:M \to N$
+\begin{itemize}
+    \item 拉回映射$\phi^{*}:\mathscr{F}_N \to \mathscr{F}_M$
+    \begin{gather*}
+        \left.(\phi^{*}f)\right|_p=\left.f\right|_{\phi(p)},\quad \forall f \in \mathscr{F}_N,\forall p \in M
+    \end{gather*}
+    \begin{itemize}
+        \item 线性映射
+        \item $\phi^{*}(fg)=\phi^{*}(f)\phi^{*}(g)$
+    \end{itemize}
+    \item $\forall p \in M$，定义推前映射$\phi_{*}:V_p \to V_{\phi(p)}$\\
+    $\forall v^a \in V_p$，定义像$\phi_{*} v^a \in V_{\phi(p)}$
+    \begin{gather*}
+        (\phi_{*}v)(f)=v(\phi^{*}f) \quad \forall f \in \mathscr{F}_N
+    \end{gather*}
+    \begin{itemize}
+        \item 线性映射
+        \item 曲线切矢的像是曲线像的切矢
+    \end{itemize}
+    \item 拉回映射可以延拓为$\phi^{*}:\mathscr{F}_N(0,l) \to \mathscr{F}_M(0,l)$，推前映射可以延拓为$\phi_{*}:\mathscr{T}_{V_p}(k,0) \to \mathscr{T}_{V_p}(k,0)$
+    \begin{itemize}
+        \item 拉回映射延拓为张量场之间的映射，而推前映射只能延拓为张量之间的映射，除非$\phi$是微分同胚映射
+        \item 若$\phi$是微分同胚映射，$\phi^{*}$和$\phi_{*}$可以推广为映射$\mathscr{F}_N(k,l) \to \mathscr{F}_M(k,l)$，且互为逆映射
+    \end{itemize}
+\end{itemize}
+
+若$\phi:M \to N$是微分同胚，$p \in M$，$\{x^{\mu}\}$和$\{y^{\mu}\}$分别为$M$和$N$的局部坐标系，坐标域$O_1$和$O_2$满足$p \in O_1,\phi(p) \in O_2$，得到$p \in \phi^{-1}(O_2)$，在$\phi^{-1}(O_2)$上定义新坐标$\{x'^{\mu}\}$
+\begin{gather*}
+    x'^{\mu}(q)=y^{\mu}(\phi(q)),\quad \forall q \in \phi^{-1}(O_2)
+    \\
+    \phi_{*}(\left.(\pt{}{x'^{\mu}})^a \right|_q)=\left.(\pt{}{y^{\mu}})^a \right|_{\phi(q)}
+    \\
+    \phi_{*}(\left.(\d x'^{\mu})_a \right|_q)=\left.(\d y^{\mu})_a \right|_{\phi(q)}
+\end{gather*}
+对微分同胚存在两种观点
+\begin{itemize}
+    \item 主动观点：微分同胚诱导出点的变换$p \mapsto \phi(p)$，进而导致张量变换$T \mapsto \phi_{*} T$
+    \item 被动观点：点和张量不变，坐标系发生变换$\{x^{\mu}\} \to \{x'^{\mu}\}$
+\end{itemize}
+两种观点等价
+\begin{gather*}
+    \left.{(\phi_{*} T)^{\mu_1 \cdots \mu_k}}_{\nu_1 \cdots \nu_l} \right|_{\phi(p)}=\left.{T'^{\mu_1 \cdots \mu_k}}_{\nu_1 \cdots \nu_l} \right|_{p} \forall T \in \mathscr{F}_M(k,l)
+\end{gather*}
+\begin{itemize}
+    \item 微分同胚的拉回、推前映射与缩并可交换顺序
+\end{itemize}
+
+\section{Lie导数}
+
+$M$上矢量场$v^a$给出一个单参微分同胚群$\phi$，群元$\phi_t$
+\begin{itemize}
+    \item Lie导数
+    \begin{gather*}
+        \mathscr{L}_v {T^{a_1 \cdots a_k}}_{b_1 \cdots b_l}=\lim_{t \to 0} \frac{1}{t}(\phi_t^{*} {T^{a_1 \cdots a_k}}_{b_1 \cdots b_l} - {T^{a_1 \cdots a_k}}_{b_1 \cdots b_l})
+    \end{gather*}
+    \begin{itemize}
+        \item \begin{gather*}
+            \mathscr{L}_v f= v(f),\quad \forall f \in \mathscr{F}
+        \end{gather*}
+        \item \begin{gather*}
+            \mathscr{L}_v {T^{a_1 \cdots a_k}}_{b_1 \cdots b_l}=v^c \nabla_c {T^{a_1 \cdots a_k}}_{b_1 \cdots b_l}-\displaystyle \sum_{i=1}^{k} {T^{a_1 \cdots c \cdots a_k}}_{b_1 \cdots b_l} \nabla_c v^{a_i}+\displaystyle \sum_{j=1}^{l} {T^{a_1 \cdots a_k}}_{b_1 \cdots c \cdots b_l} \nabla b_j v^c
+        \end{gather*}
+    \end{itemize}
+    \item $v^a$的适配坐标系\\
+    选择$v^a$的积分曲线作为$x^1$坐标线，再取与之横截的曲线为其余坐标线
+    \begin{itemize}
+        \item 在适配坐标系中
+        \begin{gather*}
+            {(\mathscr{L}_v T)^{\mu_1 \cdots \mu_k}}_{\nu_1 \cdots \nu_l}=\pt{{T^{\mu_1 \cdots \mu_k}}_{\nu_1 \cdots \nu_l}}{x^1}
+        \end{gather*}
+    \end{itemize}
+\end{itemize}
+
+\section{Killing矢量场}
+
+\begin{itemize}
+    \item 等度规映射$\phi:M \to M$
+    \begin{gather*}
+        \phi^{*} g_{ab} = g_{ab}
+    \end{gather*}
+    \item $(M,g_{ab})$上的Killing矢量场$\xi^a$\\
+    $\xi^a$给出的单参微分同胚群是单参等度规群$\iff \mathscr{L}_{\xi} g_{ab}=0$
+    \begin{itemize}
+        \item 充要条件：Killing方程
+        \begin{gather*}
+            \nabla_a \xi_b + \nabla_b \xi_a=0
+        \end{gather*}
+        $\nabla_a$为与$g_{ab}$相适配的导数算符
+        \item \begin{gather*}
+            \exists \{x^{\mu}\} \text{s.t.} \pt{g_{\mu \nu}}{x^1}=0 \implies (\pt{}{x^1})^a \text{是Killing矢量场}
+        \end{gather*}
+        \item 设$\xi^a$为Killing矢量场，$T^a$为测地线切矢，则$T^a \nabla_a (T^b \xi_b)=0$
+        \item $(M,g_{ab})$上最多有$\frac{n(n+1)}{2}$个独立的Killing矢量场
+        \item $(\mathbb{R},\eta_{ab})$上Lorentz坐标系只能通过等度规映射相互诱导得到
+    \end{itemize}
+\end{itemize}
+
+\section{超曲面}
+
+\begin{itemize}
+    \item 嵌入$\phi:S \to M (\dim S \leq \dim M =n)$\\
+    $\phi$是$C^{\infty}$单射，且$\phi_{*}:V_p \to V_{\phi(p)}$非退化，$\forall p \in S$
+    \item 嵌入子流形$\phi(S)$，若$\dim S=n-1$，$\phi(S) \subset M$称为$M$的超曲面
+    \begin{itemize}
+        \item 正则嵌入\\
+        $\phi(S)$上有嵌入带来的拓扑和$M$诱导出的子空间拓扑，若两个拓扑相等，$\phi$称为正则嵌入
+    \end{itemize}
+\end{itemize}
+
+设$\phi(S)$为超曲面，对$q \in \phi(S) \subset M$，$M$对应$q$点处$n$维切空间$V_q$，而$V_q$中切于$\phi(S)$的元素构成子集$W_q$，$W_q$是$V_q$的$(n-1)$维子空间
+\begin{itemize}
+    \item 法余矢$n_a$：$n_a w^a=0,\quad \forall w^a \in W_q$
+    \begin{itemize}
+        \item 超曲面上任一点必有法余矢，各法余矢共线
+        \item 设超曲面$\phi(S)=\{q|f(q)=C\}$，$\nabla_a f|_q \neq 0$，则$\nabla_a f|_q$为$\phi(S)$在$q$点的法余矢
+    \end{itemize}
+\end{itemize}
+在赋予度规$g_{ab}$后可以定义法矢$n^a$。对Lorentz度规，
+\begin{itemize}
+    \item $n^a \in W_q \iff n_a n^a=0$
+    \item 类空超曲面处处有$n^a n_a<0$，类时超曲面处处有$n^a n_a>0$，类光超曲面处处有$n^a n_a=0$
+    \item 嵌入子流形$\phi(S)$，$W_q$上由$g_{ab}$诱导出度规$h_{ab}$
+    \begin{gather*}
+        h_{ab} w_1^a w_2^b = g_{ab} w_1^a w_2^b,\quad \forall w_1^a,w_2^b \in W_q
+        \\
+        \intertext{对类时类空超曲面，}
+        h_{ab}=g_{ab} \mp n_a n_b \quad \text{（符号与$n^a n_a$相反）}
+    \end{gather*}
+    $V_q$向$W_q$的投影映射${h^a}_b=g^{ac}h_{cb}$
+    \begin{gather*}
+        v^a={h^a}_b v^b \pm n^a(n_b v^b)
+    \end{gather*}
+\end{itemize}

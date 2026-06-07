@@ -1,0 +1,754 @@
+% !TeX root = ../document.tex
+
+\chapter{广义相对论基础}
+\begin{xiti}
+	\item 试证弯曲时空麦氏方程 $\tensor{\nabla}{^a} \tensor{F}{_a_b} = - 4\pi \tensor{J}{_b}$ 蕴含电荷守恒定律，即 $\Nabla{a} \tensor{J}{^a} = 0$ 。注：$\tensor{\nabla}{^a} \tensor{F}{_a_b} = - 4\pi \tensor{J}{_b}$ 等价于式 (7-2-8) 而非 (7-2-9) ，故本题表明式 (7-2-8) 而非式 (7-2-9) 可推出电荷守恒。
+
+	\begin{zm}
+		\begin{equation*}
+		-4 \pi \Nabla{a} \tensor{J}{^a} = \Nabla{a} \Nabla{b} \tensor{F}{^b^a} = 0.
+		\end{equation*}
+	\end{zm}
+
+    \item 试证 $\displaystyle \Fd{\tensor{\omega}{_a}} = \Dd{\tensor{\omega}{_a}} + \left(\tensor{A}{_a} \wedge \tensor{Z}{_b}\right) \tensor{\omega}{^b} \quad \forall \tensor{\omega}{_a} \in \F_{G}(0,1).$
+
+    \begin{zm}
+    	$\forall \tensor{v}{^a} \in \F_{G}(1,0),$
+    	\begin{align*}
+    	    \tensor{v}{^a} \Fd{\tensor{\omega}{_a}} &= \Fd{\left(\tensor{v}{^a}\tensor{\omega}{_a}\right)} - \tensor{\omega}{_a} \Fd{\tensor{v}{^a}}\\
+    	    &= \tensor{v}{^a} \Dd{\tensor{\omega}{_a}} + \tensor{\omega}{_a} \Dd{\tensor{v}{^a}} - \tensor{\omega}{_a} \left( \Dd{\tensor{v}{^a}} + 2 \tensor{A}{^{[a}} \tensor{Z}{^{b]}} \tensor{v}{_b} \right)\\
+    	    &= \tensor{v}{^a} \left( \Dd{\tensor{\omega}{_a}} - 2 \tensor{A}{_{[b}} \tensor{Z}{_{a]}} \tensor{\omega}{^b} \right)\\
+    	    &= \tensor{v}{^a} \left( \Dd{\tensor{\omega}{_a}} + \tensor{A}{_{a}} \wedge \tensor{Z}{_{b}} \tensor{\omega}{^b} \right).
+    	\end{align*}
+    \end{zm}
+
+    \item 试证费米导数性质3.\label{prob-7.3}
+
+    \begin{zm}
+    	性质3如下：
+    	\begin{Property}
+    		若 $\tensor{w}{^a}$ 是 $G(\tau)$ 上的空间矢量场(对线上各点 $\tensor{w}{^a} \tensor{Z}{_a} = 0$ )，则 \[ \Fdd{\tensor{w}{^a}} = \tensor{h}{^a_b} \left( \Ddd{\tensor{w}{^b}} \right), \] 其中 $\tensor{h}{^a_b} = \tensor{g}{_a_b} + \tensor{Z}{_a} \tensor{Z}{_b}$ ，$\tensor{h}{^a_b} = \tensor{g}{^a^c} \tensor{h}{_c_b}$ 是 $G(\tau)$ 上各点的投影映射。
+    	\end{Property}
+    	\begin{Proof}
+    		$\tensor{h}{^a_b} = \tensor{g}{^a^c} \left( \tensor{g}{_c_b} + \tensor{Z}{_c} \tensor{Z}{_b} \right) = \tensor{\delta}{^a_b} + \tensor{Z}{^a} \tensor{Z}{_b},$
+    		\begin{align*}
+    		\tensor{h}{^a_b} \Dd{\tensor{w}{^b}} &= \left( \tensor{\delta}{^a_b} + \tensor{Z}{^a} \tensor{Z}{_b} \right) \Dd{\tensor{w}{^b}}\\
+    		&= \Dd{\tensor{w}{^a}} + \tensor{Z}{^a} \left( \Dd{\left( \tensor{Z}{_b} \tensor{w}{^b} \right)} - \tensor{w}{^b} \Dd{\tensor{Z}{_b}} \right)\\
+    		&= \Dd{\tensor{w}{^a}} - \tensor{Z}{^a} \tensor{A}{^b} \tensor{w}{_b}\\
+    		&= \Dd{\tensor{w}{^a}} + \left(\tensor{A}{^a} \tensor{Z}{^b} - \tensor{Z}{^a} \tensor{A}{^b}\right) \tensor{w}{_b}\\
+    		&= \Fd{\tensor{w}{^a}}.
+    		\end{align*}
+    	\end{Proof}
+    \end{zm}
+
+    \item 试证类时线 $G(\tau)$ 上长度不变(且非零)的矢量场必经受时空转动。提示：令 $\tensor{u}{^a} \equiv \Ddd{\tensor{v}{^a}}$，则 $\tensor{u}{_a} \tensor{v}{^a}=0$。先证：无论 $\tensor{v}{_a}\tensor{v}{^a}$ 为零与否，总有 $G(\tau)$ 上矢量场 $\tensor{{v'}}{^a}$ 使 $\tensor{{v'}}{_a} \tensor{v}{^a} = 1$ 。再验证 $\tensor{v}{^a}$ 经受以 $\tensor{\Omega}{_a_b} \equiv 2 \tensor{{v'}}{_{[a}} \tensor{u}{_{b]}}$ 为角速度 2 形式的时空转动。
+
+	\begin{zm}
+		\begin{enumerate}
+			\item 记 $\displaystyle \tensor{u}{^a} = \Dd{\tensor{v}{^a}}$ ，则 $\displaystyle \Dd{\left(\tensor{v}{_a}\tensor{v}{^a}\right)} = 2\tensor{u}{_a} \tensor{v}{^a}=0$ 。
+			\item 若 $\tensor{v}{^a} \tensor{v}{_a} \neq 0$，令
+			\begin{equation*}
+				\tensor{{v'}}{^a} = \frac{\tensor{v}{^a}}{\tensor{v}{^b} \tensor{v}{^b}},
+			\end{equation*}
+			若 $\tensor{v}{^a} \tensor{v}{_a} = 0$，则 $\tensor{Z}{^a} \tensor{v}{_a}$ 不为零，因为与类时矢量内积为零则为类空矢量。于是定义
+			\begin{equation*}
+				\tensor{{v'}}{^a} = \frac{\tensor{Z}{^a}}{\tensor{Z}{^b} \tensor{v}{_b}}.
+			\end{equation*}
+			\item 定义 $\tensor{\Omega}{_a_b} = 2 \tensor{{v'}}{_{[a}} \tensor{u}{_{b]}}$，则
+			\begin{equation*}
+				- \tensor{\Omega}{^a^b} \tensor{v}{_b} = \tensor{u}{^a} = \Dd{\tensor{v}{^a}},
+			\end{equation*}
+			故 $\tensor{v}{^a}$ 经受以 $\tensor{\Omega}{_a_b}$ 为角速度 2 形式的时空转动。
+		\end{enumerate}
+	\end{zm}
+
+	\item 设 $\left\{ T,X,Y,Z \right\}$ 为闵氏时空的洛伦兹坐标系，曲线 $G(\tau)$ 的参数表达式为
+	\begin{equation*}
+		T = A^{-1} \sinh A\tau \qc X = A^{-1} \cosh A\tau \qc Y=Z=0 \qc \text{（其中$A$ 为常数）}
+	\end{equation*}
+	\begin{enumerate}[label=(\alph*)]
+		\item 试证 $G(\tau)$ 是类时双曲线（即图(6-43)\footnote{即本文档图~\hyperlink{t6}{6.13}} 中的 $G$），$\tau$ 是固有时，$A$ 是 $G(\tau)$ 的 4 加速 $\tensor{A}{^a}$ 的长度。
+		\item 试证从 $\left\{ T,X,Y,Z \right\}$ 坐标系原点 $o$ 出发的与 $G(\tau)$ 有交的任一半直线 $\mu(s)$ 都与 $G(\tau)$ 正交。
+		\item 设(b)中的 $\mu(s)$ 的参数 $s$ 是 $\mu$ 的线长，随着 $\mu(s)$ 取遍所有从 $o$ 出发并与 $G(\tau)$ 有交的半直线，便得 $G(\tau)$ 上的一个空间矢量场 $\tensor{w}{^a} \equiv \tensor{\left( \pdv*{s} \right)}{^a}$，试证 $\tensor{w}{^a}$ 沿 $G(\tau)$ 费移。
+		\item 令 $\tensor{Z}{^a} \equiv \tensor{\left( \pdv*{\tau} \right)}{^a}$，选 $\left\{ \tensor{Z}{^a}, \tensor{w}{^a}, \tensor{\left( \pdv*{Y} \right)}{^a}, \tensor{\left( \pdv*{Z} \right)}{^a} \right\}$ 为 $G(\tau)$ 上的正交归一 4 标架场，求出 $G(\tau)$ 的固有坐标系 $\left\{ t, x, y, z \right\}$ 并指出其坐标域。
+
+		答： $T=\left( A^{-1} + x \right) \sinh At \qc X= \left( A^{-1} + x \right) \cosh At \qc Y=y \qc Z=z$。
+
+		\item 写出闵氏时空在上述固有坐标系中的线元表达式。计算闵氏度规在该系的克氏符，验证它满足引理 7-4-3，即式 (7-4-10)\footnote{正文 (7-4-10) 为
+		\begin{equation*}
+			\begin{gathered}
+				\ChristoffelSymbol{0}{0}{0} = \ChristoffelSymbol{\sigma}{i}{j} = 0 \qc \ChristoffelSymbol{0}{0}{i} = \ChristoffelSymbol{0}{i}{0} = \ChristoffelSymbol{i}{0}{0} = \tensor{\hat{A}}{_i},\\
+				\ChristoffelSymbol{i}{0}{j} = \ChristoffelSymbol{i}{j}{0} = - \tensor{\omega}{^k} \tensor{\varepsilon}{_0_k_i_j} \qc \sigma = 0,1,2,3; \quad i,j,k = 1,2,3.
+			\end{gathered}
+		\end{equation*}
+		}。
+	\end{enumerate}
+
+		\begin{zm}
+			\begin{enumerate}[label=(\alph*)]
+				\item 由 $\cosh^2 x - \sinh^2 x = 1$ 知 $\left( A X \right)^2 - \left( A T \right)^2 = 1$，故这是渐近线为 $T=\pm X$ 的双曲线。
+
+				以 $\tau$ 为参数，
+				\begin{equation*}
+					\tensor{\left( \pdv{\tau} \right)}{^a} = \cosh(A\tau) \tensor{\left( \pdv{T} \right)}{^a} + \sinh(A\tau) \tensor{\left( \pdv{X} \right)}{^a},
+				\end{equation*}
+				则
+				\begin{equation*}
+					\tensor{\eta}{_a_b} \tensor{\left( \pdv{\tau} \right)}{^a} \tensor{\left( \pdv{\tau} \right)}{^b} = - \cosh[2](A\tau) + \sinh[2](A\tau) = -1,
+				\end{equation*}
+				即切矢归一，$\tau$ 为固有时。
+
+				将 $\tensor{\left( \pdv{\tau} \right)}{^a}$ 延拓为
+				\begin{equation*}
+					\tensor{Z}{^a} = A X \tensor{\left( \pdv{T} \right)}{^a} + A T \tensor{\left( \pdv{X} \right)}{^a},
+				\end{equation*}
+				容易算得观者四加速为
+				\begin{equation*}
+					\begin{split}
+						\tensor{\hat{A}}{^a} &= \left. \tensor{Z}{^b} \Nabla{b} \tensor{Z}{^a}\right|_{G(\tau)}\\
+						&= \left. A^2 T \tensor{\left( \pdv{T} \right)}{^a} + A^2 X \tensor{\left( \pdv{X} \right)}{^a} \right|_{G(\tau)}\\
+						&= A \sinh(A\tau) \tensor{\left( \pdv{T} \right)}{^a} + A \cosh(A\tau) \tensor{\left( \pdv{X} \right)}{^a},
+					\end{split}
+				\end{equation*}
+				则
+				\begin{equation*}
+					\tensor{\eta}{_a_b} \tensor{\hat{A}}{^a} \tensor{\hat{A}}{^b} = A^2 \left( \cosh[2](A\tau) - \sinh[2](A\tau) \right) = A^2,
+				\end{equation*}
+				即四加速的模长为 $A$。
+
+				\item 与 $G$ 交于 $\tau$ 处的 $\mu$ 的方程为
+				\begin{equation*}
+					T = \tanh(A\tau) X,
+				\end{equation*}
+				故其在 $G(\tau)$ 处的切矢正比于
+				\begin{equation*}
+					\tensor{\left( \pdv{s} \right)}{^a} = \sinh(A\tau)\tensor{\left( \pdv{T} \right)}{^a} + \cosh(A\tau) \tensor{\left( \pdv{X} \right)}{^a},
+				\end{equation*}
+				可算得
+				\begin{equation*}
+					\tensor{\left( \pdv{s} \right)}{^a} \tensor{\left( \pdv{\tau} \right)}{_a} = - \cosh(A\tau) \sinh(A\tau) + \cosh(A\tau) \sinh(A\tau) =0.
+				\end{equation*}
+				\item 在 (b) 中给出的 $\tensor{\left( \pdv*{s} \right)}{^a}$ 已经是归一的，因而就是 $\tensor{w}{^a}$。
+				由(b) 和习题~\hyperref[prob-7.3]{3}，知
+				\begin{equation*}
+					\begin{split}
+						\Fd{\tensor{w}{^a}} &= \tensor{h}{^a_b} \Dd{\tensor{w}{^b}}\\
+						&= \tensor{h}{^a_b} \tensor{Z}{^c} \Nabla{c} \tensor{w}{^b}\\
+						&= \tensor{h}{^a_b} \left( A \cosh(A\tau) \tensor{\left( \pdv{T} \right)}{^b} + A \sinh(A\tau) \tensor{\left( \pdv{X} \right)}{^b} \right)\\
+						&= A \tensor{h}{^a_b} \tensor{Z}{^b}\\
+						&= 0,
+					\end{split}
+				\end{equation*}
+				其中 $\tensor{Z}{^a} = \tensor{\left( \pdv*{\tau} \right)}{^a}$，故 $\tensor{w}{^a}$ 沿 $G(\tau)$ 费移。
+				\item 以 $G(0)$ 为坐标原点，$\left\{ t,0,0,0\right\}$ 对应的点为 $G(t)$，即
+				\begin{equation*}
+					T= A^{-1} \sinh A t \qc X= A^{-1} \cosh A t \qc Y = Z =0,
+				\end{equation*}
+				而此点处
+				\begin{equation*}
+					\begin{split}
+						&x\tensor{w}{^a} + y \tensor{\left( \pdv{Y} \right)}{^a} + z \tensor{\left( \pdv{Z} \right)}{^a}\\
+						={}& x \sinh(At) \tensor{\left( \pdv{T} \right)}{^a} + x \cosh(At) \tensor{\left( \pdv{X} \right)}{^a} + y \tensor{\left( \pdv{Y} \right)}{^a} + z \tensor{\left( \pdv{Z} \right)}{^a},
+					\end{split}
+				\end{equation*}
+				沿此矢量决定的测地线（直线）走参数为1的距离，即
+				\begin{equation*}
+					\Delta T = x \sinh(At) \qc \Delta X = x \cosh(At) \qc \Delta Y = y \qc \Delta Z = z \tensor{\left( \pdv{Z} \right)}{^a},
+				\end{equation*}
+				故 $\left\{ t,x,y,z \right\}$ 对应的点为
+				\begin{equation}
+					T=\left( A^{-1} + x \right) \sinh At \qc X= \left( A^{-1} + x \right) \cosh At \qc Y=y \qc Z=z. \label{eq-txyz2TXYZ}
+				\end{equation}
+				\item 计算得
+				\begin{equation*}
+					\begin{split}
+						\dd{s}^2 ={}& - \dd{T}^2 + \dd{X}^2 + \dd{Y}^2 + \dd{Z}^2\\
+						={}& - \left[ \left( 1 + A x \right) \cosh(A t) \dd{t} + \sinh(A t) \dd{x} \right]^2\\
+						&{}+ \left[ \left( 1 + A x \right) \sinh(A t) \dd{t} + \cosh(A t) \dd{x} \right]^2 + \dd{y}^2 + \dd{z}^2\\
+						={}& - \left( 1+ A x \right)^2 \dd{t}^2 + \dd{x}^2 + \dd{y}^2 + \dd{z}^2,
+					\end{split}
+				\end{equation*}
+				容易算得非零克氏符为
+				\begin{equation*}
+					\ChristoffelSymbol{t}{t}{x} = \ChristoffelSymbol{t}{x}{t} = \frac{A}{1+A x} \qc \ChristoffelSymbol{x}{t}{t} = A \left( 1+Ax \right),
+				\end{equation*}
+				在线上时
+				\begin{equation*}
+					\ChristoffelSymbol{t}{t}{x} = \ChristoffelSymbol{t}{x}{t} =  \ChristoffelSymbol{x}{t}{t} = A,
+				\end{equation*}
+				% 而观者的四加速为
+				% \begin{equation*}
+				% 	\begin{split}
+				% 		\tensor{\hat{A}}{^a} &= \tensor{Z}{^b} \Nabla{b} \tensor{Z}{^a}\\
+				% 		&= \left( A X \tensor{\left( \pdv{T} \right)}{^b} + A T \tensor{\left( \pdv{X} \right)}{^b} \right) \Nabla{b} \left( A X \tensor{\left( \pdv{T} \right)}{^a} + A T \tensor{\left( \pdv{X} \right)}{^a} \right)\\
+				% 		&= A^2 X \tensor{\left( \pdv{X} \right)}{^a} + A^2 T \tensor{\left( \pdv{T} \right)}{^a},
+				% 	\end{split}
+				% \end{equation*}
+				对~\eqref{eq-txyz2TXYZ} 反解得坐标变换
+				\begin{equation*}
+					t = A^{-1} \tanh[-1](\frac{T}{X}) \qc x = \sqrt{X^2 - T^2} - A^{-1} \qc y = Y \qc z = Z,
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{\left( \pdv{T} \right)}{^a} &= \pdv{t}{T} \tensor{\left( \pdv{t} \right)}{^a} + \pdv{x}{T} \tensor{\left( \pdv{x} \right)}{^a}\\
+						&= \frac{X}{A\left( X^2 - T^2 \right)} \tensor{\left( \pdv{t} \right)}{^a} - \frac{T}{\sqrt{X^2 - T^2}} \tensor{\left( \pdv{x} \right)}{^a}\\
+						&= \frac{\cosh At}{1+Ax} \tensor{\left( \pdv{t} \right)}{^a} - \sinh(At) \tensor{\left( \pdv{x} \right)}{^a},\\
+						\tensor{\left( \pdv{X} \right)}{^a} &= \pdv{t}{X} \tensor{\left( \pdv{t} \right)}{^a} + \pdv{x}{X} \tensor{\left( \pdv{x} \right)}{^a}\\
+						&= \frac{T}{A\left( T^2 - X^2 \right)} \tensor{\left( \pdv{t} \right)}{^a} + \frac{X}{\sqrt{X^2 - T^2}} \tensor{\left( \pdv{x} \right)}{^a}\\
+						&= - \frac{\sinh At}{1+Ax} \tensor{\left( \pdv{t} \right)}{^a} + \cosh(At) \tensor{\left( \pdv{x} \right)}{^a},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{\hat{A}}{^a} ={}& A^2 X \tensor{\left( \pdv{X} \right)}{^a} + A^2 T \tensor{\left( \pdv{T} \right)}{^a}\\
+						={}& A \left( 1 + A x \right) \cosh(At) \left( - \frac{\sinh At}{1+Ax} \tensor{\left( \pdv{t} \right)}{^a} + \cosh(At) \tensor{\left( \pdv{x} \right)}{^a} \right)\\
+						&{} + A\left( 1+Ax \right) \sinh(At) \left( \frac{\cosh At}{1+Ax} \tensor{\left( \pdv{t} \right)}{^a} - \sinh(At) \tensor{\left( \pdv{x} \right)}{^a} \right)\\
+						={}& A \left( 1+ Ax \right) \tensor{\left( \pdv{x} \right)}{^a},
+					\end{split}
+				\end{equation*}
+				在线上有
+				\begin{equation*}
+					\tensor{\hat{A}}{^a} = A \tensor{\left( \pdv{x} \right)}{^a},
+				\end{equation*}
+				满足引理，证毕。
+			\end{enumerate}
+		\end{zm}
+
+	\item 设 $G$ 是质点 $L$ 在 $p\in L$ 的瞬时静止自由下落观者（即 $G$ 的 4 速 $\tensor{Z}{^a}$ 与 $L$ 的 4 速 $\tensor{U}{^a}$ 在 $p$ 点相切），$\tensor{A}{^a}	$ 是 $L$ 在 $p$ 点的 4 加速，$\tensor{a}{^a}	$ 是 $L$ 在 $p$ 点相对于 $G$ 的 3 加速[由式 (7-4-3)\footnote{正文式 (7-4-3) 为
+	\begin{equation*}
+		\tensor{a}{^a} := \left[ \dv[2]{x^i(t)}{t} \right] \tensor{\left( \pdv{x^i} \right)}{^a}.
+	\end{equation*}}定义]，试证 $\tensor{a}{^a} = \tensor{A}{^a}$。\\
+	注：本题可视为命题 6-3-6 在弯曲时空的推广。
+
+		\begin{zm}
+			记 $G(t)$ 的固有坐标系为 $\left\{ t,x,y,z \right\}$。在 $p$ 点，有 $\tensor{U}{^a} = \tensor{Z}{^a} = \tensor{\left( \pdv{t} \right)}{^a}$。对 $\tensor{U}{^a}$ 做分解，有
+			\begin{equation*}
+				\tensor{U}{^a} = \tensor{\left( \pdv{\tau_L} \right)}{^a} = \dv{t}{\tau_L} \tensor{\left( \pdv{t} \right)}{^a} + \dv{x^i}{\tau_L} \tensor{\left( \pdv{x^i} \right)}{^a} = \gamma \tensor{Z}{^a} + \gamma \tensor{u}{^a},
+			\end{equation*}
+			则
+			\begin{equation*}
+				\gamma|_p = 1 \qc \tensor{u}{^a}|_{p} = 0,
+			\end{equation*}
+			而
+			\begin{equation*}
+				\begin{split}
+					\tensor{A}{^a}|_p &= \left( \tensor{Z}{^b} \Nabla{b} \tensor{U}{^a} \right)_p\\
+					&= \left( \Partial{0} \tensor{U}{^a} + \ChristoffelSymbol{0}{a}{b} \tensor{U}{^b} \right)_p\\
+					&= \Partial{0} \tensor{U}{^a} |_p\\
+					&= \dv{\gamma}{t} \tensor{Z}{^a} + \dv{\gamma}{t} \tensor{u}{^a} + \gamma \dv{\tensor{u}{^a}}{t}\\
+					&= \dv{\tensor{u}{^a}}{t},
+				\end{split}
+			\end{equation*}
+			其中最后一步用到 $\left.\dv{\gamma}{t}\right|_p = 0$，这是因为 $\gamma = - \tensor{U}{^a} \tensor{Z}{_a} \leqslant 1$，故在 $p$ 点 $\gamma|_p=1$ 取到了极值。而 $\dv{\tensor{u}{^a}}{t}$ 就是 $\tensor{a}{^a}$。
+		\end{zm}
+
+	\item 度规 $\tensor{g}{_a_b}$ 叫 \textbf{里奇平直} 的，若 $\tensor{g}{_a_b}$ 的里奇张量为零。试证 $\tensor{g}{_a_b}$ 是真空爱因斯坦方程的解的充要条件是 $\tensor{g}{_a_b}$ 是里奇平直的。
+
+		\begin{zm}
+			真空爱因斯坦方程为 $\tensor{R}{_a_b} - \frac{1}{2} R \tensor{g}{_a_b} = 0$。
+			\begin{enumerate}
+				\item 充分性：若 $\tensor{R}{_a_b} = 0$，则取迹得 $R=0$，故满足真空场方程。
+				\item 必要性：设 $\tensor{g}{_a_b}$ 满足真空场方程，即 $\tensor{R}{_a_b} - \frac{1}{2} R \tensor{g}{_a_b} = 0$，取迹得
+				\begin{equation*}
+					R - 2 R = -R = 0,
+				\end{equation*}
+				故
+				\begin{equation*}
+					\tensor{R}{_a_b} - \frac{1}{2} R \tensor{g}{_a_b} = \tensor{R}{_a_b} = 0,
+				\end{equation*}
+				故里奇平直。
+			\end{enumerate}
+		\end{zm}
+
+	\item 设 $\left( M,\tensor{g}{_a_b} \right)$ 为里奇平直时空（定义见上题），$\tensor{\xi}{^a}$ 是其中的一个 Killing 矢量场，试证 $\tensor{F}{_a_b} := \tensor{\left( \dd{\xi} \right)}{_a_b}$ 满足 $\left( M,\tensor{g}{_a_b} \right)$ 的无源（$\tensor{J}{_a} = 0$）麦氏方程。提示：利用 Killing 场 $\tensor{\xi}{^a}$ 满足的 $\Nabla{a}\tensor{\xi}{^a} = 0$（第4章习题~\hyperlink{xt4-11}{11} 的结果）。
+
+		\begin{zm}
+			计算得
+			\begin{equation*}
+				\begin{split}
+					\tensor{\nabla}{^a} \tensor{F}{_a_b} &= \tensor{\nabla}{^a} \tensor{\nabla}{_{a}} \tensor{\xi}{_{b}} - \tensor{\nabla}{^a} \tensor{\nabla}{_b} \tensor{\xi}{_a}\\
+					&= - 2 \tensor{\nabla}{^a} \tensor{\nabla}{_b} \tensor{\xi}{_a}\\
+					&= - 2 \left( \Nabla{b} \tensor{\nabla}{^a} \tensor{\xi}{_a} + \tensor{R}{_b^c} \tensor{\xi}{_c} \right)\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			而第二个方程 $\Nabla{{[a}} \tensor{F}{_{bc]}} = 0$ 等价于 $\tensor{\left( \dd{F} \right)}{_a_b_c} = 0$，这是由 $F=\dd{\xi}$ 保证的。
+		\end{zm}
+
+	\item 设 $\tensor{\xi}{_\mu}(\mu=0,1,2,3)$ 为方程 $\tensor{\partial}{^b} \tensor{\partial}{_b} \tensor{\xi}{_\mu} = 0$ 在初始条件式 (7-9-10) $\sim$ (7-9-13) \footnote{正文 (7-9-10) $\sim$ (7-9-13) 为
+	\begin{gather}
+		\left. 2 \left( \myvec{\nabla} \vdot \myvec{\xi} - \pdv*{\tensor{\xi}{_0}}{t} \right) \right|_{\Sigma_0} = - \left. \gamma \right|_{\Sigma_0}, \tag{7-9-10}\\
+		2 \left[ - \nabla^2 \tensor{\xi}{_0} + \myvec{\nabla} \vdot \left( \pdv*{\myvec{\xi}}{t} \right) \right]_{\Sigma_0} = - \left. \pdv*{\gamma}{t} \right|_{\Sigma_0}, \tag{7-9-11}\\
+		\left[ \left( \pdv*{\tensor{\gamma}{_i}}{t} \right) + \left( \pdv*{\tensor{\xi}{_0}}{x^i} \right) \right]_{\Sigma_0} = - \left. \tensor{\gamma}{_0_i} \right|_{\Sigma_0} \qc i = 1,2,3, \tag{7-9-12}\\
+		\left[ \nabla^2 \tensor{\xi}{_i} + \pdv{x^i}(\pdv{\tensor{\xi}{_0}}{t}) \right]_{\Sigma_0} = - \left. \pdv{\tensor{\gamma}{_0_i}}{t} \right|_{\Sigma_0} \qc i=1,2,3. \tag{7-9-13}
+	\end{gather}}下的解，试证由 $\tensor{\xi}{_a} = \tensor{\xi}{_\mu} \tensor{\left( \dd{x^\mu} \right)}{_a}$ 及 $\tensor{\gamma}{_a_b}$ 按式 (7-9-8) \footnote{正文式 (7-9-8) 为
+	\begin{equation}
+		\tensor{{\gamma'}}{_a_b} = \tensor{\gamma}{_a_b} + \Partial{a} \tensor{\xi}{_b} + \Partial{b} \tensor{\xi}{_a}, \tag{7-9-8}
+	\end{equation}
+	其中 $\tensor{\xi}{_a}$ 满足
+	\begin{equation}
+		\tensor{\partial}{^b} \Partial{b} \tensor{\xi}{_a} = 0. \tag{7-9-9}
+	\end{equation}} 构造的 $\tensor{{\gamma'}}{_a_b}$ 在无源区域既满足洛伦兹规范条件 $\tensor{\partial}{^a} \tensor{{{\bar{\gamma}}}}{^\prime_a_b} = 0$ 又满足 $\gamma'=0$ 和 $\tensor{{\gamma'}}{_0_i} = 0(i=1,2,3)$。提示：(1) 根据解的唯一性定理，只须证明 $\gamma'=0$ 和 $\tensor{{\gamma'}}{_0_i}=0$ 分别是方程 $\tensor{\partial}{^c} \tensor{\partial}{_c} \gamma = 0$ 和 $\tensor{\partial}{^c} \tensor{\partial}{_c} \tensor{{\gamma'}}{_0_i} = 0$ 的满足初始条件 $\left. \gamma' \right|_{\Sigma_0} = 0$，$\left. \pdv*{\gamma'}{t} \right|_{\Sigma_0} = 0$，$\left. \tensor{{\gamma'}}{_0_i} \right|_{\Sigma_0} = 0$ 和 $\left. \pdv*{\tensor{{\gamma'}}{_0_i}}{t} \right|_{\Sigma_0} = 0$ 的解。 (2) 由 $\tensor{\partial}{^b} \tensor{\partial}{_b} \tensor{\xi}{_\mu} = 0$ 可得 $\pdv*[2]{\tensor{\xi}{_\mu}}{t} = \nabla^2 \tensor{\xi}{_\mu}$。
+
+		\begin{zm}
+			由 (7-9-8) 易知，
+			\begin{equation*}
+				\gamma' = \gamma + 2 \tensor{\partial}{^a} \tensor{\xi}{_a},
+			\end{equation*}
+			则
+			\begin{equation*}
+				\begin{split}
+					\tensor{\partial}{^a} \tensor{{\bar{\gamma}}}{^\prime_a_b} &= \tensor{\partial}{^a} \left( \tensor{{\gamma'}}{_a_b} - \frac{1}{2} \tensor{\eta}{_a_b} \gamma' \right)\\
+					&= \tensor{\partial}{^a} \left( \tensor{{\gamma}}{_a_b} + \Partial{a} \tensor{\xi}{_b} + \Partial{b} \tensor{\xi}{_a} - \frac{1}{2} \tensor{\eta}{_a_b} \gamma - \tensor{\eta}{_a_b} \tensor{\partial}{^c} \tensor{\xi}{_c} \right)\\
+					&= {\color{red} \tensor{\partial}{^a} \tensor{\gamma}{_a_b}} + 0 + \tensor{\partial}{^a} \tensor{\partial}{_b} \tensor{\xi}{_a}  {\color{red} {}-\frac{1}{2} \Partial{b} \gamma} - \Partial{b} \tensor{\partial}{^c} \tensor{\xi}{_c}\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			其中红色的两项加起来为 $\tensor{\partial}{^a} \tensor{\bar{\gamma}}{_a_b}$，故为零。
+
+			在无源区域，$\tensor{T}{_a_b} = 0$，则线性场方程为
+			\begin{equation*}
+				\tensor{\partial}{^c} \tensor{\partial}{_c} \tensor{\gamma}{_a_b} = 0,
+			\end{equation*}
+			取迹得
+			\begin{equation*}
+				\tensor{\partial}{^c} \tensor{\partial}{_c} \gamma = 0,
+			\end{equation*}
+			则
+			\begin{equation*}
+				\tensor{\partial}{^c} \tensor{\partial}{_c} \gamma' = \tensor{\partial}{^c} \tensor{\partial}{_c} \left( \gamma + 2 \tensor{\partial}{^a} \tensor{\xi}{_a} \right) = 0,
+			\end{equation*}
+			在边界上又有
+			\begin{equation*}
+				\begin{split}
+					\gamma'|_{\Sigma_0} &= \left( \gamma + 2 \tensor{\partial}{^a} \tensor{\xi}{_a} \right)_{\Sigma_0}\\
+					&= \left( \gamma - 2 \pdv{\tensor{\xi}{_0}}{t} + 2 \myvec{\nabla} \vdot \myvec{\xi} \right)_{\Sigma_0}\\
+					&= 0,\\
+					\left. \pdv{\gamma'}{t} \right|_{\Sigma_0} &= \left( \pdv{\gamma}{t} - 2 \pdv[2]{\tensor{\xi}{_0}}{t} + \myvec{\nabla} \vdot \pdv{\myvec{\xi}}{t} \right)_{\Sigma_0}\\
+					&= \left( \pdv{\gamma}{t} - 2 \nabla^2 \tensor{\xi}{_0} + \myvec{\nabla} \vdot \pdv{\myvec{\xi}}{t} \right)_{\Sigma_0}\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			故知在区域内 $\gamma'$ 必为零。
+
+			再考虑 $\tensor{\gamma}{^\prime_0_i}$，它也满足拉普拉斯方程
+			\begin{equation*}
+				\tensor{\partial}{^a} \tensor{\partial}{_a} \tensor{\gamma}{^\prime_0_i} = 0,
+			\end{equation*}
+			而在边界上
+			\begin{equation*}
+				\begin{split}
+					\left. \tensor{\gamma}{^\prime_0_i} \right|_{\Sigma_0} &= \left( \tensor{\gamma}{_0_i} + \pdv{\tensor{\xi}{_i}}{t} + \pdv{\tensor{\xi}{_0}}{x^i} \right)_{\Sigma_0}\\
+					&= 0,\\
+					\left. \pdv{\tensor{\gamma}{^\prime_0_i}}{t} \right|_{\Sigma_0} &= \left( \pdv{\tensor{\gamma}{_0_i}}{t} + \pdv[2]{\tensor{\xi}{_i}}{t} + \pdv{x^i}(\pdv{\tensor{\xi}{_0}}{t}) \right)_{\Sigma_0}\\
+					&= \left( \pdv{\tensor{\gamma}{_0_i}}{t} + \nabla^2 \tensor{\xi}{_i} + \pdv{x^i}(\pdv{\tensor{\xi}{_0}}{t}) \right)_{\Sigma_0}\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			则 $\tensor{\gamma}{^\prime_0_i}$ 在区域内也为零。
+		\end{zm}
+
+	\item 设 $\tensor{\gamma}{_a_b}$ 满足 (a) $\tensor{\partial}{^a} \tensor{\bar{\gamma}}{_a_b} = 0$；(b) $\gamma = 0$；(c) $\tensor{\gamma}{_0_i} = 0(i=1,2,3)$；(d) $\tensor{\gamma}{_0_0} = \text{常数}$。试找出一个“无限小”矢量场 $\tensor{\xi}{^a}$ 使 $\tensor{{\tilde{\gamma}}}{_a_b} \equiv \tensor{\gamma}{_a_b} + \tensor{\partial}{_a} \tensor{\xi}{_b} + \tensor{\partial}{_b} \tensor{\xi}{_a}$ 满足
+
+	(a) $\tensor{\partial}{^a} \tensor{\bar{\tilde{\gamma}}}{_a_b} = 0$；(b) $\tilde{\gamma} = 0$；(c) $\tensor{\tilde{\gamma}}{_0_i} = 0$；(d) $\tensor{\tilde{\gamma}}{_0_0} = 0$。
+
+		\begin{zm}
+			计算得
+			\begin{equation*}
+				\begin{split}
+					\tensor{\partial}{^a} \tensor{\bar{\tilde{\gamma}}}{_a_b} &= \tensor{\partial}{^a} \left( \tensor{\tilde{\gamma}}{_a_b} - \frac{1}{2} \tensor{\eta}{_a_b} \tilde{\gamma} \right)\\
+					&= \tensor{\partial}{^a} \left( \tensor{\gamma}{_a_b} + \tensor{\partial}{_a} \tensor{\xi}{_b} + \tensor{\partial}{_b} \tensor{\xi}{_a} - \frac{1}{2} \tensor{\eta}{_a_b} \gamma - \tensor{\eta}{_a_b} \tensor{\partial}{^c} \tensor{\xi}{_c} \right)\\
+					&= \tensor{\partial}{^a} \tensor{\partial}{_a} \tensor{\xi}{_b},\\
+					\tilde{\gamma} &= \gamma + 2 \tensor{\partial}{^a} \tensor{\xi}{_a},\\
+					\tensor{\tilde{\gamma}}{_0_i} &= \tensor{\gamma}{_0_i} + \pdv{\tensor{\xi}{_i}}{t} + \pdv{\tensor{\xi}{_0}}{x^i}\\
+					&= \pdv{\tensor{\xi}{_i}}{t} + \pdv{\tensor{\xi}{_0}}{x^i},\\
+					\tensor{\tilde{\gamma}}{_0_0} &= \tensor{\gamma}{_0_0} + 2 \pdv{\tensor{\xi}{_0}}{t},
+				\end{split}
+			\end{equation*}
+			故得微分方程组
+			\begin{equation*}
+				\left\{
+					\begin{aligned}
+						\tensor{\partial}{^a} \tensor{\partial}{_a} \tensor{\xi}{_\mu} &= 0 \qc \mu=0,1,2,3,\\
+						\tensor{\partial}{^\mu} \tensor{\xi}{_\mu} &= 0,\\
+						\pdv{\tensor{\xi}{_i}}{t} + \pdv{\tensor{\xi}{_0}}{x^i} &= 0 \qc i=1,2,3,\\
+						\pdv{\tensor{\xi}{_0}}{t} &= - \frac{1}{2} \tensor{\gamma}{_0_0},
+					\end{aligned}
+				\right.
+			\end{equation*}
+			先关注 $\tensor{\xi}{_0}$，由
+			\begin{equation*}
+				\left\{
+					\begin{aligned}
+						\nabla^2 \tensor{\xi}{_0} &= 0,\\
+						\pdv{\tensor{\xi}{_0}}{t} &= - \frac{1}{2} \tensor{\gamma}{_0_0},
+					\end{aligned}
+				\right.
+			\end{equation*}
+			则最简单的解为
+			\begin{equation*}
+				\tensor{\xi}{_0} = - \frac{1}{2} \tensor{\gamma}{_0_0} t,
+			\end{equation*}
+			代回方程组得
+			\begin{equation*}
+				\left\{
+					\begin{aligned}
+						\tensor{\partial}{^a} \tensor{\partial}{_a} \tensor{\xi}{_i} &= 0 \qc i=1,2,3,\\
+						\tensor{\partial}{_i} \tensor{\xi}{^i} &= - \frac{1}{2} \tensor{\gamma}{_0_0},\\
+						\pdv{\tensor{\xi}{_i}}{t} &= 0 \qc i=1,2,3,
+					\end{aligned}
+				\right.
+			\end{equation*}
+			则取 $\tensor{\xi}{^i} = \frac{1}{6} \tensor{\gamma}{_0_0} x^i$ 即可，即
+			\begin{equation*}
+				\tensor{\xi}{^a} = \frac{1}{2} \tensor{\gamma}{_0_0} t \tensor{\left( \pdv{t} \right)}{^a} - \frac{1}{6} \tensor{\gamma}{_0_0} x^i \tensor{\left( \pdv{x^i} \right)}{^a}.
+			\end{equation*}
+		\end{zm}
+
+	\item 试证命题 7-9-2。
+
+		\begin{zm}
+			命题 7-9-2 为
+			\begin{Theorem}
+				\begin{equation*}
+					\begin{split}
+						\tensor{R}{_a_b_c_d} ={}& \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+						& {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d}.
+					\end{split}
+				\end{equation*}
+			\end{Theorem}
+			\begin{Proof}
+				式 (7-9-32) 为
+				\begin{equation*}
+					\begin{split}
+						\tensor{R}{_a_b_c^d} ={} & \tensor{R}{_a_b_1^3} \tensor{\left( e^1 \right)}{_c} \tensor{\left( e_3 \right)}{^d} + \tensor{R}{_a_b_2^3} \tensor{\left( e^2 \right)}{_c} \tensor{\left( e_3 \right)}{^d} + \tensor{R}{_a_b_4^1} \tensor{\left( e^4 \right)}{_c} \tensor{\left( e^1 \right)}{^d} + \tensor{R}{_a_b_4^2} \tensor{\left( e^4 \right)}{_c} \tensor{\left( e_2 \right)}{^d}\\
+						={}& \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left[ \tensor{\left( e^1 \right)}{_c} \tensor{\left( e_3 \right)}{^d} + \tensor{\left( e^4 \right)}{_c} \tensor{\left( e_1 \right)}{^d} \right]\\
+						&{}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left[ \tensor{\left( e^2 \right)}{_c} \tensor{\left( e_3 \right)}{^d} + \tensor{\left( e^4 \right)}{_c} \tensor{\left( e_2 \right)}{^d} \right],
+					\end{split}
+				\end{equation*}
+				由 (7-9-26) 知
+				\begin{equation*}
+					\tensor{g}{_a_b} = \tensor{\left( e^1 \right)}{_a} \tensor{\left( e^1 \right)}{_b} + \tensor{\left( e^2 \right)}{_a} \tensor{\left( e^2 \right)}{_b} - \tensor{\left( e^3 \right)}{_a} \tensor{\left( e^4 \right)}{_b} - \tensor{\left( e^4 \right)}{_a} \tensor{\left( e^3 \right)}{_b},
+				\end{equation*}
+				则
+				\begin{equation*}
+					\begin{split}
+						\tensor{R}{_a_b_c_d} ={}& \tensor{R}{_a_b_c^e} \tensor{g}{_e_d}\\
+						={}& \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left[ - \tensor{\left( e^1 \right)}{_c} \tensor{\left( e^4 \right)}{_d} + 0 \right]\\
+						&{}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left[ - \tensor{\left( e^2 \right)}{_c} \tensor{\left( e^4 \right)}{_d} + 0 \right]\\
+						={}& \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+						& {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d}.
+					\end{split}
+				\end{equation*}
+			\end{Proof}
+		\end{zm}
+
+	\item 验证式 (7-9-41) 后的 (1)$\sim$(3)。
+
+		\begin{zm}
+			\begin{enumerate}[label=(\arabic*)]
+				\item
+				\begin{equation*}
+					\begin{split}
+						\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_1 \right)}{^b} ={}& %\left( \tensor{\eta}{_a_b} + 2 P \left( \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_b} \right) \left( \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_a} \right) \right)\\
+						% & {} \times \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} Z_1 \tensor{K}{^a} \right) \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} Z_1 \tensor{K}{^a} \right)\\
+						\tensor{g}{_a_b} \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} Z_1 \tensor{K}{^a} \right) \left( \tensor{\left( \pdv{x} \right)}{^b} + E^{-1} Z_1 \tensor{K}{^b} \right),
+					\end{split}
+				\end{equation*}
+				易知
+				\begin{align*}
+					\tensor{g}{_a_b} \tensor{K}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \left( \tensor{\left( \pdv{t} \right)}{^a} + \tensor{\left( \pdv{z} \right)}{^a} \right)\\ \displaybreak[2]
+					&= \tensor{\left( \dd{z} \right)}{_b} - \tensor{\left( \dd{t} \right)}{_b},\\
+					\tensor{g}{_a_b} \tensor{\left( \pdv{x} \right)}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \tensor{\left( \pdv{x} \right)}{^a}\\ \displaybreak[2]
+					&= \tensor{\left( \dd{x} \right)}{_b},\\
+					\tensor{g}{_a_b} \tensor{\left( \pdv{y} \right)}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \tensor{\left( \pdv{y} \right)}{^a}\\ \displaybreak[2]
+					&= \tensor{\left( \dd{y} \right)}{_b},\\
+					\tensor{g}{_a_b} \tensor{\left( \pdv{t} \right)}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \tensor{\left( \pdv{t} \right)}{^a}\\
+					&= - \tensor{\left( \dd{t} \right)}{_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right]\\ \displaybreak[2]
+					&= - \tensor{\left( \dd{t} \right)}{_b} - 2 P \tensor{K}{_b},\\
+					\tensor{g}{_a_b} \tensor{\left( \pdv{z} \right)}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \tensor{\left( \pdv{z} \right)}{^a}\\ \displaybreak[2]
+					&= \tensor{\left( \dd{z} \right)}{_b} - 2 P \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right]\\
+					&= \tensor{\left( \dd{z} \right)}{_b} + 2 P \tensor{K}{_b},
+				\end{align*}
+				则
+				% \begin{equation*}
+				% 	\begin{split}
+				% 		\tensor{g}{_a_b} \tensor{\left( \pdv{x} \right)}{^a} \tensor{\left( \pdv{x} \right)}{^b} &= 1,\\
+				% 		\tensor{g}{_a_b} \tensor{\left( \pdv{x} \right)}{^a} \tensor{K}{^b} &= \tensor{\left( \dd{x} \right)}{_b} \tensor{K}{^b}\\
+				% 		&= 0,\\
+				% 		\tensor{g}{_a_b} \tensor{K}{^a} \tensor{K}{^b} &= \left[ \tensor{\left( \dd{z} \right)}{_b} - \tensor{\left( \dd{t} \right)}{_b} \right] \tensor{K}{^b}\\
+				% 		&= 0,
+				% 	\end{split}
+				% \end{equation*}
+				% 故
+				% \begin{equation*}
+				% 	\begin{split}
+				% 		\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_1 \right)}{^b} &= 1,
+				% 	\end{split}
+				% \end{equation*}
+				% 同理
+				\begin{equation*}
+					\begin{split}
+						\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} &= \tensor{\left( \dd{x} \right)}{_b} + E^{-1} Z_1 \tensor{K}{_b},\\
+						\tensor{g}{_a_b} \tensor{\left( E_2 \right)}{^a} &= \tensor{\left( \dd{y} \right)}{_b} + E^{-1} Z_2 \tensor{K}{_b},\\
+						\tensor{g}{_a_b} \tensor{\left( \tensor{E}{_3} \right)}{^a} &= E^{-1} \tensor{K}{_b} - \tensor{Z}{_b},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{align*}
+					\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_1 \right)}{^b} &= \left( \tensor{\left( \dd{x} \right)}{_b} + E^{-1} Z_1 \tensor{K}{_b} \right) \left( \tensor{\left( \pdv{x} \right)}{^b} + E^{-1} Z_1 \tensor{K}{^b} \right)\\ \displaybreak[2]
+					&= 1,\\
+					\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_2 \right)}{^b} &= \left( \tensor{\left( \dd{x} \right)}{_b} + E^{-1} Z_1 \tensor{K}{_b} \right) \left( \tensor{\left( \pdv{y} \right)}{^b} + E^{-1} Z_2 \tensor{K}{^b} \right)\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_3 \right)}{^b} &= \left( \tensor{\left( \dd{x} \right)}{_b} + E^{-1} Z_1 \tensor{K}{_b} \right) \left( E^{-1} \tensor{K}{^b} - \tensor{Z}{^b} \right)\\
+					&= - Z_1 + Z_1\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_2 \right)}{^a} \tensor{\left( E_1 \right)}{^b} &= \left( \tensor{\left( \dd{y} \right)}{_b} + E^{-1} Z_2 \tensor{K}{_b} \right) \left( \tensor{\left( \pdv{x} \right)}{^b} + E^{-1} Z_1 \tensor{K}{^b} \right)\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_2 \right)}{^a} \tensor{\left( E_2 \right)}{^b} &= \left( \tensor{\left( \dd{y} \right)}{_b} + E^{-1} Z_2 \tensor{K}{_b} \right) \left( \tensor{\left( \pdv{y} \right)}{^b} + E^{-1} Z_2 \tensor{K}{^b} \right)\\ \displaybreak[2]
+					&= 1,\\
+					\tensor{g}{_a_b} \tensor{\left( E_2 \right)}{^a} \tensor{\left( E_3 \right)}{^b} &= \left( \tensor{\left( \dd{y} \right)}{_b} + E^{-1} Z_2 \tensor{K}{_b} \right) \left( E^{-1} \tensor{K}{^b} - \tensor{Z}{^b} \right)\\
+					&= - Z_2 + Z_2\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_3 \right)}{^a} \tensor{\left( E_1 \right)}{^b} &= \left( E^{-1} \tensor{K}{_b} - \tensor{Z}{_b} \right) \left( \tensor{\left( \pdv{x} \right)}{^b} + E^{-1} Z_1 \tensor{K}{^b} \right)\\
+					&= - Z_1 + Z_1\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_3 \right)}{^a} \tensor{\left( E_2 \right)}{^b} &= \left( E^{-1} \tensor{K}{_b} - \tensor{Z}{_b} \right) \left( \tensor{\left( \pdv{y} \right)}{^b} + E^{-1} Z_2 \tensor{K}{^b} \right)\\
+					&= - Z_2 + Z_2\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_3 \right)}{^a} \tensor{\left( E_3 \right)}{^b} &= \left( E^{-1} \tensor{K}{_b} - \tensor{Z}{_b} \right) \left( E^{-1} \tensor{K}{^b} - \tensor{Z}{^b} \right)\\
+					&= 1 + 1 - 1\\
+					&= 1.
+				\end{align*}
+
+				\item 先计算 $\tensor{h}{^a_b} \tensor{K}{^b} = \tensor{K}{^a} - E \tensor{Z}{^a}$ 的模方：
+				\begin{equation*}
+					\begin{split}
+						\left( \tensor{K}{^a} - E \tensor{Z}{^a} \right) \left( \tensor{K}{_a} - E \tensor{Z}{_a} \right) &= E^2 + E^2 - E^2\\
+						&= E^2,
+					\end{split}
+				\end{equation*}
+				故将其归一化得
+				\begin{equation*}
+					\frac{\tensor{K}{^a} - E \tensor{Z}{^a}}{E} = E^{-1} \tensor{K}{^a} - \tensor{Z}{^a} = \tensor{\left( E_3 \right)}{^a}.
+				\end{equation*}
+
+				\item 首先，由于 $\tensor{Z}{^a}$ 是测地观者，
+				\begin{equation*}
+					\begin{split}
+						\tensor{Z}{^a} \Nabla{a} E &= - \tensor{Z}{^a} \Nabla{a} \left( \tensor{Z}{^b} \tensor{K}{_b} \right)\\
+						&= - \left( \tensor{Z}{^a} \Nabla{a} \tensor{Z}{^b} \right) \tensor{K}{_b} - \tensor{Z}{^a} \tensor{Z}{_b} \Nabla{a} \tensor{K}{_b}\\
+						&= 0,
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{Z}{^b} \Nabla{b} \tensor{\left( E_3 \right)}{^a} &= \tensor{Z}{^b} \Nabla{b} \left( E^{-1} \tensor{K}{^a} - \tensor{Z}{^a} \right)\\
+						&= E^{-1} \tensor{Z}{^b} \Nabla{b} \tensor{K}{^a} - \tensor{Z}{^b} \Nabla{b} \tensor{Z}{^a}\\
+						&=0,
+					\end{split}
+				\end{equation*}
+				而 采用 (7-9-25) 的标架可算得
+				\begin{equation*}
+					\begin{split}
+						\Nabla{b} \tensor{\left( \pdv{x} \right)}{^a} &= \Nabla{b} \tensor{\left( e_1 \right)}{^a}\\
+						&= - \tensor{\omega}{_1^\nu_b} \tensor{\left( e_\nu \right)}{^a}\\
+						&= - \tensor{\omega}{_1^3_b} \tensor{\left( e_3 \right)}{^a}\\
+						&= - \left( fx+gy \right) \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \tensor{K}{^a}\\
+						&= \left( fx+gy \right) \tensor{K}{_b} \tensor{K}{^a},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{Z}{^b} \Nabla{b} \tensor{\left( E_1 \right)}{^a} &= \tensor{Z}{^b} \Nabla{b} \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} Z_1 \tensor{K}{^a} \right)\\
+						&= \tensor{Z}{^b} \Nabla{b} \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} \tensor{Z}{_c} \tensor{\left( \pdv{x} \right)}{^c} \tensor{K}{^a} \right)\\
+						&= \tensor{Z}{^b} \Nabla{b} \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} \tensor{Z}{^b} \tensor{Z}{_c} \tensor{K}{^a} \Nabla{b} \tensor{\left( \pdv{x} \right)}{^c}\\
+						&= \left( fz+gy \right) \left( \tensor{Z}{^b} \tensor{K}{_b} \tensor{K}{^a} + E^{-1} \tensor{Z}{^b} \tensor{Z}{_c} \tensor{K}{^a} \tensor{K}{_b} \tensor{K}{^c} \right)\\
+						&= \left( fx+gy \right) \left( - E + E \right) \tensor{K}{^a}\\
+						&= 0,
+					\end{split}
+				\end{equation*}
+				同理由于
+				\begin{equation*}
+					\begin{split}
+						\Nabla{b} \tensor{\left( \pdv{y} \right)}{^a} &= \Nabla{b} \tensor{\left( e_2 \right)}{^a}\\
+						&= - \tensor{\omega}{_2^\nu_b} \tensor{\left( e_\nu \right)}{^a}\\
+						&= - \tensor{\omega}{_2^3_b} \tensor{\left( e_3 \right)}{^a}\\
+						&= - \left( gx-fy \right) \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \tensor{K}{^a}\\
+						&= \left( gx-fy \right) \tensor{K}{_b} \tensor{K}{^a},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{Z}{^b} \Nabla{b} \tensor{\left( E_2 \right)}{^a} &= \tensor{Z}{^b} \Nabla{b} \left( \tensor{\left( \pdv{y} \right)}{^a} + E^{-1} Z_2 \tensor{K}{^a} \right)\\
+						&= \tensor{Z}{^b} \Nabla{b} \left( \tensor{\left( \pdv{y} \right)}{^a} + E^{-1} \tensor{Z}{_c} \tensor{\left( \pdv{y} \right)}{^c} \tensor{K}{^a} \right)\\
+						&= \tensor{Z}{^b} \Nabla{b} \tensor{\left( \pdv{y} \right)}{^a} + E^{-1} \tensor{Z}{^b} \tensor{Z}{_c} \tensor{K}{^a} \Nabla{b} \tensor{\left( \pdv{y} \right)}{^c}\\
+						&= \left( gx-fy \right) \left( \tensor{Z}{^b} \tensor{K}{_b} \tensor{K}{^a} + E^{-1} \tensor{Z}{^b} \tensor{Z}{_c} \tensor{K}{^a} \tensor{K}{_b} \tensor{K}{^c} \right)\\
+						&= \left( gx-fy \right) \left( - E + E \right) \tensor{K}{^a}\\
+						&= 0.
+					\end{split}
+				\end{equation*}
+			\end{enumerate}
+		\end{zm}
+
+	\item 试证式 (7-9-43)。\footnote{正文(7-9-43)为
+	\begin{equation*}
+		\left( \tensor{\psi}{^i_j} \right) = \mqty[
+			\alpha & \beta & 0 \\
+			\beta & -\alpha & 0\\
+			0 & 0 & 0
+		]
+		\qc \alpha \equiv - E^2 f \qc \beta \equiv - E^2 g. \tag{7-9-43}
+	\end{equation*}}
+	\begin{zm}
+		首先，注意到
+		\begin{equation*}
+			\begin{split}
+				\tensor{\left( E_1 \right)}{^a} &= \tensor{\left( e_1 \right)}{^a} + E^{-1} Z_1 \tensor{\left( e_3 \right)}{^a},\\
+				\tensor{\left( E_2 \right)}{^a} &= \tensor{\left( e_2 \right)}{^a} + E^{-1} Z_2 \tensor{\left( e_3 \right)}{^a},\\
+				\tensor{\left( E_3 \right)}{^a} &= E^{-1} \tensor{\left( e_3 \right)}{^a} - \tensor{Z}{^a},
+			\end{split}
+		\end{equation*}
+		且 $\tensor{\left( e^4 \right)}{_a} = \tensor{\left( \dd{u} \right)}{_a} = - \tensor{K}{_a}$，易得
+		\begin{equation*}
+			\mqty(
+				\tensor{\left( e^1 \right)}{_a} \tensor{\left( E_1 \right)}{^a} & \tensor{\left( e^1 \right)}{_a} \tensor{\left( E_2 \right)}{^a} & \tensor{\left( e^1 \right)}{_a} \tensor{\left( E_3 \right)}{^a}\\
+				\tensor{\left( e^2 \right)}{_a} \tensor{\left( E_1 \right)}{^a} & \tensor{\left( e^2 \right)}{_a} \tensor{\left( E_2 \right)}{^a} & \tensor{\left( e^2 \right)}{_a} \tensor{\left( E_3 \right)}{^a}\\
+				\tensor{\left( e^4 \right)}{_a} \tensor{\left( E_1 \right)}{^a} & \tensor{\left( e^4 \right)}{_a} \tensor{\left( E_2 \right)}{^a} & \tensor{\left( e^4 \right)}{_a} \tensor{\left( E_3 \right)}{^a}
+			)
+			=
+			\mqty(
+				1 & 0 & - Z_1\\
+				0 & 1 & - Z_2\\
+				0 & 0 & - E
+			),
+		\end{equation*}
+		并有
+		\begin{equation*}
+			\begin{split}
+				\tensor{\left( e^1 \right)}{_a} \tensor{Z}{^a} &= Z_1,\\
+				\tensor{\left( e^2 \right)}{_a} \tensor{Z}{^a} &= Z_2,\\
+				\tensor{\left( e^4 \right)}{_a} \tensor{Z}{^a} &= - \tensor{K}{_a} \tensor{Z}{^a}\\
+				&= E,
+			\end{split}
+		\end{equation*}
+		故
+		\begin{align*}
+			\tensor{\psi}{^1_1} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} + 0 \\
+			&= E \left( f E + 0 \right)\\
+			&= E^2 f\\
+			&= - \alpha\\
+			\tensor{\psi}{^1_2} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} + 0 \\
+			&= E^2 g\\
+			&= - \beta,\\
+			\tensor{\psi}{^1_3} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} + 0 \\
+			&= 0,\\
+			\tensor{\psi}{^2_1} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b}\\
+			&= g E^2\\
+			&= - \beta,\\
+			\tensor{\psi}{^2_2} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b}\\
+			&= - f E^2\\
+			&= \alpha,\\
+			\tensor{\psi}{^2_3} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b}\\
+			&= 0,\\
+			\tensor{\psi}{^3_i} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_i \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_3 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_i \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_3 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left( - E Z_1 + Z_1 E \right)\\
+			&\qquad {} + \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left( - E Z_2 + Z_2 E \right) \bigg) \tensor{Z}{^a} \tensor{\left( E_i \right)}{^b}\\
+			&= 0,
+		\end{align*}
+		故
+		\begin{equation*}
+			\left[ \tensor{\psi}{^i_j} \right] = - \mqty(
+				\alpha & \beta & 0 \\
+				\beta & -\alpha & 0\\
+				0 & 0 & 0
+			)
+			\qc \alpha \equiv - E^2 f \qc \beta \equiv - E^2 g.
+		\end{equation*}
+		（好像差了个负号耶……）
+	\end{zm}
+
+	\item 试证式 (7-9-36)，即 $\tensor{\nabla}{^a} \tensor{\nabla}{_a} P = \left( \pdv*[2]{P}{x} \right) + \left( \pdv*[2]{P}{y} \right)$。
+
+	\begin{zm}
+		首先，
+		\begin{equation*}
+			\begin{split}
+				\tensor{\nabla}{_a} P &= \tensor{\left( \dd{P} \right)}{_a}\\
+				&= \pdv{P}{u} \tensor{\left( \dd{u} \right)}{_a} + \pdv{P}{x} \tensor{\left( \dd{x} \right)}{_a} + \pdv{P}{y} \tensor{\left( \dd{y} \right)}{_a}\\
+				&= \pdv{P}{u} \tensor{\left( e^4 \right)}{_a} + \pdv{P}{x} \tensor{\left( e^1 \right)}{_a} + \pdv{P}{y} \tensor{\left( e^2 \right)}{_a},
+			\end{split}
+		\end{equation*}
+		则
+		\begin{equation*}
+			\begin{split}
+				\tensor{\nabla}{^a} \tensor{\nabla}{_a} P ={} & \tensor{\left( e^4 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{u} + \pdv{P}{u} \tensor{\nabla}{^a} \tensor{\left( e^4 \right)}{_a}\\
+				&{}+ \tensor{\left( e^1 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{x} + \pdv{P}{x} \tensor{\nabla}{^a} \tensor{\left( e^1 \right)}{_a}\\
+				&{}+ \tensor{\left( e^2 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{y} + \pdv{P}{y} \tensor{\nabla}{^a} \tensor{\left( e^2 \right)}{_a},
+			\end{split}
+		\end{equation*}
+		注意到
+		\begin{equation*}
+			\tensor{\nabla}{^a} \tensor{\left( e^\mu \right)}{_a} = \tensor{\left( e^\nu \right)}{^a} \tensor{\omega}{_\nu^\mu_a},
+		\end{equation*}
+		且
+		\begin{align*}
+			\tensor{\left( e^1 \right)}{^a} &= \tensor{g}{^1^\mu} \tensor{\left( e_\mu \right)}{^a}\\
+			&= \tensor{\left( e_1 \right)}{^a},\\
+			\tensor{\left( e^2 \right)}{^a} &= \tensor{g}{^2^\mu} \tensor{\left( e_\mu \right)}{^a}\\
+			&= \tensor{\left( e_2 \right)}{^a},\\
+			\tensor{\left( e^3 \right)}{^a} &= \tensor{g}{^3^\mu} \tensor{\left( e_\mu \right)}{^a}\\
+			&= -\tensor{\left( e_4 \right)}{^a},\\
+			\tensor{\left( e^4 \right)}{^a} &= \tensor{g}{^4^\mu} \tensor{\left( e_\mu \right)}{^a}\\
+			&= - \tensor{\left( e_3 \right)}{^a},
+		\end{align*}
+		可知
+		\begin{equation*}
+			\begin{split}
+				\tensor{\nabla}{^a} \tensor{\left( e^1 \right)}{_a} &= \tensor{\left( e^4 \right)}{^a} \tensor{\omega}{_4^1_a}\\
+				&= - \tensor{\left( e_3 \right)}{^a} \pdv{P}{x} \tensor{\left( e^4 \right)}{_a}\\
+				&= 0,\\
+				\tensor{\nabla}{^a} \tensor{\left( e^2 \right)}{_a} &= \tensor{\left( e^4 \right)}{^a} \tensor{\omega}{_4^2_a}\\
+				&= - \tensor{\left( e_3 \right)}{^a} \pdv{P}{y} \tensor{\left( e^4 \right)}{_a}\\
+				&= 0,\\
+				\tensor{\nabla}{^a} \tensor{\left( e^3 \right)}{_a} &= \tensor{\left( e^1 \right)}{^a} \tensor{\omega}{_1^3_a} + \tensor{\left( e^2 \right)}{^a} \tensor{\omega}{_2^3_a}\\
+				&= \tensor{\left( e_1 \right)}{^a} \pdv{P}{x} \tensor{\left( e^4 \right)}{_a} + \tensor{\left( e_2 \right)}{^a} \pdv{P}{y} \tensor{\left( e^4 \right)}{_a}\\
+				&= 0,\\
+				\tensor{\nabla}{^a} \tensor{\left( e^4 \right)}{_a} &= 0,
+			\end{split}
+		\end{equation*}
+		故
+		\begin{align*}
+			\tensor{\nabla}{^a} \tensor{\nabla}{_a} P =&= \tensor{\left( e^4 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{u} + \tensor{\left( e^1 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{x} + \tensor{\left( e^2 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{y}\\
+			&= - \tensor{\left( e_3 \right)}{^a} \tensor{\nabla}{_a} \pdv{P}{u} + \tensor{\left( e_1 \right)}{^a} \tensor{\nabla}{_a} \pdv{P}{x} + \tensor{\left( e_2 \right)}{^a} \tensor{\nabla}{_a} \pdv{P}{y}\\
+			&= - \left( \pdv{t} + \pdv{z} \right) \pdv{P}{u} + \pdv{x} \pdv{P}{x} + \pdv{y} \pdv{P}{y}\\
+			&= - \left( \pdv{u}{t} + \pdv{u}{z} \right) \pdv[2]{P}{u} + \pdv[2]{P}{x} + \pdv[2]{P}{y}\\
+			&= \pdv[2]{P}{x} + \pdv[2]{P}{y}.
+		\end{align*}
+	\end{zm}
+\end{xiti}

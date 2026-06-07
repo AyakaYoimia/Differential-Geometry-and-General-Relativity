@@ -1,0 +1,175 @@
+\chapter{流形和张量场}
+
+\section{微分流形}
+
+\begin{itemize}
+    \item $n$维光滑微分流形$M$
+    \begin{itemize}
+        \item 坐标，坐标系
+        \item 图，图册，相容性
+        \item 不相容的图册代表不同的微分结构
+    \end{itemize}
+    \item 微分同胚
+\end{itemize}
+
+\section{切矢量}
+
+\begin{itemize}
+    \item 矢量空间
+    \item 矢量：类比方向导数，将函数映射到实数，满足线性性，Leibniz律
+    \begin{itemize}
+        \item[\o] 两函数在点$p$的邻域内相等，则在任意矢量作用下得到相同数
+        \item[\o] 流形$M$中点$p$处所有矢量组成的集合$V_p$是$n$维矢量空间，基矢$X_{\mu}$
+        \begin{gather*}
+            X_{\mu}(f)=\left.\pt{F}{x^{\mu}}\right|_p=\left.\pt{(f \circ \psi^{-1})}{x^{\mu}}\right|_p
+            \\
+            \intertext{简记为}
+            X_{\mu}(f)=\left.\pt{f}{x^{\mu}}\right|_p
+        \end{gather*}
+        $f$为标量场，$\psi:M \to \mathbb{R}^n$为微分同胚映射
+        \item[\o] 矢量$v$在两个坐标系$\{x^{\mu}\}$和$\{x'^{\nu}\}$下的坐标分量满足
+        \begin{gather*}
+            v'^{\nu}=\left.\pt{x'^{\nu}}{x^{\mu}}\right|_p v^{\mu}
+        \end{gather*}
+    \end{itemize}
+    \item 曲线$C(t)$，参数$t$，重参数化，坐标线
+    \item 曲线的切矢量$T=\pt{}{t}$
+    \begin{gather*}
+        \left.\pt{}{t}\right|_{C(t_0)}(f)=T(f)=\left.\dt{(f \circ C)}{t} \right|_{t_0}
+        \\
+        \pt{}{t}=\dt{x^{\mu}(t)}{t} \pt{}{x^{\mu}}
+        \\
+        \pt{}{t}=\dt{t'(t)}{t} \pt{}{t'}
+    \end{gather*}
+    $\forall v \in V_p,\exists C(t)$使$v$为$C(t)$切矢量，因此点$p$矢量称为切矢量，$V_p$称为切空间
+    \item 矢量场$v:p \mapsto v_p(f)$
+    \item 对易子
+    \begin{itemize}
+        \item[\o] $[\partial_{\mu},\partial_{\nu}]=0$
+    \end{itemize}
+    \item 积分曲线
+    \begin{itemize}
+        \item[\o] 流形上任意一点$p$必有光滑矢量场唯一积分曲线$C(t)$经过，满足$C(0)=p$
+        \item[\o] （更强版本）流形上任意一点$p$必有$C^1$矢量场唯一不可延积分曲线$C(t)$经过，满足$C(0)=p$
+    \end{itemize}
+    \item 群：结合律，恒等元，逆元
+    \begin{itemize}
+        \item 单参数群
+        \item 单参微分同胚群：由$C^{\infty}$映射$\phi:\mathbb{R} \times M \to M$组成，满足
+        \begin{enumerate}
+            \item $\phi_t=\phi(t,\cdot):M \to M,\quad\forall t \in \mathbb{R}$是微分同胚
+            \item $\phi_t \circ \phi_s=\phi_{t+s},\quad \forall t,s \in \mathbb{R}$
+        \end{enumerate}
+        $\forall p \in M,\quad \phi_p=\phi(\cdot,p):\mathbb{R} \to M$是一条光滑曲线，满足$\phi_p(0)=p$，称为轨道，轨道每一点的切矢量给出一个光滑矢量场，但一个光滑矢量场只能给出一个单参微分同胚局部群
+        \item 矢量场完备性：每条不可延积分曲线参数取值范围都是$\mathbb{R}$，紧致流形上任意矢量场都是完备的
+    \end{itemize}
+\end{itemize}
+
+\section{对偶矢量场}
+
+\begin{itemize}
+    \item 对偶矢量：线性映射$\omega:V \to \mathbb{R}$\\
+    对偶空间$V^{*}$
+    \begin{itemize}
+        \item $\dim V^{*}=\dim V$
+        \item 对偶基$\{e^{\mu *}\}$满足
+        \begin{gather*}
+            e^{\mu *}(e_{\nu})={\delta^\mu}_\nu
+        \end{gather*}
+        \item $V^{*}$与$V$存在同构映射，但没有自然同构；对偶空间的对偶空间$V^{**}$与$V$存在自然同构关系
+        \begin{gather*}
+            v^{**}(\omega)=\omega(v),\quad \forall \omega \in V^*
+        \end{gather*}
+        \item 若有基变换$e'_{\mu}={A^\nu}_\mu e_\nu$，则对偶基变换为
+        \begin{gather*}
+            e'^{\mu *}={((A^T)^{-1})_{\nu}}^\mu e^{\nu *}
+        \end{gather*}
+    \end{itemize}
+    \item 微分：$\left. \d f \right|_p \in V^*$
+    \begin{gather*}
+        \left. \d f \right|_p(v)=v(f),\quad \forall v \in V_p
+        \\
+        \implies \d x^\mu \pt{}{x^\nu}={\delta^\mu}_\nu
+    \end{gather*}
+    $\{\d x^{\mu}\}$是对偶空间的一组坐标基底，则有
+    \begin{gather*}
+        \d f=\pt{f(x)}{x^\mu} \d x^\mu,\forall f \in C^{\infty}(O)
+    \end{gather*}
+    坐标变换
+    \begin{gather*}
+        \omega'_\nu=\left.\pt{x^{\mu}}{x'^{\nu}} \right|_p \omega_{\mu}
+    \end{gather*}
+\end{itemize}
+
+\section{张量}
+
+\begin{itemize}
+    \item $(k,l)$型张量：多重线性映射$T:V^{*k} \times V^l \to \mathbb{R}$，组成集合$\mathscr{T}_V(k,l)$
+    \begin{itemize}
+        \item[\o] $\dim \mathscr{T}_V(k,l)=n^{k+l}$
+    \end{itemize}
+    \item 张量积：$(k,l)$型张量$T$和$(k',l')$型张量$T'$的张量积$T \otimes T'$是$(k+k',l+l')$型张量
+    \item 缩并
+    \item 张量变换
+    \begin{gather*}
+        {T'^{\mu_1 \cdots \mu_k}}_{\nu_1 \cdots \nu_k}=\pt{x'^{\mu_1}}{x^{\rho_1}} \cdots \pt{x'^{\mu_k}}{x^{\rho_k}} \pt{x^{\sigma_1}}{x'^{\nu_1}} \cdots \pt{x^{\sigma_l}}{x'^{\nu_l}} {T^{\rho_1 \cdots \rho_k}}_{\sigma_1 \cdots \sigma_k}
+    \end{gather*}
+\end{itemize}
+
+\section{度规}
+
+\begin{itemize}
+    \item 度规$g$：对称、非退化的$(0,2)$型张量\\
+    度规可视为$g:V \to V^*$，给出一个自然同构线性映射
+    \begin{itemize}
+        \item 长度，正交：在正交归一基下，度规的表示矩阵是对角矩阵，对角矩阵元为$\pm 1$
+        \item[\o] 任何带度规的矢量空间都有正交归一基，度规写成对角表示矩阵时对角元中$\pm 1$个数与基无关
+        \item 号差：对角元之和
+        \begin{itemize}
+            \item 正定：对角元全为$+1$
+            \item 负定：对角元全为$-1$
+            \item 不定：其他情况，Lorentzian：只有一个对角元为$-1$
+        \end{itemize}
+        \item 带Lorentzian度规的矢量空间中矢量分类
+        \begin{itemize}
+            \item 类空：$g(v,v)>0$
+            \item 类时：$g(v,v)<0$
+            \item 类光：$g(v,v)=0$
+        \end{itemize}
+    \end{itemize}
+    \item 度规张量场
+    \item 线长：带Lorentzian度规的流形$M$上类时、类空、类光曲线$C(t)$线长
+    \begin{gather*}
+        l=\int \sqrt{|g(T,T)|} \d t,\quad T=\pt{}{t}
+    \end{gather*}
+    重参数化不改变线长
+    \item 线元
+    \begin{gather*}
+        \d s^2=g_{\mu \nu} \d x^{\mu} \d x^{\nu}
+    \end{gather*}
+    \item 广义Riemann空间：Riemann空间，伪Riemann空间，Euclidean空间，Minkowski空间
+\end{itemize}
+
+\section{抽象指标}
+
+\begin{enumerate}
+    \item $(k,l)$型张量用有$k$个上标和$l$个下标的字母表示，上下标为小写Latin字母，只表示类型，不代表分量序号
+    \item 重复上下抽象指标表示求缩并
+    \item 张量积符号省略
+    \item 具体指标：指标为希腊字母，表示张量的分量，可以赋值来表示分量序号
+\end{enumerate}
+
+定义张量的对称部分和反对称部分为
+\begin{gather*}
+    T_{(a_1 \cdots a_l)}=\frac{1}{l!} \displaystyle \sum_{\pi} T_{a_{\pi(1)} \cdots a_{\pi(l)}}
+    \\
+    T_{[a_1 \cdots a_l]}=\frac{1}{l!} \displaystyle \sum_{\pi} \delta_{\pi} T_{a_{\pi(1)} \cdots a_{\pi(l)}}
+\end{gather*}
+其中$\pi$表示$(1,\cdots,l)$的排列，进而可以定义全对称、全反对称张量，有如下性质
+\begin{itemize}
+    \item 括号不影响缩并
+    \item 括号内的同种括号可以删去
+    \item 括号内有异种括号，得到结果为$0$
+    \item 异种括号缩并得$0$
+    \item 全对称张量的反对称部分为$0$，全反对称张量的对称部分为$0$，
+\end{itemize}

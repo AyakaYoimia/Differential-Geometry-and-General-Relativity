@@ -1,0 +1,177 @@
+\chapter{Riemann曲率张量}
+
+\section{导数算符}
+
+\begin{itemize}
+    \item 无挠导数算符$\nabla:\mathscr{F}_M(k,l) \to \mathscr{F}_M(k,l+1)$\\
+    线性性，Leibniz律，与缩并可交换（即$\nabla_a {\delta^b}_c=0$），$v(f)=v^a \nabla_a f$，无挠性
+    \begin{itemize}
+        \item $p \in M,\omega_b,\omega'_b \in \mathscr{F}_M(0,1),\left.\omega'_b\right|_p=\left.\omega'_b\right|_p$，则
+        \begin{gather*}
+            \left.(\tilde{\nabla}_a-\nabla_a)\omega'_b\right|_p=\left.(\tilde{\nabla}_a-\nabla_a)\omega_b\right|_p
+        \end{gather*}
+        \item 不同导数算符之间相差$(1,2)$型张量${C^c}_{ab}$，无挠性要求下标对称
+        \begin{gather*}
+            \nabla_a \omega_b=\tilde{\nabla}_a \omega_b-{C^c}_{ab} \omega_c
+            \\
+            \nabla_a v^b=\tilde{\nabla}_a v^b+{C^b}_{ac} v^c
+            \\
+            \nabla_a {T^{b_1 \cdots b_k}}_{c_1 \cdots c_l}=\tilde{\nabla}_a {T^{b_1 \cdots b_k}}_{c_1 \cdots c_l}+\displaystyle \sum_{i=1}^{k} {C^{b_i}}_{ad} {T^{b_1 \cdots b_{i-1} d b_{i+1} \cdots b_k}}_{c_1 \cdots c_l}-\displaystyle \sum_{j=1}^{l} {C^d}_{ac_j} {T^{b_1 \cdots b_k}}_{c_1 \cdots c_{j-1} d c_{j+1} \cdots c_l}
+        \end{gather*}
+        与$T$上标缩并为$+$号，与$T$下标缩并为$-$号
+        \item \begin{gather*}
+            [u,v]^a=u^b \nabla_b v^a-v^b \nabla_b u^a
+        \end{gather*}
+    \end{itemize}
+    \item 普通导数算符：选定坐标系$\{x^{\mu}\}$和坐标域$O$，普通导数算符$\partial_a:\mathscr{F}_O(k,l) \to \mathscr{F}_O(k,l+1)$
+    \begin{gather*}
+        \partial_a {T^b}_c=(\d x^{\mu})_a (\pt{}{x^{\nu}})^b (\d x^{\sigma})_c \partial_{\mu} {T^{\nu}}_{\sigma}
+    \end{gather*}
+    普通导数算符与坐标系有关，将协变导数算符记为$\nabla_a$
+    \begin{itemize}
+        \item Christoffel符号${\Gamma^c}_{ab}$\\
+        协变导数与普通导数之间的差，与选取的协变导数和坐标系有关的张量，不满足张量坐标变换关系
+        \begin{gather*}
+            {v^{\nu}}_{;\mu}={v^{\nu}}_{,\mu}+{\Gamma^{\nu}}_{\mu \sigma} v^{\sigma}
+            \\
+            {\omega_{\nu}}_{;\mu}={\omega_{\nu}}_{,\mu}-{\Gamma^{\sigma}}_{\mu \nu} \omega_{\sigma}
+            \\
+            \intertext{其中}
+            \partial_a v^b={v^{\nu}}_{,\mu} (\d x^{\mu})_a (\pt{}{x^{\nu}})^b
+            \\
+            \nabla_a v^b={v^{\nu}}_{;\mu} (\d x^{\mu})_a (\pt{}{x^{\nu}})^b
+        \end{gather*}
+    \end{itemize}
+\end{itemize}
+
+\section{矢量场沿曲线的导数和平移}
+
+\begin{itemize}
+    \item 沿曲线$C(t)$平移的矢量场：$T^b \nabla_b v^a=0$
+    \begin{itemize}
+        \item 在坐标系$\{x^{\mu}\}$下，
+        \begin{gather*}
+            T^b \nabla_b v^a=(\pt{}{x^{\mu}})^a (\dt{v^{\mu}}{t}+{\Gamma^{\mu}}_{\nu\sigma}T^{\nu}v^{\sigma})
+        \end{gather*}
+        \item 曲线上一点和该点的一个矢量确定了唯一的一个沿曲线平移的矢量场，$\nabla_a$和曲线联系了两个点处的切空间，$\nabla_a$称为联络
+    \end{itemize}
+    \item 与度规相适配的导数算符\\
+    对平移添加保内积的要求，$u^a v^a$在$C(t)$上是常数，等价于
+    \begin{gather*}
+        \nabla_c g_{ab}=0
+    \end{gather*}
+    满足该条件的导数是唯一的
+    \begin{itemize}
+        \item 在某一坐标系下，联系该坐标系下普通导数$\partial_a$和与度规$G_{bc}$相适配的导数$\nabla_a$的Christoffel符号的分量为
+        \begin{gather*}
+            {\Gamma^{\sigma}}_{\mu\nu}=\frac{1}{2}g^{\sigma \rho}(g_{\rho \mu;\nu}+g_{\rho \nu;\mu}-g_{\mu \nu ;\rho})
+        \end{gather*}
+    \end{itemize}
+    \item 矢量场沿曲线导数和平移的关系\\
+    设$\left. \tilde{v}^a \right|_p$是$\left. v^a \right|_q$沿曲线$C(t)$从$q$平移到$p$的结果，
+    \begin{gather*}
+        \left.T^b \nabla_b v^a \right|_p=\lim_{\Delta t \to 0} \frac{1}{\Delta t} (\left. \tilde{v}^a \right|_p-\left. v^a \right|_p)
+    \end{gather*}
+\end{itemize}
+
+\section{测地线}
+
+\begin{itemize}
+    \item 测地线$\gamma(t)$：切矢$T^a$满足$T^b \nabla_b T^a=0$
+    \begin{itemize}
+        \item $\gamma(t)$参数式$x^\mu=x^\mu(t)$，得到测地线方程
+        \begin{gather*}
+            \dt{^2 x^\mu}{t^2}+{\Gamma^{\mu}}_{\nu \sigma} \dt{x^{\nu}}{t} \dt{x^{\sigma}}{t}=0
+        \end{gather*}
+        \item 测地线$\gamma(t)$重参数化后$\gamma'(t')=\gamma(t)$的切矢$T'^a$满足
+        \begin{gather*}
+            T'^b \nabla_b T'^a=\alpha T'^a,\quad \alpha\text{为某个函数}
+        \end{gather*}
+        反过来，满足上式的曲线也可以通过重参数化变为测地线，能使曲线成为测地线的参数称为仿射参数
+        \item 仿射参数之间变换为线性映射
+        \item 带联络的流形上的一点$p$和$p$点的一个矢量$v^a$可以确定唯一的测地线$\gamma(t)$，满足$\gamma(0)=p,\gamma(t)$在$p$点切矢为$v^a$
+        \item 非类光测地线的线长参数为仿射参数
+        \item 在Lorentz度规场下，流形上两点间的光滑类时/类光曲线为测地线$\iff$曲线线长取极值\\
+        在正定度规场下，流形上两点间的曲线为测地线$\iff$曲线线长取极值
+        \begin{itemize}
+            \item 在Lorentz度规场下，类时曲线长度取极大值$\implies$该曲线是测地线\\
+            逆命题成立$\iff$曲线上不存在共轭点对，对Minkowski时空逆命题总成立
+            \item 在正定度规场下，曲线长度取极小值$\implies$该曲线是测地线\\
+            逆命题成立$\iff$曲线上不存在共轭点对，对Euclidean空间逆命题总成立
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section{Riemann曲率张量}
+
+\begin{itemize}
+    \item[\o] 设$\omega_c,\omega'_c \in \mathscr{F}(0,1)$，$\left.\omega'_c\right|_p=\left.\omega_c\right|_p$，则
+    \begin{gather*}
+        \left. (\nabla_a \nabla_b - \nabla_b \nabla_a) \omega'_c \right|_p=\left. (\nabla_a \nabla_b - \nabla_b \nabla_a) \omega_c \right|_p
+    \end{gather*}
+    \item Riemann曲率张量${R_{abc}}^d$
+    \begin{gather*}
+        (\nabla_a \nabla_b - \nabla_b \nabla_a) \omega_c={R_{abc}}^d \omega_d
+        \\
+        (\nabla_a \nabla_b - \nabla_b \nabla_a) v^c=-{R_{abd}}^c v^d
+        \\
+        (\nabla_a \nabla_b - \nabla_b \nabla_a) {T^{b_1 \cdots b_k}}_{c_1 \cdots c_l}=-\displaystyle \sum_{i=1}^{k} {R_{abe}}^{c_i} {T^{c_1 \cdots b_{i-1} e b_{i+1} \cdots c_k}}_{d_1 \cdots d_l}+\displaystyle \sum_{j=1}^{l} {R_{abd_j}}^e {T^{b_1 \cdots b_k}}_{d_1 \cdots d_{j-1} e d_{j+1} \cdots d_l}
+    \end{gather*}
+    性质
+    \begin{gather*}
+        {R_{abc}}^d=-{R_{bac}}^d
+        \\
+        {R_{[abc]}}^d=0
+        \\
+        \nabla_{[a} {R_{bd]d}}^e=0
+        \\
+        \intertext{定义$R_{abcd}=g_{de}{R_{abc}}^e$}
+        R_{abcd}=-R_{abdc}
+        \\
+        R_{abcd}=R_{cdab}
+    \end{gather*}
+    $R_{abcd}$独立分量数为$N=\frac{n^2(n^2-1)}{12}$
+    \begin{itemize}
+        \item Ricci张量$R_{ac}={R_{abc}}^b$
+        \item 标量曲率$R=g^{ac}R_{ac}$
+        \item 对$n \geq 3$的空间，无迹部分为Weyl张量
+        \begin{gather*}
+            C_{abcd}=R_{abcd}-\frac{2}{n-2}(g_{a[c} R_{d]b}-g_{b[c}R_{d]a})+\frac{2}{(n-1)(n-2)}Rg_{a[c}g_{d]b}
+        \end{gather*}
+        \begin{itemize}
+            \item 性质
+            \begin{gather*}
+                C_{abcd}=-C_{bacd}=-C_{abdc}=C_{cdab}
+                \\
+                C_{[abc]d}=0
+            \end{gather*}
+        \end{itemize}
+        \item 广义Riemann空间的Einstein张量
+        \begin{gather*}
+            G_{ab}=R_{ab}-\frac{1}{2}Rg_{ab}
+        \end{gather*}
+        \begin{itemize}
+            \item $\nabla^a G_{ab}=g^{ac} \nabla_c G_{ab}=0$
+        \end{itemize}
+    \end{itemize}
+    \item 用度规计算Riemann曲率张量
+    \begin{gather*}
+        {R_{\mu \nu \sigma}}^{\rho}={\Gamma^\rho}_{\mu \sigma ,\nu}-{\Gamma^\rho}_{\nu \sigma ,\mu}+{\Gamma^{\lambda}}_{\sigma \mu} {\Gamma^{\rho}}_{\nu \lambda}-{\Gamma^{\lambda}}_{\sigma \nu} {\Gamma^{\rho}}_{\mu \lambda}
+        \\
+        R_{\mu \sigma}={\Gamma^\nu}_{\mu \sigma ,\nu}-{\Gamma^\nu}_{\nu \sigma ,\mu}+{\Gamma^{\lambda}}_{\sigma \mu} {\Gamma^{\nu}}_{\nu \lambda}-{\Gamma^{\lambda}}_{\sigma \nu} {\Gamma^{\nu}}_{\mu \lambda}
+    \end{gather*}
+    \item 计算缩并Christoffel符号${\Gamma^\mu}_{\mu \sigma}$
+    \begin{gather*}
+        {\Gamma^\mu}_{\mu \sigma}=\frac{1}{\sqrt{|\det g|}}\pt{\sqrt{|\det g|}}{x^{\sigma}}
+        \\
+        \nabla_a v^a=\frac{1}{\sqrt{|\det g|}}\pt{}{x^{i}}(\sqrt{|\det g|} v^{i})
+    \end{gather*}
+    \item 内禀曲率：内禀性质，表现在如下三个等价性质上
+    \begin{itemize}
+        \item 导数算符不对易
+        \item 矢量沿流形上闭合曲线平移一周不复原
+        \item 存在初始平行后来不平行的测地线
+    \end{itemize}
+    \item 外曲率：嵌入高一维的空间后表现出的弯曲\\
+    内禀曲率与外曲率是不同的性质
+\end{itemize}

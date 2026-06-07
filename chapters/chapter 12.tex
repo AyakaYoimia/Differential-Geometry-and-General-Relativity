@@ -1,0 +1,215 @@
+\chapter{渐进平直时空}
+
+\section{共形变换}
+
+\begin{itemize}
+    \item 共形变换
+    \begin{gather*}
+        g_{ab} \to \tilde{g}_{ab} = \Omega^2 g_{ab}
+        \\
+        \tilde{g}^{ab} = \Omega^{-2} g^{ab}
+    \end{gather*}
+    $\Omega$为$M$上$C^{\infty}$恒正函数
+    \begin{itemize}
+        \item 与二者相适配的导数算符分别为$\nabla_a$和$\tilde{\nabla}_a$
+        \begin{gather*}
+            \tilde{\nabla}_a \omega_b = \nabla_a \omega_b - {C^c}_{ab} \omega_c
+            \\
+            {C^c}_{ab} = 2 {\delta^c}_{(a} \nabla_{b)} (\ln \Omega) - g_{ab} g^{cd} \nabla_d (\ln \Omega)
+        \end{gather*}
+        \item 共形变换不改变类时、类空、类光性
+        \item 类光测地线是共形不变的，但仿射参数可能变化，除非$\Omega$为常数；类时、类空测地线一般不是共性不变的\\
+        可以选定仿射参数，其间关系
+        \begin{gather*}
+            \dt{\tilde{\lambda}}{\lambda} = c \Omega^2
+        \end{gather*}
+        \item 曲率张量
+        \begin{align*}
+            {\tilde{R}_{abc}}^d=&{R_{abc}}^d + 2 {\delta^d}_{[a} \nabla_{b]} \nabla_c (\ln \Omega) - 2 g^{de} g_{c[a} \nabla_{b]} \nabla^e (\ln \Omega) + 2 \nabla_{[a} (\ln \Omega) {\delta^d}_{b]} \nabla_c (\ln \Omega) 
+            \\
+            &- 2 \nabla_{[a} (\ln \Omega) g_{b]c} g^{df} \nabla_f (\ln \Omega) - 2 g_{c[a} {\delta^d}_{b]} g^{ef} \nabla_e (\ln \Omega) \nabla_f (\ln \Omega)
+        \end{align*}
+        \item Ricci张量
+        \begin{align*}
+            \tilde{R}_{ac} = & R_{ac} - (n-2) \nabla_a \nabla_c (\ln \Omega) - g_{ac} g^{de} \nabla_d \nabla_e (\ln \Omega) + (n-2) \nabla_a (\ln \Omega) \nabla_c (\ln \Omega) 
+            \\
+            &- (n-2) g_{ac} g^{de} \nabla^d (\ln \Omega) \nabla_e (\ln \Omega)
+        \end{align*}
+        \item 标量曲率
+        \begin{gather*}
+            \tilde{R} = \Omega^{-2} \left[ R - 2(n-1) g^{ac} \nabla_a \nabla_c (\ln \Omega) - (n-1)(n-2) g^{ac} \nabla_a (\ln \Omega) \nabla_c (\ln \Omega) \right]
+        \end{gather*}
+        \item Weyl张量
+        \begin{gather*}
+            {\tilde{C}_{abc}}^d = {C_{abc}}^d
+            \\
+            \tilde{C}_{abcd} = \Omega^2 C_{abcd}
+        \end{gather*}
+        Weyl张量是共形张量
+    \end{itemize}
+    \item 共形平直度规
+    \begin{itemize}
+        \item 2维广义Riemann时空$(M, g_{ab})$必局域共形平直
+        \item 3维广义Riemann时空$(M, g_{ab})$局域共形平直$\iff$Cotton张量恒为零，Cotton张量
+        \begin{gather*}
+            C_{abc} = \nabla_c R_{ab} - \nabla_b R_{ac} + \frac{1}{4} (g_{ac} \nabla_b R - g_{ab} \nabla_c R)
+        \end{gather*}
+        \item $n>3$的$n$维度规场局域共形平直$\iff$Weyl张量恒为零
+    \end{itemize}
+    \item 广义Riemann时空$(M, g_{ab})$和$(\tilde{M}, \tilde{g}_{ab})$，微分同胚映射$\psi: M \to \tilde{M}$，
+    \begin{itemize}
+        \item $\psi$称为等度规映射，若$\tilde{g}_{ab} = \psi_{*} g_{ab}$
+        \item $\psi$称为共形等度规映射，若$\tilde{g}_{ab} = \Omega^2 \psi_{*} g_{ab}$，$\Omega$为$\tilde{M}$上$C^{\infty}$恒正函数
+        \begin{itemize}
+            \item Lorenz号差的4维共形平直线元$\d s^2= \Omega^2(x^{\mu}) (-\d t^2+\d x^2+\d y^2+\d z^2)$是平直线元$\iff$
+            \begin{gather*}
+                \Omega(x^{\mu})=\frac{C}{Q(x^{\mu})}
+                \\
+                Q(x^{\mu})=
+                \begin{cases}
+                    \eta_{\mu \mu} (x^{\mu} + \rho^{\mu})^2
+                    \\
+                    a_{\mu} x^{\mu} + b
+                    \\
+                    Const
+                \end{cases}
+            \end{gather*}
+            其中$C, \rho^{\mu}, a_{\mu}, b$为常数且$a_{\mu} a^{\mu} = 0$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section{Minkowski时空的共形无限远}
+
+球坐标系下Minkowski时空线元
+\begin{gather*}
+    \d s^2 = -\d t^2 + \d r^2 + r^2 (\d \theta^2 + \sin^2 \theta \d \varphi^2)
+    \\
+    \intertext{定义坐标}
+    \begin{cases}
+        v = t + r
+        \\
+        u = t - r
+    \end{cases}
+    \\
+    -\infty < u \leq v < +\infty
+    \\
+    \intertext{再定义新坐标}
+    \begin{cases}
+        T = \arctan v + \arctan u
+        \\
+        R = \arctan v - \arctan u
+    \end{cases}
+    \\
+    -\pi < T + R < \pi, \quad -\pi < T - R < \pi,\quad R \geq 0
+    \\
+    \intertext{共形变换}
+    \d \tilde{s}^2 = \Omega^2 \d s^2 = -\d T^2 + \d R^2 + \sin^2 R (\d \theta^2 + \sin^2 \theta \d \varphi^2)
+    \\
+    \Omega = 2 \cos \frac{T+R}{2} \cos \frac{T-R}{2}
+    \\
+    \tilde{g}_{ab} = \Omega^2 \eta_{ab}
+\end{gather*}
+共形变换将无穷远拉到有限处，从而可以讨论
+
+无穷远分为如下部分
+\begin{itemize}
+    \item 过去类时无限远$ i^-: (T, R) = (-\pi, 0)$
+    \item 未来类时无限远$ i^+: (T, R) = (\pi, 0)$
+    \item 空间无限远$ i^0: (T, R) = (0, \pi)$
+    \item 过去类光无限远$\mathscr{I}^-: T-R=-\pi, \quad R \in (0, \pi)$
+    \item 未来类光无限远$\mathscr{I}^+: T+R=\pi, \quad R \in (0, \pi)$
+\end{itemize}
+$\mathscr{I}^-$和$\mathscr{I}^+$用$\tilde{g}_{ab}$衡量是类光超曲面
+\begin{itemize}
+    \item Minkowski时空的不可延指向未来类时测地线起于$i^-$止于$i^+$，不可延指向未来类光测地线起于$\mathscr{I}^-$止于$\mathscr{I}^+$，不可延类空测地线起于$i^0$止于$i^0$
+\end{itemize}
+
+2维Euclidean空间的共形变换
+\begin{gather*}
+    \d s^2 = \d r^2 + r^2 \d \varphi^2
+    \\
+    r=\tan \frac{\theta}{2}
+    \\
+    0 \leq \theta < \pi
+    \\
+    \d s^2 = \frac{1}{4 \cos^4 \frac{\theta}{2}} (\d \theta^2 + \sin^2 \theta \d \varphi^2)
+    \\
+    \d \tilde{s}^2 = \Omega^2 \d s^2 = \d \theta^2 + \sin^2 \theta \d \varphi^2
+    \\
+    \Omega = 2 \cos^2 \frac{\theta}{2}
+    \\
+    \tilde{g}_{ab} = \Omega^2 \delta_{ab}
+\end{gather*}
+
+\section{Schwarzschild时空的共形无限远}
+
+Schwarzschild最大延拓时空在Kruskal坐标系下线元
+\begin{gather*}
+    \d s^2=\frac{32M^3}{r} \e^{-\frac{r}{2M}}(-\d T^2+\d X^2)+r^2(\d \theta^2+\sin^2\theta \d \varphi^2)
+    \\
+    \intertext{定义新坐标}
+    \begin{cases}
+        \tan(\xi+\chi) = T + X
+        \\
+        \tan(\xi-\chi) = T - X
+    \end{cases}
+    \\
+    -\frac{\pi}{2} < \xi + \chi < \frac{\pi}{2}, \quad -\frac{\pi}{2} < \xi - \chi < \frac{\pi}{2}, \quad -\frac{\pi}{4} < \xi < \frac{\pi}{4}
+    \\
+    \d s^2 = \frac{32M^3}{r} \e^{-\frac{r}{2M}} \frac{-\d \xi^2 + \d \chi^2}{\cos^2(\xi+\chi) \cos^2(\xi-\chi)} + r^2 (\d \theta^2 + \sin^2 \theta \d \varphi^2)
+\end{gather*}
+坐标变换将无穷远拉到有限处
+
+共形压缩
+\begin{itemize}
+    \item 内向Eddington坐标系覆盖$A \cup N_1^+ \cup B \cup \mathscr{I}^-$
+    \begin{gather*}
+        v = t + r + 2M \ln \left|\frac{r}{2M} - 1\right|
+        \\
+        \d s^2 = r^2 \left[-\frac{1}{r^2}\left(1 - \frac{2M}{r}\right) \d v^2 + \frac{2}{r^2} \d v \d r + \d \theta^2 + \sin^2 \theta \d \varphi^2\right]
+        \\
+        \d \tilde{s}^2 = \Omega^2 \d s^2 = -(\Omega^2-2M\Omega^3) \d v^2 - 2 \d v \d \Omega + \d \theta^2 + \sin^2 \theta \d \varphi^2
+        \\
+        \Omega = \frac{1}{r}
+    \end{gather*}
+    \item 外向Eddington坐标系覆盖$A \cup N_2^- \cup W \cup \mathscr{I}^+$
+    \begin{gather*}
+        u = t - r - 2M \ln \left|\frac{r}{2M} - 1\right|
+        \\
+        \d s^2 = r^2 \left[-\frac{1}{r^2}\left(1 - \frac{2M}{r}\right) \d u^2 + \frac{2}{r^2} \d u \d r + \d \theta^2 + \sin^2 \theta \d \varphi^2\right]
+        \\
+        \d \tilde{s'}^2 = \Omega^2 \d s^2 = -(\Omega^2-2M\Omega^3) \d u^2 - 2 \d u \d \Omega + \d \theta^2 + \sin^2 \theta \d \varphi^2
+        \\
+        \Omega = \frac{1}{r}
+    \end{gather*}
+\end{itemize}
+
+\section{孤立体系和渐进平直时空}
+
+\begin{itemize}
+    \item 渐进平直时空 (Ashtekar)：真空时空$(M, g_{ab})$称为在类光和空间无限远处渐进平直的，若
+    \begin{enumerate}
+        \item $\exists$时空$(\tilde{M}, \tilde{g}_{ab})$满足
+        \begin{enumerate}
+            \item $M \subset \tilde{M}$
+            \item $\exists i^0 \in \tilde{M}$使$\overline{J^+(i^0)} \cup \overline{J^-(i^0)} = \tilde{M} - M$
+            \item $\tilde{g}_{ab}$在$\tilde{M}-\{i^0\}$上为$C^{\infty}$，在$\{i^0\}$为$C^{>0}$
+        \end{enumerate}
+        \item $\exists \tilde{M}$上函数$\Omega$满足
+        \begin{enumerate}
+            \item 在$M$上$\tilde{g}_{ab} = \Omega^2 g_{ab}$
+            \item $\Omega$在$\tilde{M}-M$上为$C^{\infty}$，在$\{i^0\}$为$C^{2}$
+            \item $\left.\Omega\right|_{M} > 0,\quad \left.\Omega\right|_{\dot{M}} = 0$
+            \item $\left.\tilde{\nabla}_a \Omega \right|_p \neq 0,\quad \forall p \in \mathscr{I}^{\pm},\quad \displaystyle \lim_{p \to i^0} \tilde{\nabla}_a \Omega = 0$
+            \item $\displaystyle \lim_{p \to i^0} \tilde{\nabla}_a \tilde{\nabla}_b \Omega = 2 \tilde{g}_{ab}|_{i^0}$
+        \end{enumerate}
+        \item $\exists \dot{M}$的开邻域$U$使$(U, \tilde{g}_{ab})$为强因果时空
+        \item 
+        \begin{enumerate}
+            \item 
+            \item 
+        \end{enumerate}
+    \end{enumerate}
+    $(M, g_{ab})$和$(\tilde{M}, \tilde{g}_{ab})$分别称为物理时空和非物理时空
+\end{itemize}

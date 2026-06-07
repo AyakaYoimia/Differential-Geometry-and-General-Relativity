@@ -1,0 +1,260 @@
+\documentclass[openany]{ctexbook}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs} %定义了类似铜版体的\mathscr
+\usepackage{upgreek}
+%\usepackage{textcomp}
+\usepackage{physics}
+\usepackage{cancel}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+%\usepackage{fancyvrb}%能用颜文字卖萌了，2333
+\usepackage{siunitx}%生成标准格式的国际单位
+\usepackage{tensor}
+\usepackage{tikz}
+\usepackage{listings}
+% \usepackage{fontspec}
+%\usepackage{minted}
+\usepackage{pifont}
+\usepackage{bm}
+\usepackage{lmodern}
+\usepackage{anyfontsize}
+\usepackage{babel}
+\usepackage[backend=biber,backref=true,style=authoryear]{biblatex}
+% \usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[listings]{tcolorbox}
+\usepackage[amsmath,hyperref,thmmarks,framed]{ntheorem}
+\usepackage{pdftexcmds}
+\usepackage{catchfile}
+% \usepackage{ifluatex}
+% \usepackage{ifplatform}
+\usepackage{DejaVuSansMono}
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%%  biblatex v3.15a bug fixing  %%%%%%%%%%%%%
+% \providetoggle{blx@lang@captions@english}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\allowdisplaybreaks
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{3d}
+
+\tcbuselibrary{skins,breakable}
+
+% \setmonofont{DejaVuSansMono Nerd Font}
+% \ifwindows
+% 	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
+% \fi
+% \iflinux
+% 	\newfontfamily\codefont{DejaVuSansMono}
+% \fi
+% \ifmacosx
+% 	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
+% \fi
+\def\codefont\ttfamily
+
+\geometry{
+	a4paper,
+	centering,
+	scale=0.77,
+	showframe
+}
+
+\lstset{
+	backgroundcolor=\color[gray]{0.95},
+	basicstyle=\ttfamily,
+	stringstyle=\sffamily,
+	flexiblecolumns,
+	escapechar='
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	pdftitle={梁灿彬《微分几何入门与广义相对论》习题参考解答},
+	pdfauthor={薛定谔的大喵}
+}
+
+%\newtheorem{mytheorem}{定理}[chapter]
+
+%\newenvironment{yuanli}{\begin{list}{}{%
+%			\leftmargin=4em \itemindent=0pt %
+%			\topsep=1em \rightmargin=4em %
+%		}%
+%		\item \itshape%
+%	}{%
+%	\end{list}\normalfont}
+
+{
+	\theoremstyle{nonumberplain}
+	\theoremheaderfont{\normalfont\bfseries}
+	\theorembodyfont{\normalfont\slshape}
+	\theoremsymbol{\ensuremath{\diamondsuit}}
+	\theoremseparator{.}
+	% \theoremprework{\bigskip\hrule}
+	% \theorempostwork{\hrule\bigskip}
+	\newtheorem{Theorem}{定理}
+}
+{
+	\theoremstyle{nonumberplain}
+	\theoremheaderfont{\normalfont\bfseries}
+	\theorembodyfont{\normalfont\ttfamily\small}
+	% \theoremsymbol{\ensuremath{\diamondsuit}}
+	\theoremseparator{}
+	% \theoremprework{\bigskip\hrule}
+	% \theorempostwork{\hrule\bigskip}
+	\newtheorem{Proposition}{命题}
+}
+{
+	\theoremstyle{nonumberplain}
+	\theoremheaderfont{\normalfont\bfseries}
+	\theorembodyfont{\normalfont\ttfamily\small}
+	% \theoremsymbol{\ensuremath{\diamondsuit}}
+	\theoremseparator{}
+	% \theoremprework{\bigskip\hrule}
+	% \theorempostwork{\hrule\bigskip}
+	\newtheorem{Property}{性质}
+}
+{
+	\theoremstyle{plain}
+	\theorembodyfont{\normalfont\itshape\small}
+	% \theoremsymbol{\ensuremath{\heartsuit}}
+	% \theoremindent0.5cm
+	% \theoremnumbering{greek}
+	\newtheorem{Lemma}{引理}
+}
+{
+	\theoremheaderfont{\normalfont\upshape\bfseries}
+	\theorembodyfont{\normalfont\mdseries\ttfamily\small}
+	\theoremstyle{nonumberplain}
+	\theoremseparator{}
+	\theoremsymbol{\mbox{$\square$}}
+	\newtheorem{Proof}{证明}
+}
+
+\newcommand{\myvec}[1]{\vec{#1}} %定制矢量格式
+\newcommand{\myvu}[1]{\vu*{#1}}%单位矢量
+%\providecommand{\dd}[0]{\mathrm{d}}
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+\newcommand{\dvt}[2][]{\dv[#1]{#2}{t}}
+\newcommand{\pdvt}[2][]{\pdv[#1]{#2}{t}}
+\newcommand{\pd}[1]{\pdv*{}{#1}}
+\newcommand{\liej}[1]{\ensuremath{{#1}_1,\cdots,{#1}_n}}
+\newcommand{\qqiff}{\qq{iff}}
+\newcommand{\F}{\ensuremath{\mathscr{F}}}
+\newcommand{\La}{\ensuremath{\mathscr{L}}}
+\newcommand{\Ld}[1]{\ensuremath{\mathcal{L}}\indices{_{#1}}}
+\newcommand{\TT}{\ensuremath{\mathscr{T}}}
+\newcommand{\inner}[1]{\mathrm{i}\left( #1 \right)}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\I}{\ensuremath{\mathrm{I}}}
+\newcommand{\J}{\ensuremath{\mathrm{J}}}
+\newcommand{\hj}[2][-1bp]{\raisebox{#1}{\includegraphics[height=#2 bp]{pictures/hj}}}
+\newcommand{\wl}[2][-1bp]{\raisebox{#1}{\includegraphics[height=#2 bp]{pictures/wulian}}}
+\newcommand{\Nabla}[1]{\tensor{\nabla}{_{#1}}}%协变导数算符
+\newcommand{\tNabla}[1]{\tensor{{\tilde{\nabla}}}{_{#1}}}%另一个协变导数算符
+\newcommand{\Partial}[1]{\tensor{\partial}{_{#1}}}%普通导数算符
+\newcommand{\Fd}[2][\tau]{\ensuremath{\frac{\mathrm{D_F}#2}{\dd{#1}}}}%费米导数
+\newcommand{\Fdd}[2][\tau]{\ensuremath{\mathrm{D_F}#2/\dd{#1}}}%行内费米导数
+\newcommand{\Dd}[2][\tau]{\ensuremath{\frac{\mathrm{D}#2}{\dd{#1}}}}%协变导数
+\newcommand{\Ddd}[2][\tau]{\ensuremath{\mathrm{D}#2/\dd{#1}}}%行内协变导数
+\newcommand{\ChristoffelSymbol}[3]{\tensor{\Gamma}{^{#1}_{#2}_{#3}}}
+\newcommand{\christoffelSymbol}[4]{\frac{1}{2} \tensor{g}{^{#1}^{#4}} \left( \tensor{g}{_{#4}_{#2}_{,#3}} + \tensor{g}{_{#3}_{#4}_{,#2}} - \tensor{g}{_{#2}_{#3}_{,#4}} \right) }
+\newcommand{\riemannR}[5]{\tensor{\Gamma}{^{#4}_{#1}_{#3}_{,#2}}- \tensor{\Gamma}{^{#4}_{#2}_{#3}_{,#1}}+ \ChristoffelSymbol{#5}{#3}{#1} \ChristoffelSymbol{#4}{#2}{#5}- \ChristoffelSymbol{#5}{#3}{#2} \ChristoffelSymbol{#4}{#1}{#5}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommand{\tmu}{\mspace{2mu}}
+\newcommand{\mmacs}{\bfseries\ttfamily\itshape\color[RGB]{67,137,88}}%mma局部变量字体
+\newcommand{\mmab}{\bfseries\ttfamily\color[RGB]{60,125,145}}%mma变量字体
+\newcommand{\mmaundef}{\bfseries\ttfamily\color[RGB]{0,44,195}}%mma未定义
+\newcommand{\mma}{\bfseries\ttfamily}%mma代码字体
+\newcommand{\myarrow}{-{Latex[length=5pt 6,width'=0pt 0.3]}}
+\newcommand{\SO}[1]{\ensuremath{\mathrm{SO}\left(#1\right)}}
+\newcommand{\OO}[1]{\ensuremath{\mathrm{O}\left(#1\right)}}
+
+\newcommand{\form}[1]{\bm{#1}}
+
+\newcommand{\tensord}[2]{\tensor{\left( \dd{#1} \right)}{_{#2}}}
+\newcommand{\tensorp}[2]{\tensor{\left( \pdv{#1} \right)}{^{#2}}}
+
+\newcommand{\TB}[2][{}]{\mathrm{T}_{#1}\!{#2}}
+\newcommand{\TBx}[2][{}]{\mathrm{T}_{#1} {#2}}
+\newcommand{\CTB}[2][{}]{\mathrm{T}^*_{#1}\!{#2}}
+
+\renewcommand{\CancelColor}{\color{blue!70!red}}
+
+\newcommand*{\circled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)circle (.5em) node {\makebox[1em][c]{\small #1}};}}
+
+\newenvironment{jianjie}[1][2em]{%
+\heiti\chapter*{说明}\begin{list}{}{%
+\itemindent=#1 \listparindent=2em%
+\leftmargin=2em \rightmargin=2em%
+\parsep=0pt}\kaishu\item }{\end{list}}
+
+\DeclareMathOperator{\ddiv}{div}
+\DeclareMathOperator{\ggrad}{grad}
+\DeclareMathOperator{\ccurl}{curl}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\arctanh}{arctanh}
+
+\title{《微分几何入门与广义相对论》\\部分习题参考解答}
+\author{by 薛定谔的大喵\thanks{\href{mailto:wyj1234@mail.ustc.edu.cn}{wyj1234@mail.ustc.edu.cn}}}
+
+\addbibresource{ref.bib}
+
+% \includeonly{chapters/c9}
+
+\begin{document}
+	\input{xiti}
+	\maketitle
+
+	% \begin{jianjie}
+	% 	本文档虽今天重新编译生成，但是内容是我数月前初学时所写，所有习题解答没有多次复核，仅供参考。若有错误之处请多多谅解，也可与我联系指出。
+
+	% 	前五章是18年寒假时所写，之后春季学期断断续续写了些后面的，第六章所需作图很多，当时我尚未熟悉使用 Ti\textit{k}Z 作图，感到比较吃力，后来就鸽了……之后读其他章节时陆续写了点。
+
+	% 	我一向觉得初学一个领域需要一些练习的积累，而苦于很多书上的练习题没有解答，做来又不知道对不对。梁先生的《微分几何入门与广义相对论》三卷在中文教材中可谓精品，我很希望梁书能流行起来，希望我以后能有空将这份答案补全（Flag立下……）
+
+	% 	\vspace{12pt}
+	% 	\begin{tabularx}{0.8\textwidth}{cXc}
+	% 		&&薛定谔的大喵\\
+	% 		&&\itshape 2018.11.3
+	% 	\end{tabularx}
+	% \end{jianjie}
+
+	\frontmatter
+
+	\tableofcontents
+
+	\mainmatter
+
+	\part{上册}
+	\include{chapters/c1}
+	\include{chapters/c2}
+	\include{chapters/c3}
+	\include{chapters/c4}
+	\include{chapters/c5}
+	\include{chapters/c6}
+	\include{chapters/c7}
+	\include{chapters/c8}
+	\include{chapters/c9}
+	\include{chapters/c10}
+	\part{中册}
+	\include{chapters/c11}
+	\include{chapters/B}
+	\include{chapters/G}
+
+	\backmatter
+	\printbibliography
+\end{document}

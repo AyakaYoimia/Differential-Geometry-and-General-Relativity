@@ -1,0 +1,290 @@
+\chapter{宇宙论}
+
+\section{宇宙学标准模型}
+
+\subsection{宇宙运动学}
+
+\begin{itemize}
+    \item 宇宙学原理：每一时刻的宇宙空间在大尺度下是均匀且各向同性的
+    \item 广义相对论中，时间分层方式是选定任意单参类空超曲面族
+    \item 空间均匀时空$(M, g_{ab})$\\
+    $\exists$把$M$分层的单参类空超曲面族$\{\Sigma_t\}$，使得$\forall t, \forall p,q \in \Sigma_t$，$\exists$由$g_{ab}$在$\Sigma_t$上诱导的度规$h_{ab}$的等度规映射$\phi:\Sigma_t \to \Sigma_t$使$\phi(p)=q$，每一$\Sigma_t$称为一张均匀面
+    \item 各项同性\\
+    对时空中任一观者，4速度为$Z^a$，其世界线上任意点$p$和$p$点任意两个等长的空间矢量$w_1^a$和$w_2^a$，存在$g_{ab}$的等度规映射$\psi:M \to M$使$\psi(p)=p, \psi_{*}(Z^a)=Z^a, \psi_{*}(w_1^a)=w_2^a$
+    \item 若空间均匀且各向同性时空有唯一的均匀面族，则均匀面必定处处与各向同性观者世界线正交
+    \item 宇宙静系：选定的世界线与均匀面正交的各向同性观者
+    \item 设诱导度规$h_{ab}$的曲率张量${\hat{R}_{abc}}^d$，则存在常数$K$使
+    \begin{gather*}
+        \hat{R}_{abcd}=2Kh_{c[a}h_{b]d}
+    \end{gather*}
+    \item 常曲率空间：存在常数$K$使Riemann张量满足
+    \begin{gather*}
+        R_{abcd}=2Kg_{c[a}g_{b]d}
+    \end{gather*}
+    \begin{itemize}
+        \item 常曲率空间有最高对称性，即其等度规局部群的维数（即独立Killing矢量场）个数为$\frac{n(n+1)}{2}$
+        \item 流形维数、度规号差、$K$相同的两个常曲率空间是局域等度规的
+    \end{itemize}
+    从而可以穷尽均匀面的局域空间几何
+    \begin{itemize}
+        \item $K=0$
+        \begin{gather*}
+            \d l^2=\d x^2+\d y^2+\d z^2=\d \psi^2+\psi^2(\d \theta^2+\sin^2\theta \d \varphi^2)
+        \end{gather*}
+        \item $K>0$：半径为$R$的3维球面
+        \begin{gather*}
+            \d l^2=R^2[\d \psi^2+\sin^2 \psi(\d \theta^2+\sin^2\theta \d \varphi^2)]
+            \\
+            {\hat{R}_{ab}}^{cd}=2R^{-2} {\delta_a}^{[c} {\delta_b}^{d]}
+        \end{gather*}
+        \item $K<0$：3维旋转双曲面
+        \begin{gather*}
+            t^2-x^2-y^2-z^2=\xi^2
+            \\
+            \d l^2=\xi^2[\d \psi^2+\sinh^2 \psi(\d \theta^2+\sin^2\theta \d \varphi^2)]
+            \\
+            {\hat{R}_{ab}}^{cd}=-2\xi^{-2} {\delta_a}^{[c} {\delta_b}^{d]}
+        \end{gather*}
+    \end{itemize}
+    \item Robertson-Walker度规\\
+        每一点的时间坐标$t$定义为过该点各向同性观者的固有时，空间坐标用$\{\psi, \theta, \varphi\}$描述，则同时面与均匀面重合
+        \begin{gather*}
+            g_{00}=g_{ab} Z^a Z^b=-1
+            \\
+            g_{0i}=0
+            \\
+            g_{ij}=h_{ij}(t, x)=a^2(t)\hat{h}_{ij}(x)
+        \end{gather*}
+        从而线元可以写成
+        \begin{gather*}
+            \d s^2=-\d t^2+a^2(t)\left[\frac{\d r^2}{1-kr^2}+r^2(\d \theta^2+\sin^2\theta \d \varphi^2)\right]
+            \\
+            r=\begin{cases}
+                \sin \psi,\quad K>0
+                \\
+                \psi,\quad K=0
+                \\
+                \sinh \psi,\quad K<0
+            \end{cases}
+            \quad 
+            k=\begin{cases}
+                1,\quad K>0
+                \\
+                0,\quad K=0
+                \\
+                -1,\quad K<0
+            \end{cases}
+        \end{gather*}
+        \begin{itemize}
+            \item 尺度因子$a(t)$反映两星系间空间距离的变化情况，在$k=1$时是封闭宇宙的半径
+            \begin{gather*}
+                V=\int \hat{\bm{\varepsilon}}=2\pi^2 a^3
+            \end{gather*}
+        \end{itemize}
+\end{itemize}
+
+\subsection{宇宙动力学}
+
+\subsubsection{Hubble定律}
+
+设两星系距离
+\begin{gather*}
+    D(t)=a(t)\hat{D}
+\end{gather*}
+$\hat{D}$只与两星系有关，与时间无关。相对速度
+\begin{gather*}
+    u(t)=\dt{D(t)}{t}=\hat{D} \dt{a(t)}{t}=\frac{\dot{a}(t)}{a(t)} D(t)
+    \\
+    \intertext{Hubble参数}
+    H(t)=\frac{\dot{a}(t)}{a(t)}
+    \\
+    \intertext{从而可以得到Hubble定律}
+    u(t)=H(t)D(t)
+    \\
+    \intertext{在观测时刻$t_0$}
+    u_0 = H_0 D_0
+\end{gather*}
+
+宇宙学红移：\\
+在几何光学近似下，$A$在$p_1$发出的光子沿类光测地线$\eta(\beta)$传播，在$p_2$到达$B$，4波矢
+\begin{gather*}
+    K^b=\left(\pt{}{t}\right)^b \left(\dt{t}{\beta}\right)+\left(\pt{}{x^i}\right)^b \left(\dt{x^i}{\beta}\right)
+    \\
+    \intertext{测地线方程化为}
+    \dt{^2 \theta}{\beta^2}+2\frac{\dot{a}}{a}\dt{t}{\beta} \dt{\theta}{\beta}+\frac{2}{r} \dt{r}{\beta} \dt{\theta}{\beta}-\sin\theta \cos\theta \left(\dt{\varphi}{\beta}\right)^2=0
+    \\
+    \dt{^2 \varphi}{\beta^2}+2\frac{\dot{a}}{a}\dt{t}{\beta} \dt{\varphi}{\beta}+\frac{2}{r} \dt{r}{\beta} \dt{\varphi}{\beta}+2\cot \theta \dt{\theta}{\beta} \dt{\varphi}{\beta}=0
+    \\
+    \dt{^2 t}{\beta^2}+\frac{a\dot{a}}{1-kr^2}\left(\dt{r}{\beta}\right)^2=0
+\end{gather*}
+通过选取坐标系使$\theta(p_1)=\theta_0, \varphi(p_1)=\varphi_0$，$K^a|_{p_1}$的$\theta,\varphi$分量为0，可得$\theta(\beta)=\theta_0, \varphi(\beta)=\varphi_0$。由$K^a$类光性，
+\begin{gather*}
+    \left(\dt{t}{\beta}\right)^2=\frac{a^2}{1-kr^2} \left(\dt{r}{\beta}\right)^2
+    \\
+    \intertext{代入得}
+    \dt{^2 t}{\beta^2}=\frac{\dot{a}}{a} \left(\dt{t}{\beta}\right)^2=0
+    \\
+    \intertext{由}
+    \omega=\dt{t}{\beta}
+    \\
+    \dt{\omega}{\beta}+\frac{\omega}{a} \dt{a}{\beta}=0
+    \\
+    \omega=\frac{\omega_0}{a}
+    \\
+    \intertext{相对红移}
+    z=\frac{\lambda_2-\lambda_1}{\lambda_1}=\frac{\omega_1}{\omega_2}-1=\frac{a(t_2)}{a(t_1)}-1
+    \\
+    \intertext{由光子世界线类光性}
+    t_2-t_1 \approx D(t_1)
+    \\
+    z \approx \frac{\dot{a}(t_1)}{a(t_1)} D(t_1)=H(t_1) D(t_1)
+\end{gather*}
+
+\subsubsection{尺度因子的演化}
+
+\begin{gather*}
+    \text{宇宙的内容物}
+    \begin{cases}
+        \text{物质：静质量非0的粒子，主要由星系贡献，}p=0\\
+        \text{辐射：静质量为0的粒子，主要由宇宙微波背景辐射贡献，}p=\frac{1}{3} \rho
+    \end{cases}
+    \\
+    \intertext{总能动张量}
+    T_{ab}=\rho U_a U_b+p(g_{ab}+U_a U_b)
+    \\
+    \intertext{场方程等价于}
+    \begin{cases}
+        \text{Friedmann方程：}3\frac{\dot{a}^2+k}{a^2}=8\pi \rho
+        \\
+        2\frac{\ddot{a}}{a}+\frac{\dot{a}^2+k}{a^2}=-8\pi p
+    \end{cases}
+    \\
+    \begin{cases}
+        3\ddot{a}=-4\pi a(\rho+3p)
+        \\
+        \dot{\rho}+3(\rho +p)\frac{\dot{a}}{a}=0
+    \end{cases}
+\end{gather*}
+$\ddot{a}<0$，表明除个别时刻外$\dot{a} \neq 0$，观测表明目前$\dot{a}(t_0)>0$，沿时间回溯，宇宙以越来越大的速率缩小，直至$t=0$时$a(0)=0$，称为大爆炸奇点
+\begin{itemize}
+    \item 尘埃宇宙：$T_{ab}$完全来自尘埃的贡献，$p=0$
+    \begin{gather*}
+        \rho_{M} a^3=const
+        \\
+        \intertext{设}
+        A=\frac{8}{3} \pi \rho a^3
+        \\
+        \intertext{由Friedmann方程}
+        \dot{a}^2(t)=\frac{A}{a(t)}-k
+        \\
+        \intertext{引入}
+        \hat{t}=\int_{0}^{t} \frac{\d t'}{a(t')}
+        \\
+        \left(\dt{a}{\hat{t}}\right)^2=Aa-ka^2
+        \\
+        \begin{cases}
+            k=1,\quad a=\frac{A}{2}(1-\cos \hat{t}),\quad t=\frac{A}{2}(1-\sin \hat{t})
+            \\
+            k=0,\quad a=\left(\frac{9}{4}A\right)^{\frac{1}{3}} t^{\frac{2}{3}}
+            \\
+            k=-1,\quad a=\frac{A}{2}(\cosh \hat{t}-1),\quad t=\frac{A}{2}(\sinh \hat{t}-\hat{t})
+        \end{cases}
+    \end{gather*}
+    \item 辐射宇宙：$T_{ab}$完全来自辐射的贡献，$p=\frac{1}{3}\rho_R$
+    \begin{gather*}
+        \rho_{R} a^4=const
+        \\
+        \intertext{设}
+        B=\sqrt{\frac{8}{3} \pi \rho a^4}
+        \\
+        \dot{a}^2(t)=\frac{B^2}{a^2(t)}-k
+        \\
+        a^2(t)=2Bt-kt^2
+    \end{gather*}
+\end{itemize}
+实际宇宙介于两者之间，定性上与尘埃宇宙一致
+
+通过$t_0 \approx \frac{D_0}{u_0}=\frac{1}{H_0}$可以估计宇宙年龄的上限
+
+\subsubsection{宇宙学常数和静态宇宙}
+
+引入宇宙学常数$\Lambda$
+\begin{gather*}
+    G_{ab}+\Lambda g_{ab}=8\pi \bar{T}_{ab}
+    \\
+    G_{ab}=8\pi T_{ab}=8\pi(\bar{T}_{ab}-\frac{\Lambda}{8\pi}g_{ab})
+\end{gather*}
+在尘埃宇宙模型下，
+\begin{gather*}
+    p=-\frac{\Lambda}{8\pi}
+\end{gather*}
+相当于引入压强为负的物质，从而解得
+\begin{gather*}
+    k=a^2 \Lambda
+    \\
+    3k=(8\pi \bar{\rho}+\Lambda)a^2
+    \\
+    k>0 \implies k=1
+    \\
+    \Lambda=\frac{1}{a^2},\quad a^2=\frac{1}{4\pi \bar{\rho}}
+    \\
+    \intertext{Einstein静态宇宙度规}
+    \d s^2=-\d t^2+\frac{1}{\Lambda}[\d \psi^2+\sin^2 \psi(\d \theta^2+\sin^2\theta \d \varphi^2)]
+\end{gather*}
+但该静态解不稳定
+
+\subsection{宇宙的热历史}
+
+由宇宙学标准模型，$\rho \approx a^{-4}$，$a$足够小时忽略$k$，$a \approx t^{\frac{1}{2}} \implies T \approx t^{-\frac{1}{2}}$，从而在大爆炸奇点，$T \to +\infty$，认为在$t<t_p$时，经典广义相对论失效
+
+早期宇宙，粒子碰撞速率大于宇宙膨胀速率，可以实现局域热平衡
+
+\begin{itemize}
+    \item 疑难：物质与反物质的不对称性
+    \item 宇宙加速膨胀
+    \item 宇宙微波背景辐射
+    \item 原初核合成
+    \item 冷/热暗物质模型：冷暗物质模型已经由暴涨模型支持
+\end{itemize}
+
+暗物质，宇宙学常数与真空能量密度之间的矛盾
+
+\section{标准模型的疑难和克服}
+
+粒子视界
+\begin{itemize}
+    \item 视界疑难$\iff$宇宙微波背景辐射的长程均匀性与有限粒子视界之间的矛盾
+    \item 平直性疑难$\iff$熵疑难
+    \item 磁单极疑难
+\end{itemize}
+暴涨模型可以解决上述疑难
+
+\section{暗能量和新标准宇宙模型}
+
+暗能量也可以解释加速膨胀，有如下特点
+\begin{itemize}
+    \item 不发光
+    \item $\rho \sim -p$
+    \item 空间分布近似均匀
+\end{itemize}
+
+宇宙学常数有如下疑难
+\begin{itemize}
+    \item 远小于量子场论计算结果
+    \item 微调疑难
+\end{itemize}
+
+回答
+\begin{itemize}
+    \item 动力学暗能量：quintessence理论
+    \item 统一暗物质与暗能量：quartessence理论
+    \item 在宇宙尺度下Einstein场方程不再适用
+    \item 加速膨胀的观测有误
+\end{itemize}
+
+新标准宇宙模型
+\begin{itemize}
+    \item 宇宙在空间上平直，宇宙在加速膨胀
+    \item 极早期经历过暴涨，从而导致冷暗物质结构
+    \item 当今宇宙内容物：暗能量，暗物质，发光物质，辐射
+\end{itemize}

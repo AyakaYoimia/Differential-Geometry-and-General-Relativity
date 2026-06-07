@@ -1,0 +1,225 @@
+\chapter{微分形式及其积分}
+
+\section{微分形式}
+
+\begin{itemize}
+    \item $V$上的$l$形式$\bm{\omega}=\omega_{a_1 \cdots a_l} \in \mathscr{T}_V(0,l)$
+    \begin{gather*}
+        \omega_{a_1 \cdots a_l}=\omega_{[a_1 \cdots a_l]}
+    \end{gather*}
+    $V$上全体$l$形式集合记为$\Lambda(l)$，设$\dim V=n$，则
+    \begin{gather*}
+        \begin{cases}
+            \dim \Lambda(l)=\frac{n!}{l!(n-l)!},\quad l\geq n
+            \\
+            \Lambda(l)={0},\quad l > n
+        \end{cases}
+    \end{gather*}
+    \begin{itemize}
+        \item $l$形式 $\implies \omega_{\mu_1 \cdots \mu_l}=\omega_{[\mu_1 \cdots \mu_l]},\quad \forall \text{基底}$
+        $\omega_{\mu_1 \cdots \mu_l}=\omega_{[\mu_1 \cdots \mu_l]},\quad \exists\text{基底} \implies$ $\bm{\omega}$是$l$形式
+        \item $\omega_{a_1 \cdots a_l}=\delta_{\pi} \omega_{a_{\pi(1)} \cdots a_{\pi(l)}}$
+    \end{itemize}
+    \item 楔形积$\wedge:\Lambda(l) \times \Lambda(m) \to \Lambda(l+m)$
+    \begin{gather*}
+        (\omega \wedge \mu)_{a_1 \cdots a_l b_1 \cdots b_m}=\frac{(l+m)!}{l!m!} \omega_{[a_1 \cdots a_l} \mu_{b_1 \cdots b_m]}
+        \\
+        \bm{\omega} \wedge \bm{\mu}=(-1)^{lm} \bm{\mu} \wedge \bm{\omega}
+    \end{gather*}
+    \begin{itemize}
+        \item \begin{align*}
+            \omega_{a_1 \cdots a_l}&=\displaystyle \sum_{C} \omega_{\mu_1 \cdots \mu_l}  (\e^{\mu_1})_{a_1} \wedge \cdots \wedge (\e^{\mu_l})_{a_l}
+            \\
+            &=\frac{1}{l!} \omega_{\mu_1 \cdots \mu_l}  (\e^{\mu_1})_{a_1} \wedge \cdots \wedge (\e^{\mu_l})_{a_l}
+        \end{align*}
+        $\displaystyle \sum_{C}$代表对组合$C_n^l$的不同情况求和
+    \end{itemize}
+    \item 流形$M$上，$\forall p \in M$，在$V_p$处指定一个$l$形式，得到$M$上光滑的$l$形式场，组成集合$\Lambda_M(l)$
+    \item 外微分$d:\Lambda_M(l) \to \Lambda_M(l+1)$
+    \begin{gather*}
+        (\d \omega)_{ba_1 \cdots a_l}=(l+1) \nabla_{[b} \omega_{a_1 \cdots a_l]}
+    \end{gather*}
+    $\nabla_b$为任意导数算符
+    \begin{itemize}
+        \item 设$\omega_{a_1 \cdots a_l}=\displaystyle \sum_{C} \omega_{\mu_1 \cdots \mu_l} (\d x^{\mu_1})_{a_1} \wedge \cdots \wedge (\d x^{\mu_l})_{a_l}$
+        \begin{gather*}
+            (\d \omega)_{ba_1 \cdots a_l}=\displaystyle \sum_{C} (\d \omega_{\mu_1 \cdots \mu_l})_b (\d x^{\mu_1})_{a_1} \wedge \cdots \wedge (\d x^{\mu_l})_{a_l}
+        \end{gather*}
+        \item $\d \circ \d = 0$
+        \item $\bm{\omega}$是闭的，若$\d \bm{\omega}=0$；$\omega$是恰当的，若$\bm{\omega}=\d \bm{\mu}$
+        \begin{itemize}
+            \item 恰当形式一定是闭形式；在拓扑平凡空间中，闭形式一定是恰当形式
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section{流形上的积分}
+
+\begin{itemize}
+    \item $n$维流形$M$称为可定向的，若其上存在$C^0$且处处非零的$n$形式场$\bm{\varepsilon}$
+    \item 定向的；同一个定向
+    \item 已定向的流形$M$上，开域$O \subset M$上的基底场$\{(e_{\mu})^a\}$称为以$\bm{\varepsilon}$衡量为右手的，若$\exists$恒正函数$h$使$\bm{\varepsilon}=h (e^1)_{a_1} \wedge \cdots \wedge (e^n)_{a_n}$；右手系
+    \item $n$维已定向流形$M$上右手坐标系$(O,\Psi)$，开子集$G \subset O$上的连续$n$形式场$\bm{\omega}$的积分
+    \begin{gather*}
+        \int_{G} \bm{\omega}=\int_{\Psi(G)} \omega_{1\cdots n}(x^1,\cdots,x^n) \d x^1 \cdots \d x^n
+    \end{gather*}
+    \item 嵌入上$\bm{\mu}$的限制$\tilde{\bm{\mu}}$
+    \item Stokes定理\\
+    $n$维定向流形$M$上的紧致子集$N$是$n$维带边流形，$\bm{\omega}$是$M$上$C^1$的$n-1$形式场，则
+    \begin{gather*}
+        \int_{i(N)} \d \bm{\omega}=\int_{\partial N} \bm{\omega}
+    \end{gather*}
+\end{itemize}
+
+\section{体元}
+
+\begin{itemize}
+    \item 体元：$n$维可定向流形$M$上的任一$C^0$且处处非零的$n$形式场$\bm{\varepsilon}$
+    \item 选定度规$g_{ab}$后，得到与度规$g_{ab}$相容的体元
+    \begin{gather*}
+        \varepsilon_{a_1 \cdots a_n}=\pm (e^1)_{a_1} \wedge \cdots \wedge (e^n)_{a_n} (\text{正负分别对应左手系和右手系，在正交归一基底下})
+        \\
+        \varepsilon^{a_1 \cdots a_n} \varepsilon_{a_1 \cdots a_n}=(-1)^s n!
+    \end{gather*}
+    $s$为$g_{ab}$在正交归一基底下分量中$-1$的个数
+    \begin{itemize}
+        \item 在基底$\{(e_{\mu})^a\}$下
+        \begin{gather*}
+            \varepsilon_{a_1 \cdots a_n}=\pm \sqrt{|\det g|} (e^1)_{a_1} \wedge \cdots \wedge (e^n)_{a_n}
+        \end{gather*}
+        \item 对与度规相容的导数算符$\nabla_a$和体元$\bm{\varepsilon}$
+        \begin{gather*}
+            \nabla_b \varepsilon_{a_1 \cdots a_n}=0
+        \end{gather*}
+        \item
+        \begin{gather*}
+            {\delta^{[a_1}}_{a_1} \cdots {\delta^{a_j}}_{a_j} {\delta^{a_{j+1}}}_{b_{j+1}} \cdots {\delta^{a_n]}}_{b_n}=\frac{j!(n-j)!}{n!}{\delta^{[a_{j+1}}}_{b_{j+1}} \cdots {\delta^{a_n]}}_{b_n}
+        \end{gather*}
+        \item 
+        \begin{gather*}
+            \varepsilon^{a_1 \cdots a_n} \varepsilon_{b_1 \cdots b_n}=(-1)^s n! {\delta^{[a_1}}_{b_1} \cdots {\delta^{a_n]}}_{b_n}
+            \\
+            \varepsilon^{a_1 \cdots a_j a_{j+1} \cdots a_n} \varepsilon_{a_1 \cdots a_j b_{j+1} \cdots b_n}=(-1)^s j! (n-j)! {\delta^{[a_{j+1}}}_{b_{j+1}} \cdots {\delta^{a_n]}}_{b_n}
+        \end{gather*}
+    \end{itemize}
+    \item 诱导体元\\
+    设$M$是$n$维定向流形，$N$是$M$中$n$维紧致带边嵌入子流形，$g_{ab}$是$M$上的度规，与度规相容的导数算符$\nabla_a$和体元$\bm{\varepsilon}$，$v^a$是$M$上的$C^1$矢量场\\
+    $\partial N$有归一化外向法矢$n^a$，诱导度规$h_{ab}$，诱导体元$\hat{\varepsilon}_{a_1 \cdots a_{n-1}}$满足
+    \begin{enumerate}
+        \item 与$\partial N$上的诱导定向$\bar{\varepsilon}_{a_1 \cdots a_{n-1}}$相容
+        \item 与度规$h_{ab}$相容
+    \end{enumerate}
+    \begin{gather*}
+        \hat{\varepsilon}_{a_1 \cdots a_{n-1}}=n^b \varepsilon_{ba_1 \cdots a_{n-1}}
+    \end{gather*}
+    \item Gauss定理
+    \begin{gather*}
+        \int_{i(N)} (\nabla_a v^a) \bm{\varepsilon}=\pm \int_{\partial N} v^a n_a \hat{\bm{\varepsilon}}
+    \end{gather*}
+    符号与$n^a n_a$相同
+\end{itemize}
+
+\section{对偶微分形式}
+
+\begin{itemize}
+    \item 对偶微分形式$\star:\Lambda_M(l) \to \Lambda_M(n-l)$
+    \begin{gather*}
+        \star \omega_{a_1 \cdots a_(n-l)}=\frac{1}{l!}\omega^{b_1 \cdots b_l} \varepsilon_{b_1 \cdots b_l a_1 \cdots a_{n-l}}
+        \\
+        \omega^{b_1 \cdots b_l}=g^{b_1 c_1} \cdots g^{b_l c_l} \omega_{c_1 \cdots c_l}
+    \end{gather*}
+    \begin{itemize}
+        \item 
+        \begin{gather*}
+            \star \star \bm{\omega}=(-1)^{s+l(n-l)}\bm{\omega}    
+        \end{gather*}
+    \end{itemize}
+\end{itemize}
+
+\section{标架法计算曲率张量}
+
+\begin{gather*}
+    \text{曲率张量求法}
+    \begin{cases}
+        \text{坐标基底}
+        \\
+        \text{（正交归一）标架}
+    \end{cases}
+\end{gather*}
+只有在平直度规场下，才能找到正交归一的坐标基底，统一两种方法
+
+给定导数算符$\nabla_a$，基底$\{(e_\mu)^a\}$
+\begin{itemize}
+    \item 联络系数${\gamma^{\sigma}}_{\mu \tau}$
+    \begin{gather*}
+        (e_{\tau})^b \nabla_b (e_{\mu})^a={\gamma^{\sigma}}_{\mu \tau} (e_{\sigma})^a
+        \\
+        {\gamma^{\nu}}_{\mu \tau}=(e^{\nu})_a (e_{\tau})^b \nabla_b (e_{\mu})^a
+    \end{gather*}
+    \item 联络1形式$({\omega_{\nu}}^{\mu})_a$
+    \begin{align*}
+        ({\omega_{\nu}}^{\mu})_a&=-{\gamma^{\nu}}_{\mu \tau} (e^{\tau})_a
+        \\
+        &=-(e^{\nu})_c \nabla_a (e_{\mu})^c
+        \\
+        &=(e_{\mu})^c \nabla_a (e^{\nu})_c
+    \end{align*}
+    \item 定义
+    \begin{gather*}
+        (\omega_{\mu \nu})_a=g_{\nu \sigma} ({\omega_{\mu}}^{\sigma})_a
+    \end{gather*}
+    $g_{\mu \nu}$为常数的标架为刚性标架，在刚性标架下，
+    \begin{gather*}
+        (\omega_{\mu \nu})_a=(e_{\mu})_b \nabla_a (e_{\nu})^b
+        \\
+        (\omega_{\mu \nu})_a=-(\omega_{\nu \mu})_a
+    \end{gather*}
+    $(\omega_{\mu \nu})_a$有$\frac{n(n-1)}{2}$个独立分量，Ricci旋转系数$\omega_{\mu \nu \rho}$有$\frac{n^2(n-1)}{2}$个独立分量
+\end{itemize}
+
+标架计算法步骤
+\begin{enumerate}
+    \item 选定刚性标架
+    \item 计算联络1形式$({\omega_{\nu}}^{\mu})_a$：有两种方法
+    \begin{enumerate}
+        \item Cartan第一结构方程
+        \begin{gather*}
+            (\d e^\nu)_{ab}=-(e^{\mu})_a \wedge ({\omega_{\nu}}^{\mu})_b
+        \end{gather*}
+        \item 借助坐标系$\{x^{\mu}\}$，引入
+        \begin{gather*}
+            \Lambda_{\mu \nu \rho}=[(e_{\nu})_{\lambda,\tau}-(e_{\nu})_{\tau,\lambda}](e_{\nu})^{\lambda} (e_{\rho})^{\tau}
+        \end{gather*}
+    \end{enumerate}
+    \item 计算2形式${R_{ab\mu}}^{\nu}$\\
+    Cartan第二结构方程
+    \begin{gather*}
+        {R_{ab\mu}}^{\nu}=(\d {\omega_{\mu}}^{\nu})_{ab}+({\omega_{\mu}}^{\lambda} \wedge {\omega_{\lambda}}^{\nu})_{ab}
+    \end{gather*}
+\end{enumerate}
+
+\section*{与三维矢量分析之间的关系}
+
+梯度
+\begin{align*}
+    \nabla u&=\partial^a u
+    \\
+    &=g^{ab} \partial_b u
+    \\
+    &=g^{\mu \nu} \pt{u}{x^{\nu}} \left(\pt{}{x^{\mu}}\right)^a
+    \\
+    \intertext{正交归一坐标系基矢}
+    (e_{\mu})^a&=\frac{1}{\sqrt{g_{\mu \mu}}} \left(\pt{}{x^{\mu}}\right)^a
+    \\
+    \nabla u&=\sqrt{g_{\mu \mu}} \pt{u}{x^{\mu}} (e_{\mu})^a
+\end{align*}
+Laplace算子
+\begin{align*}
+    \nabla^2 u&=\partial_a \partial^a u
+    \\
+    &=\partial_a g^{ab} \partial_b u
+    \\
+    &=\partial_a g^{\mu \nu} \pt{u}{x^{\nu}} \left(\pt{}{x^{\mu}}\right)^a
+    \\
+    &=\pt{}{x^{\mu}} \left(g^{\mu \nu} \pt{u}{x^{\nu}}\right)
+\end{align*}

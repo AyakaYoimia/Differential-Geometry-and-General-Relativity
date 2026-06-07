@@ -1,0 +1,397 @@
+\chapter{Schwarzschild时空}
+
+\section{测地线}
+
+\begin{itemize}
+    \item 可以选择Schwarzschild坐标，使Schwarzschild时空的一条类时或类光测地线$\gamma(\tau)$的$\theta$值永为$\frac{\pi}{2}$
+\end{itemize}
+
+$\gamma(\tau)$切矢$U^a=\left(\pt{}{\tau}\right)^a$，定义
+\begin{gather*}
+    \kappa=-g_{ab} U^a U^b=
+    \begin{cases}
+        1,\quad \text{对类时测地线}
+        \\
+        0,\quad \text{对类光测地线}
+    \end{cases}
+    \\
+    \intertext{定义测地线上两个常量}
+    E=-g_{ab}\left(\pt{}{t}\right)^a \left(\pt{}{\tau}\right)^b=\left(1-\frac{2M}{r}\right) \dt{t}{\tau}
+    \\
+    L=g_{ab}\left(\pt{}{\varphi}\right)^a \left(\pt{}{\tau}\right)^b=r^2 \dt{\varphi}{\tau}
+    \\
+    -\kappa=-\frac{E^2}{1-\frac{2M}{r}}+\frac{1}{1-\frac{2M}{r}} \left(\dt{r}{\tau}\right)^2+\frac{L^2}{r^2}
+\end{gather*}
+
+物理意义：设自由质点质量$m$，4速度$U^a=\left(\pt{}{\tau}\right)^a$，4动量$P^a=mU^a$，$p \in \gamma(\tau)$，$G$为过$p$点的静态观者，在$p$点4速度$Z^a$，则
+\begin{itemize}
+    \item 当地观测测得能量
+    \begin{gather*}
+        E_{local}=-Z_a P^a
+        \\
+        \intertext{Killing矢量}
+        \xi^a=\left(\pt{}{t}\right)^a=\chi Z^a,\quad \chi=\sqrt{-\xi^b \xi_b}
+        \\
+        E=-\xi_a U^a=\frac{\chi}{m} E_{local}
+    \end{gather*}
+    表示单位质量质点包含引力势能的总能量
+    \item $L$表示单位质量质点相对于静态参考系的3角动量大小
+\end{itemize}
+
+\section{广义相对论的实验验证}
+
+\subsection{引力红移}
+
+$G$和$G'$是任意稳态时空中任意稳态参考系的两个观者，$G$在$p$点发出的光子在$p'$点到达$G'$，观者4速度$Z^a$，光子4波矢$K^a$，则稳态观者测得角频率
+\begin{gather*}
+    \omega=-\left.(K_a Z^a) \right|_p=-\left.\left(\frac{K_a \xi^a}{\chi}\right)\right|_p
+    \\
+    \omega'=-\left.(K_a Z^a) \right|_{p'}=-\left.\left(\frac{K_a \xi^a}{\chi}\right) \right|_{p'}
+    \\
+    \xi^a=\chi Z^a,\quad \chi=\sqrt{-\xi^b \xi_b}=\sqrt{-g_{00}}=\sqrt{1-\frac{2M}{r}}
+    \\
+    \intertext{测地线切矢$K^a$与Killing矢量$\xi^a$缩并在测地线上是常数}
+    \left.(K_a \xi^a) \right|_p=\left.(K_a \xi^a) \right|_{p'}
+    \\
+    \frac{\omega'}{\omega}=\frac{\chi}{\chi'}=\frac{\sqrt{1-\frac{2M}{r}}}{\sqrt{1-\frac{2M}{r'}}}
+\end{gather*}
+
+\subsection{水星近日点进动}
+
+令$\kappa=1$
+\begin{gather*}
+    \left(\dt{r}{\varphi}\right)^a-\frac{E^2r^4}{L^2}+r^2\left(1+\frac{r^2}{L^2}\right)\left(1-\frac{2M}{r}\right)=0
+    \\
+    \intertext{设$\mu=\frac{1}{r}$}
+    \left(\dt{\mu}{\varphi}\right)^2+\mu^2=\frac{E^2-1}{L^2}+\frac{2M}{L^2}\mu + 2M\mu^3
+    \\
+    \intertext{对$\mu$求导}
+    \dt{^2 \mu}{\varphi^2}+\mu=\frac{M}{L^2}+3M\mu^2
+    \\
+    \mu(\varphi)=\mu_0(\varphi)+\mu_1(\varphi)
+    \\
+    \intertext{零级解}
+    \mu_0(\varphi)=\frac{M}{L^2}(1+e\cos\varphi)
+    \\
+    \intertext{代入解得一级解}
+    \mu_1(\varphi)=\frac{3M^3}{L^4}\left[1+e\varphi \sin \varphi+e^2 \left(\frac{1}{2}-\frac{1}{6}\cos2\varphi\right)\right]
+    \\
+    \intertext{略去与进动无关的$\hat{\mu}(\varphi)$}
+    \mu(\varphi)-\hat{\mu}(\varphi)=\frac{M}{L^2}\left[1+e\left(\cos\varphi+\frac{3M^2}{L^2}\varphi \sin \varphi\right)\right]
+    \\
+    \intertext{由于$\frac{M^2}{L^2}\ll 1$}
+    \mu(\varphi)-\hat{\mu}(\varphi)=\frac{M}{L^2}\left[1+e\cos (\varphi-\varepsilon \varphi)\right]
+    \\
+    \intertext{一个周期内进动角}
+    \Delta \varphi=\frac{2\pi}{1-\varepsilon}-2\pi \approx 2\pi \varepsilon=\frac{6\pi M^2}{L^2}
+\end{gather*}
+
+\subsection{光线偏折}
+
+令$\kappa=0$，类似可得
+\begin{gather*}
+    \left(\dt{r}{\varphi}\right)^a-\frac{E^2r^4}{L^2}+r^2\left(1-\frac{2M}{r}\right)=0
+    \\
+    \dt{^2 \mu}{\varphi^2}+\mu=3M\mu^2
+    \\
+    \intertext{$M=0$时解为}
+    \mu_0(\varphi)=\frac{1}{l} \sin\varphi
+    \\
+    \intertext{代入解得一级解}
+    \mu_1(\varphi)=\frac{M}{l^2}(1-\cos\varphi)^2
+    \\
+    \mu(0)=0, \quad r(0)=+\infty
+    \\
+    \mu(\pi) \neq 0
+    \\
+    \intertext{设偏折角$\beta \ll 1$，则}
+    \mu(\pi+\beta)=0
+    \\
+    \beta \approx \frac{4M}{l}
+\end{gather*}
+
+\section{球对称恒星及其内部演化}
+
+\subsection{静态球对称恒星内部解}
+
+恒星内部物质场看作理想流体，能动张量
+\begin{gather*}
+    T_{ab}=(\rho+p)U_a U_b+pg_{ab}
+\end{gather*}
+4速度$U^a$与Killing矢量$\xi^a$平行。$T_{ab}$只有对角分量非零，设$g_{00}=-\e^{2A}$，场方程等价于如下3个独立方程
+\begin{gather*}
+    g_{11}(r)=\frac{1}{1-\frac{2m(r)}{r}},\quad m(r)=4\pi \int_{0}^{r} \rho(x) x^2 \d x \iff \dt{m(r)}{r}=4\pi r^2
+    \\
+    \dt{A}{r}=\frac{m(r)+4\pi p r^3}{r(r-2m(r))}
+    \\
+    \intertext{Oppenheimer-Volkoff流体静力学平衡方程}
+    \left(\pt{}{r}\right)^b \nabla^a T_{ab}=0 \iff \dt{p}{r}=-(\rho+p)\frac{m(r)+4\pi p r^3}{r(r-2m(r))}
+\end{gather*}
+再附加物态方程$f(p, \rho)=0$便可求解
+
+$m(0)=0$，指定$p(0)=0$，$A(0)$待定，根据$p(R)=0$解出星球半径$R$，再代入边界条件求出$A(0)$使得内外解连续
+\begin{gather*}
+    \e^{2A(R)}=1-\frac{2M}{R}
+\end{gather*}
+从而确定了所有解
+
+取物态方程为$\rho=const$，
+\begin{itemize}
+    \item Newton引力论
+    \begin{gather*}
+        m(r)=\frac{4}{3}\rho \pi r^3
+        \\
+        p(r)=\frac{2}{3}\pi \rho^2(R^2-r^2)
+    \end{gather*}
+    \item 广义相对论：Schwarzschild内解
+    \begin{gather*}
+        p(r)=\rho \frac{\sqrt{1-\frac{2M}{R}}-\sqrt{1-\frac{2Mr^2}{R^3}}}{\sqrt{1-\frac{2Mr^2}{R^3}}-3\sqrt{1-\frac{2M}{R}}}
+        \\
+        p(0)=\rho \frac{1-\sqrt{1-\frac{2M}{R}}}{3\sqrt{1-\frac{2M}{R}}-1}
+        \\
+        \sqrt{1-\frac{2M}{R}} \leq \frac{1}{3} \implies \left(\frac{M}{R}\right)_{max}=\frac{4}{9} \implies M_{max}=\frac{4}{9\sqrt{3\pi \rho}}
+    \end{gather*}
+\end{itemize}
+
+\subsection{恒星演化}
+
+密度不均匀气体（氢为主）\\
+$\implies$以密度较大处为中心吸引形成球对称气团，在自引力下收缩，温度升高，压强增大\\
+$\implies$发生核反应氢聚变为氦，释放能量补偿辐射损失，达到平衡，成为恒星\\
+$\implies$氢全部变为氦，当温度还不足引发氦的聚变时，再次收缩升温，成为红巨星\\
+$\implies$氦聚变为碳或氧，短暂平衡后再次收缩\\
+\begin{itemize}
+    \item 质量足够小的恒星，高温电离出电子气的简并压抵消自引力，达到平衡，成为白矮星$\implies$辐射能量，温度下降直至与周围相等，不可见
+    \item 质量超过Chandrasekhar极限的恒星，核聚变反应逐步进行，直至形成铁和镍，在自引力下剧烈收缩，光子将铁镍原子核分裂为中子、质子或轻核，电子与质子反应形成中子或逃逸出星体的中微子，中子的兼并压与自引力平衡，发生超新星爆发
+    \begin{itemize}
+        \item 爆发后质量小于中子星上限，成为中子星
+        \item 爆发后质量大于中子星上限，引力坍缩无法被阻止，形成Schwarzchild黑洞
+    \end{itemize}
+\end{itemize}
+
+\section{Kruskal延拓与Schwarzschild黑洞}
+
+\begin{itemize}
+    \item 不完备测地线：仿射参数的取值范围不是$\mathbb{R}$
+    \item 奇点：不可延拓时空中存在不完备的类时或类光测地线，称为奇异时空\\
+    该定义仍是狭义的
+    \begin{itemize}
+        \item 坐标奇点：只由于坐标系选择导致$g_{\mu \nu}$奇异
+        \item 时空奇点：度规张量$g_{ab}$本身奇异
+    \end{itemize}
+    \item 曲率奇性
+    \begin{itemize}
+        \item s.p.曲率奇性：曲率构成的标量沿不完备测地线发散
+        \item p.p.曲率奇性：${R_{abc}}^d$及其协变导数在沿测地线平移的任一标架场的分量中至少有一个发散\\
+        \emph{有s.p.曲率奇性则必有p.p曲率奇性，反之不然}
+    \end{itemize}
+\end{itemize}
+Schwarzschild度规$r=2M$处为坐标奇点，$r=0$处为时空奇点
+
+\subsection{Rindler度规的坐标奇点}
+
+2维Rindler时空
+\begin{gather*}
+    \d s^2=-x^2 \d t^2+\d x^2
+\end{gather*}
+$x=0$为奇点，为了保持背景流形的连通，选择$x>0$
+
+设$\eta(\lambda)$为一条类光测地线，
+\begin{gather*}
+    0=g_{ab} \left(\pt{}{\lambda}\right)^a \left(\pt{}{\lambda}\right)^b=-x^2 \left(\dt{t}{\lambda}\right)^2+\left(\dt{x}{\lambda}\right)^2
+    \\
+    t=\pm \ln x + C
+    \\
+    \intertext{定义类光坐标}
+    \begin{cases}
+        v=t+\ln x
+        \\
+        u=t-\ln x
+    \end{cases}
+    \\
+    \d s^2=-\e^{v-u} \d v \d u
+\end{gather*}
+$\left(\pt{}{v}\right)^a$和$\left(\pt{}{u}\right)^a$是类光矢量，取值范围均为$\mathbb{R}$，但并非仿射参数
+\begin{gather*}
+    \intertext{定义}
+    E=-g_{ab} \left(\pt{}{t}\right)^a \left(\pt{}{\lambda}\right)^b=x^2 \dt{t}{\lambda}
+    \\
+    \intertext{仿射参数}
+    \lambda=\frac{\e^{-u}}{2E} \e^{v}+C_1
+\end{gather*}
+对外向和内向测地线，分别有仿射参数
+\begin{gather*}
+    \begin{cases}
+        V=\e^{v}
+        \\
+        U=-\e^{-u}
+    \end{cases}
+    \\
+    \d s^2=-\d V \d U
+    \\
+    V>0,\quad U<0
+\end{gather*}
+$g_{VU}$非奇异，取值范围可以延拓至$\mathbb{R}$，从而包含了$x=0$
+\begin{gather*}
+    \intertext{进一步定义}
+    \begin{cases}
+        T=\frac{V+U}{2}
+        \\
+        X=\frac{V-U}{2}
+    \end{cases}
+    \\
+    \d s^2=-\d T^2+\d X^2
+\end{gather*}
+从而可以看出，Rindler时空是2维Minkowski时空的子时空
+
+\subsection{Schwarzschild时空的Kruskal延拓}
+
+    $r=2M$为坐标奇点：先取定$r>2M$
+    \begin{gather*}
+        \intertext{乌龟坐标}
+        r_{*}=r+2M\ln \left(\frac{r}{2M}-1\right)
+        \\
+        \intertext{定义}
+        \begin{cases}
+            v=t+r_{*}
+            \\
+            u=t-r_{*}
+        \end{cases}
+        \\
+        \intertext{取值范围均为$\mathbb{R}$}
+        \d s^2=-\left(1-\frac{2M}{r}\right)\d v \d u+r^2(\d \theta^2+\sin^2\theta \d \varphi^2)
+        \\
+        \intertext{再定义（$\beta$为待定常数）}
+        \begin{cases}
+            V=\e^{\beta v}
+            \\
+            U=-\e^{-\beta u}
+        \end{cases}
+        \\
+        \d s^2=-\frac{r-2M}{\beta^2 r \e^{2\beta r}} \left(\frac{2M}{r-2M}\right)^{4\beta M} \d V \d U+r^2(\d \theta^2+\sin^2\theta \d \varphi^2)
+    \end{gather*}
+    $r=2M$处的奇性可以通过选取$\beta=\frac{1}{4M}$消去
+    \begin{gather*}
+        \intertext{再定义}
+        \begin{cases}
+            T=\frac{V+U}{2}
+            \\
+            X=\frac{V-U}{2}
+        \end{cases}
+        \\
+        \d s^2=\frac{32M^3}{r} \e^{-\frac{r}{2M}}(-\d T^2+\d X^2)+r^2(\d \theta^2+\sin^2\theta \d \varphi^2)
+        \\
+        \left(\frac{r}{2M}-1\right)\e^{\frac{r}{2M}}=X^2-T^2
+    \end{gather*}
+    从而可以延拓到$r>0$的空间
+    \begin{gather*}
+        r_{*}=r+2M \ln \left|\frac{r}{2M}-1\right|  
+    \end{gather*}
+    \begin{itemize}
+        \item A区：当前宇宙
+        \begin{gather*}
+            V>0,\quad U<0
+            \\
+            \begin{cases}
+                V=\e^{\frac{r_{*}+t}{4M}}
+                \\
+                U=-\e^{\frac{r_{*}-t}{4M}}
+            \end{cases}
+            \\
+            T^2-X^2<0,\quad X>0
+            \\
+            \begin{cases}
+                T=\sqrt{\frac{r}{2M}-1}\e^{\frac{r}{4M}}\sinh \frac{t}{4M}
+                \\
+                X=\sqrt{\frac{r}{2M}-1}\e^{\frac{r}{4M}}\cosh \frac{t}{4M}
+            \end{cases}
+        \end{gather*}
+        \item A'区：平行宇宙
+        \begin{gather*}
+            V<0,\quad U>0
+            \\
+            \begin{cases}
+                V=-\e^{\frac{r_{*}+t}{4M}}
+                \\
+                U=\e^{\frac{r_{*}-t}{4M}}
+            \end{cases}
+            \\
+            T^2-X^2<0,\quad X<0
+            \\
+            \begin{cases}
+                T=-\sqrt{\frac{r}{2M}-1}\e^{\frac{r}{4M}}\sinh \frac{t}{4M}
+                \\
+                X=-\sqrt{\frac{r}{2M}-1}\e^{\frac{r}{4M}}\cosh \frac{t}{4M}
+            \end{cases}
+        \end{gather*}
+        \item B区：黑洞
+        \begin{gather*}
+            V>0,\quad U>0
+            \\
+            \begin{cases}
+                V=\e^{\frac{r_{*}+t}{4M}}
+                \\
+                U=\e^{\frac{r_{*}-t}{4M}}
+            \end{cases}
+            \\
+            0<T^2-X^2<1,\quad T>0
+            \\
+            \begin{cases}
+                T=\sqrt{1-\frac{r}{2M}}\e^{\frac{r}{4M}}\sinh \frac{t}{4M}
+                \\
+                X=\sqrt{1-\frac{r}{2M}}\e^{\frac{r}{4M}}\cosh \frac{t}{4M}
+            \end{cases}
+        \end{gather*}
+        \item W区：白洞
+        \begin{gather*}
+            V<0,\quad U<0
+            \\
+            \begin{cases}
+                V=-\e^{\frac{r_{*}+t}{4M}}
+                \\
+                U=-\e^{\frac{r_{*}-t}{4M}}
+            \end{cases}
+            \\
+            0<T^2-X^2<1,\quad T<0
+            \\
+            \begin{cases}
+                T=-\sqrt{1-\frac{r}{2M}}\e^{\frac{r}{4M}}\sinh \frac{t}{4M}
+                \\
+                X=-\sqrt{1-\frac{r}{2M}}\e^{\frac{r}{4M}}\cosh \frac{t}{4M}
+            \end{cases}
+        \end{gather*}
+        \item 事件视界
+        \begin{gather*}
+            \mathrm{N}_{1+}: T=X,\quad X>0
+            \\
+            \mathrm{N}_{2+}: T=X,\quad X<0
+        \end{gather*}
+        $r=2M$称为无限红移面
+        \begin{itemize}
+            \item 宇宙发出的内向指向未来的类时类光曲线必定穿过事件视界进入黑洞，黑洞发出的指向未来的类时类光曲线不可能进入宇宙
+            \item 白洞发出的指向未来的类时类光曲线必定进入宇宙
+        \end{itemize}
+    \end{itemize}
+
+\subsection{球对称星体的引力坍缩}
+
+引入内向Eddington坐标系$\{v, r, \theta, \varphi\}$覆盖A区和B区
+\begin{gather*}
+    v=t-r_{*}
+    \\
+    \d s^2=-\left(1-\frac{2M}{r}\right) \d v^2+2\d v \d r+r^2(\d \theta^2+\sin^2\theta \d \varphi^2)
+\end{gather*}
+对径向类光测地线，
+\begin{gather*}
+    \dt{v}{\lambda}\left[-\left(1-\frac{2M}{r}\right)\dt{v}{\lambda}+2\dt{r}{\lambda}\right]=0
+    \\
+    \intertext{引入}
+    \tilde{t}=v-r
+    \\
+    \d s^2=-\left(1-\frac{2M}{r}\right) \d \tilde{t}^2+\frac{4M}{r}\d \tilde{t} \d r+\left(1+\frac{2M}{r}\right) \d r^2+r^2(\d \theta^2+\sin^2\theta \d \varphi^2)
+\end{gather*}
+\begin{itemize}
+    \item $$\dt{v}{r}=0 \iff \dt{\tilde{t}}{r}=-1$$
+    \item $$\dt{v}{r}=\frac{2r}{4-2M} \iff \dt{\tilde{t}}{r}=\frac{r+2M}{r-2M}$$
+\end{itemize}
+可以看出事件视界内的光是无法穿出事件视界的

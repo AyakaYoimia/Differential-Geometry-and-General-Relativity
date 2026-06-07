@@ -1,0 +1,245 @@
+\chapter{Einstein方程的求解}
+
+\section{稳态时空与静态时空}
+
+\begin{itemize}
+    \item 稳态时空：存在类时Killing矢量场
+    \item 矢量场$v^a$超曲面正交：$\forall p \in M, \exists$与$v^a$处处正交的超曲面$\Sigma$使$p \in \Sigma$
+    \item 静态时空：存在超曲面正交的类时Killing矢量场
+    \begin{itemize}
+        \item $\xi^a=\left(\pt{}{t}\right)^a$是Killing矢量场，$\Sigma_0=\{p \in M \vert t(p)=0\}$是处处与$\xi^a$正交的超曲面，则超曲面$\Sigma_{t_1}=\{p \in M \vert t(p)=t_1\}$也处处与$\xi^a$正交
+        \item 运用携带法可以得到时轴正交坐标系，$g_{0i}=0$，且度规各分量只与空间坐标有关
+        \item 静态时空具有时间平移不变性和时间反射不变性
+    \end{itemize}
+\end{itemize}
+
+\section{球对称时空}
+
+\begin{itemize}
+    \item 球对称度规场：等度规群含有一个与$SO(3)$同构的子群$G_3$，且$G_3$的所有轨道都是2维球面，称为轨道球面
+    \item 球对称时空：还要求物质分布$T_{ab}$也具有球对称性
+    \item 3维Euclidean空间中的2维球面线元
+    \begin{gather*}
+        \d s^2=r^2(\d \theta^2+\sin^2 \theta \d \varphi^2)
+    \end{gather*}
+    Killing矢量场
+    \begin{gather*}
+        \xi_1^a=\left(\pt{}{\varphi}\right)^a
+        \\
+        \xi_2^a=\left(\pt{}{\theta}\right)^a \sin \varphi + \left(\pt{}{\varphi}\right)^a \cot \theta \cos \varphi
+        \\
+        \xi_3^a=\left(\pt{}{\theta}\right)^a \cos \varphi - \left(\pt{}{\varphi}\right)^a \cot \theta \sin \varphi
+    \end{gather*}
+    对应$G_3$
+\end{itemize}
+
+\section{Schwarzschild真空解}
+
+\begin{itemize}
+    \item 静态球对称时空只有一个超曲面正交的类时Killing矢量场$\xi^a$，则$G_3$的所有轨道球面与$\xi^a$正交
+    \item Schwarzschild真空解：静态无电荷球对称星体外部真空
+    \begin{gather*}
+        \d s^2=-(1-\frac{2M}{r}) \d t^2+\frac{1}{1-\frac{2M}{r}} \d r^2+r^2(\d \theta^2 + \sin^2 \theta \d \varphi^2)
+    \end{gather*}
+    稳态观者的4加速度
+    \begin{gather*}
+        A^a=\nabla^a \ln \chi,\quad \chi=\sqrt{-\xi_a \xi^a}
+        \\
+        |A^a|=|\bm{g}|=\frac{GM}{r^2\sqrt{1-\frac{2GM}{c^2 r}}}
+    \end{gather*}
+    \item Birkhoff定理：真空Einstein方程的球对称解必为Schwarzschild度规
+\end{itemize}
+
+\section{Reissner-Nordstrom解}
+
+\begin{itemize}
+    \item 电磁真空：Einstein-Maxwell方程组
+    \begin{gather*}
+        R_{ab}-\frac{1}{2}Rg_{ab}=2(F_{ac}{F_b}^c-\frac{1}{4}g_{ab} F_{cd} F^{cd})
+        \\
+        \nabla^a F_{ab}=0
+        \\
+        \nabla_{[a} F_{bc]}=0
+    \end{gather*}
+    迹$T=0 \implies R=0$
+    \item 定义
+    \begin{gather*}
+        \Sigma_{ab}=F_{ab}+\i \star F_{ab}
+    \end{gather*}
+    $F_{ab}$类光条件
+    \begin{gather*}
+        \Sigma_{ab} \Sigma^{ab}=0
+        \\
+        \iff \begin{cases}
+            B^2=E^2
+            \\
+            \bm{E} \cdot \bm{B}=0
+        \end{cases}
+    \end{gather*}
+    \begin{itemize}
+        \item 类光电磁场被瞬时观者测得的能量密度是指向未来的类光张量
+    \end{itemize}
+    \item Reissner-Nordstrom解：静态带电荷球对称星体外部真空\\
+    由静态球对称性，4矢势$A_a$分量$A_{\mu}$只与$r$有关，且只有第0、1分量，选定规范可以使$A_1=0$，解得
+    \begin{gather*}
+        \d s^2=-(1-\frac{2M}{r}+\frac{Q^2}{r^2}) \d t^2+\frac{1}{1-\frac{2M}{r}+\frac{Q^2}{r^2}} \d r^2+r^2(\d \theta^2 + \sin^2 \theta \d \varphi^2)
+        \\
+        F_{ab}=-\frac{Q}{r^2} (\d t)_a \wedge (\d r)_b
+        \\
+        A=-\frac{Q}{r} (\d t)_a
+    \end{gather*}
+    \item 推广Birkhoff定理：电磁真空Einstein方程的球对称解必为Reissner-Nordstrom度规
+\end{itemize}
+
+\section{Vaidya度规和Kinnersley度规}
+
+\subsection{Vaidya度规}
+
+Vaidya度规：向外发出纯辐射场的球对称物体
+
+Schwarzschild度规进行坐标变换
+\begin{gather*}
+    \{t, r, \theta, \varphi\} \mapsto \{u, r, \theta, \varphi\}
+    \\
+    u=t-r_{*}
+    \\
+    \intertext{乌龟坐标}
+    r_{*}=r+2M \ln(\frac{r}{2M}-1)
+    \\
+    \d s^2=[-\d u^2-2 \d u \d r+r^2(\d \theta^2 + \sin^2 \theta \d \varphi^2)]+\frac{2M}{r} \d u^2=\d s^2_{flat}+\frac{2M}{r} \d u^2
+\end{gather*}
+将$M$替换为$m(u)$得到Vaidya度规
+\begin{gather*}
+    \d s^2=-\left[1-\frac{2m(u)}{r}\right]\d u^2-2\d u \d r+r^2 (\d \theta^2 + \sin^2 \theta \d \varphi^2)
+\end{gather*}
+Ricci张量只有一个非零分量
+\begin{gather*}
+    R_{uu}=-2\frac{\dot{m}}{r^2},\quad \dot{m}=\dt{m}{u}
+\end{gather*}
+能动张量
+\begin{gather*}
+    T_{ab}=-\frac{\dot{m}}{4\pi r^2} (\d u)_a (\d u)_b
+\end{gather*}
+在$\dot{m}<0$时是如下能动张量特例
+\begin{gather*}
+    T_{ab}=\Phi^2 k_a k_b
+    \\
+    k_a=-(\d u)_a,\quad k^a=\left(\pt{}{r}\right)^a
+\end{gather*}
+代表两种物质场
+\begin{itemize}
+    \item 沿$k^a$运动的光子：$\Phi^2=\frac{E^2}{2\pi}$，$E$为某正交归一标架下的电场
+    \item 纯辐射场：其他零质量沿$k^a$运动的粒子
+\end{itemize}
+
+\emph{Schwarzschild度规忽略了向外发出的粒子，相比于Vaidya度规多一个类时Killing矢量场}
+
+\subsection{Kinnersley度规}
+
+Kinnersley度规：向外发出纯辐射场的火箭
+
+4维Minkowski时空光滑类时曲线$L(u)$，$u$为固有时，4速度$\lambda^a=\left(\pt{}{u}\right)^a$。假设$L(u)$不渐进类光，则时空中任一点$p$的过去光锥面与$L(u)$仅有一个交点$q$
+\begin{gather*}
+    \intertext{在任一惯性坐标系$\{X^{\mu}\}$下，$p$和$q$位置}
+    \psi^a=\psi^{\mu} \left.\left(\pt{}{X^{\mu}}\right)^a \right|_{p}
+    \\
+    \xi^a=\xi^{\mu} \left.\left(\pt{}{X^{\mu}}\right)^a \right|_{q}
+\end{gather*}
+通过令对应$p$和$q$的$u$和$\lambda^a$相等可以将$u$和$\lambda^a$延拓到全时空，各$\lambda^a$积分曲线
+\begin{gather*}
+    X^{\mu}(u)=\xi^{\mu}(u)+\sigma^{\mu}
+    \\
+    \eta_{\mu \nu} \sigma^{\mu} \sigma^{\nu}=0
+\end{gather*}
+$\sigma^a$是类光矢量场，进行$3+1$分解
+\begin{gather*}
+    \sigma^a=r\lambda^a+\hat{\sigma}^a,\quad r=-\lambda_a \sigma^a
+    \\
+    \intertext{定义}
+    k^a=\frac{\sigma^a}{r},\quad n^a=\frac{\hat{\sigma}^a}{r}
+    \\
+    k^a=\lambda^a+n^a
+    \\
+    \lambda_a k^a=-1,\quad \eta_{ab}n^a n^b=1
+\end{gather*}
+$k^a$是等$u$超曲面的法矢，则$k_a \propto \partial_a u$
+\begin{gather*}
+    k_a=-(\d u)_a
+\end{gather*}
+Kinnersley度规
+\begin{gather*}
+    g_{ab}=\eta_{ab}+\frac{2m(u)}{r} (\d u)_a (\d u)_b
+\end{gather*}
+指标升降使用的是$\eta_{ab}$
+
+\begin{enumerate}
+    \item $L(u)$是$\eta_{ab}$测地线：等同于Vaidya度规或Schwarzschild度规\\
+    选取$\eta_{ab}$的惯性坐标系$\{T, X, Y, Z\}$，使空间坐标原点的世界线与$L(u)$重合，则$\lambda^a=(1, 0, 0, 0)$，$r=\sigma^0$表示$p$与原点空间距离，空间上建立球坐标系，再取$u=T-r$，得到Kinnersley度规等同于Vaidya度规或Schwarzschild度规
+    \begin{gather*}
+        \d s^2=-\left[1-\frac{2m(u)}{r}\right]\d u^2-2\d u \d r+r^2 (\d \theta^2 + \sin^2 \theta \d \varphi^2)
+    \end{gather*}
+    \item $L(u)$不是$\eta_{ab}$测地线：\\
+    4加速度$\dot{\lambda}^a=\lambda^b \partial_b \lambda^a$非零且与$\lambda^a$正交，过$q$点做$\eta_{ab}$测地线$G_q$，对应惯性参考系$\mathscr{R}_q$，则$r$代表$G_p$与$L(u)$的推迟距离。在$\mathscr{R}_q$中定义惯性坐标系$\{T, X, Y, Z\}$
+    \begin{itemize}
+        \item $G_q$为空间坐标原点世界线
+        \item $q$为时空坐标原点
+        \item $Z$轴与$\dot{\lambda}^a|_q$重合
+    \end{itemize}
+    计算得到Kinnersley度规非零分量
+    \begin{gather*}
+        \begin{cases}
+            g_{uu}=-1-2a(u)r\cos \theta+r^2(f^2+g^2\sin^2\theta)+\frac{2m(u)}{r}
+            \\
+            g_{ur}=g_{ru}=-1
+            \\
+            g_{u\theta}=g_{\theta u}=-r^2 f
+            \\
+            g_{u\varphi}=g_{\varphi u}=-r^2 g \sin^2 \theta
+            \\
+            g_{\theta \theta}=r^2
+            \\
+            g_{\varphi \varphi}=r^2 \sin^2 \theta
+        \end{cases}
+        \\
+        \intertext{其中}
+        \begin{cases}
+            a(u)=\sqrt{\eta_{ab} \dot{\lambda}^a(u) \dot{\lambda}^b(u)}
+            \\
+            b, c\text{反映}\dot{\lambda}^a\text{方向变化率}
+        \end{cases}
+        \intertext{Ricci张量和标曲率}
+        R_{ab}=-\frac{2(\dot{m}+3ma\cos\theta)}{r^2} k_a k_b,\quad R=0
+        \\
+        T_{ab}=-\frac{\dot{m}+3ma\cos\theta}{4\pi} k_a k_b
+    \end{gather*}
+\end{enumerate}
+
+\emph{火箭与纯辐射场的引力辐射抵消，因此火箭与纯辐射场的能动量守恒}
+
+\section{坐标条件，广义相对论的规范自由性}
+
+\subsection{坐标条件}
+
+在坐标变换下，不同的度规形式对应相同的时空几何，广义协变性带来4个额外自由度，可以附加4个坐标条件
+\begin{itemize}
+    \item Gauss法坐标
+    \begin{gather*}
+        g_{00}=1,\quad g_{0i}=0
+    \end{gather*}
+    \item 谐和坐标条件
+    \begin{gather*}
+        g_{ab} \nabla_a \nabla_b x^{\sigma}=0
+        \\
+        \iff g^{\mu \nu} {\Gamma^{\lambda}}_{\mu \nu}=0
+    \end{gather*}
+\end{itemize}
+
+\subsection{微分同胚不变性}
+
+微分同胚变换$\phi:M \to M$下，
+\begin{gather*}
+    \phi_{*}(R_{ab}[g])=R_{ab}[\phi_{*} g]
+    \\
+    \implies G_{ab}[g]=0 \iff G_{ab}[\phi_{*}g]=0
+\end{gather*}
+也就是前述坐标变换不变性的主动提法

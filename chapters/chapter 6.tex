@@ -1,0 +1,393 @@
+\chapter{狭义相对论}
+
+\section{4维表述}
+
+\begin{itemize}
+    \item 事件（时空点），时空，世界线，时空图
+    \item 粒子：有静质量、无静质量
+    \item 观者
+    \begin{itemize}
+        \item 标准钟，固有时：世界线参数
+        \item 观者只能对自己世界线上的事件进行观测
+        \item 参考系：一系列观者的集合，可以对全时空进行观测
+        \item 惯性观者：各惯性观者平权
+        \item 惯性参考系，惯性坐标系
+    \end{itemize}
+\end{itemize}
+
+\section{狭义相对论背景时空}
+
+Minkowski时空
+\begin{gather*}
+    \d s^2=-\d t^2 + \d x^2 + \d y^2 + \d z^2
+\end{gather*}
+狭义相对论要求，光子世界线是类光曲线，质点世界线为类时曲线
+
+\subsection{时空结构}
+
+给定事件$p$，$\mathbb{R}^4-\{p\}$可以写成三个不交子集$M_1,M_2,M_3$之并
+\begin{gather*}
+    M_1=\{q \in \mathbb{R}^4-\{p\} \vert \exists \text{先经历$q$后经历$p$的观者} \}
+    \\
+    M_2=\{q \in \mathbb{R}^4-\{p\} \vert \exists \text{先经历$p$后经历$q$的观者} \}
+    \\
+    M_3=\{q \in \mathbb{R}^4-\{p\} \vert \text{不存在既经历$p$又经历$q$的观者} \}
+\end{gather*}
+\begin{enumerate}
+    \item 非相对论
+    \begin{itemize}
+        \item $M_3$为$p$所在的垂直于时间轴的平面
+        \item $M_1$为$M_3$下方
+        \item $M_2$为$M_3$上方
+    \end{itemize}
+    \item 狭义相对论
+    \begin{itemize}
+        \item $M_1$为以$p$为顶点的光锥下方
+        \item $M_2$为以$p$为顶点的光锥上方
+        \item $M_3$为以$p$为顶点的光锥面及外侧
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Newton引力论}
+
+引力势$\phi$，质量密度$\mu$
+\begin{gather*}
+    \nabla^2 \phi=4\pi \mu
+    \\
+    \dt{x^i}{t^2}=-\pt{\phi}{x^i},\quad i=1,2,3
+\end{gather*}
+背景时空为Newton时空，在流形$\mathbb{R}^4$上附加内禀结构
+\begin{itemize}
+    \item 绝对时间：光滑函数$t:\mathbb{R}^4 \to \mathbb{R}$
+    \item 导数算符$\nabla_a$，在$x^0=t$的坐标系中的Christoffel符号满足
+    \begin{gather*}
+        \begin{cases}
+            {\Gamma^i}_{00}=\pt{\phi}{x^i},\quad i=1,2,3
+            \\
+            \text{else}\;{\Gamma^{\mu}}_{\nu \sigma}=0
+        \end{cases}
+    \end{gather*}
+\end{itemize}
+可以得到
+\begin{itemize}
+    \item 存在绝对同时面
+    \item 测地线
+    \begin{gather*}
+        \dt{^2 x^\mu}{\lambda^2}+{\Gamma^{\mu}}_{\nu \sigma} \dt{x^{\nu}}{\lambda} \dt{x^{\sigma}}{\lambda}=0
+    \end{gather*}
+    \begin{itemize}
+        \item $\mu =0$
+        \begin{gather*}
+            t = \alpha \lambda + \beta
+        \end{gather*}
+        \item $\mu = i$
+        \begin{gather*}
+            \dt{^2 x^i}{t^2}=-\pt{f}{x^i}
+        \end{gather*}
+    \end{itemize}
+    \item 
+    \begin{gather*}
+        \intertext{Riemann张量}
+        \begin{cases}
+            {R_{0i0}}^{j}=-{R_{i00}}^{j}=\pt{^2 \phi}{x^i \partial x^j}
+            \\
+            \text{else}\;{R_{\mu \nu \rho}}^{\sigma}=0
+        \end{cases}
+        \\
+        \intertext{Ricci张量}
+        \begin{cases}
+            R_{00}=4\pi \mu
+            \\
+            \text{else}\;R_{\mu\nu}=0
+        \end{cases}
+    \end{gather*}
+\end{itemize}
+同时面为三维欧氏空间，但Newton时空上的度规必定是退化的
+
+\subsection{典型效应}
+
+\begin{itemize}
+    \item 尺缩效应
+    \item 钟慢效应
+    \item 孪生子佯谬
+    \item 车库佯谬
+\end{itemize}
+
+\section{质点运动学和动力学}
+
+\begin{itemize}
+    \item 静质量，动质量
+    \item 4维速度
+    \begin{gather*}
+        U^a=\left(\pt{}{\tau}\right)^a
+        \\
+        \intertext{诱导度规}
+        h_{ab}=\eta_{ab}+Z_a Z_b
+        \\
+        \intertext{3维速度}
+        u^a=\frac{1}{\gamma} {h^a}_b U^b
+        \\
+        \gamma=\dt{t}{\tau}=-U^a Z_z
+        \\
+        \intertext{分解}
+        U^a=\gamma(Z^a+u^a)
+    \end{gather*}
+    4维速度只在世界线上有定义
+    \item 4维动量
+    \begin{gather*}
+        P^a=mU^a
+        \\
+        \intertext{分解}
+        P^a=EZ^a+p^a
+    \end{gather*}
+    \item 4维加速度
+    \begin{gather*}
+        A^a=U^b \partial_{b} U^a
+        \\
+        A^a U_a=0
+        \\
+        \intertext{3维加速度}
+        a^a=\dt{^2 x^i(t)}{t^2} \left(\pt{}{x^i}\right)^a
+        \\
+        \intertext{分解}
+        \begin{cases}
+            A^0=\gamma^4 \bm{u} \cdot \bm{a}
+            \\
+            A^i=\gamma^2 a^i+\gamma^4 (\bm{u} \cdot \bm{a}) u^i
+        \end{cases}
+    \end{gather*}
+    \item 4维力
+    \begin{gather*}
+        F^a=U^b \partial_b P^a
+        \\
+        \intertext{分解}
+        \begin{cases}
+            F^0=\gamma \bm{f} \cdot \bm{u}
+            \\
+            F^i=\gamma  f^i
+        \end{cases}
+    \end{gather*}
+\end{itemize}
+
+\begin{itemize}
+    \item 瞬时观者$(p,Z^a)$
+    \item 瞬时静止观者
+\end{itemize}
+
+\section{连续介质的能动张量}
+
+物质场能动张量$T_{ab}$
+\begin{itemize}
+    \item 对称性$T_{ab}=T_{ba}$
+    \item 守恒律
+    \begin{gather*}
+        \partial^a T_{ab}=0
+    \end{gather*}
+    \item 对任意瞬时观者$(p,(e_{\mu})^a)$，
+    \begin{itemize}
+        \item 能量密度$\mu=T_{00}$
+        \item 动量密度$w^a=-{T^i}_0 (e_i)^a$
+        \item 3维动量流密度张量$T^{ij}(e_i)^a (e_j)^a$
+    \end{itemize}
+\end{itemize}
+
+4维动量密度
+\begin{gather*}
+    W^a=-{T^a}_b Z^b
+    \\
+    \intertext{分解}
+    W^a=\mu Z^a+w^a
+\end{gather*}
+
+\section{理想流体动力学}
+
+\begin{itemize}
+    \item 理想流体：能动张量
+    \begin{gather*}
+        T_{ab}=(\mu+p)U_a U_b+p\eta_{ab}
+    \end{gather*}
+    $U^a$实际上是对分子运动统计平均后得到的4维速度场
+    \item 共动观者$(p,\left.U^a\right|_p)$
+    \begin{gather*}
+        T_{ab} \to
+        \begin{bmatrix}
+            \mu & 0 & 0 & 0 \\
+            0 & p & 0 & 0 \\
+            0 & 0 & p & 0 \\
+            0 & 0 & 0 & p
+        \end{bmatrix}
+    \end{gather*}
+    \item 对于理想气体
+    \begin{gather*}
+        p=\frac{1}{3} \mu \bar{u^2},\quad p \ll u
+    \end{gather*}
+    对于光子气
+    \begin{gather*}
+        p=\frac{1}{3} \mu
+    \end{gather*}
+\end{itemize}
+
+\section{动力学}
+
+守恒律
+\begin{gather*}
+    0=\partial^a T_{ab}=U_a U_b \partial^a(\mu+p)+(\mu+p)(U^a \partial_a U_b+U_b \partial_a U^a)+\partial_b p
+    \\
+    \intertext{用$U^b$缩并，注意到$U^b U^a \partial_a U_b=\frac{1}{2}U^a \partial_a(U^b U_b)=0$}
+    U^a \partial_a \mu+(\mu+p)\partial_a U^a=0
+    \\
+    \intertext{用投影映射${h_c}^b={\delta_c}^b+U_c U^b$缩并得}
+    (\mu+p)U^a \partial_a U_c+\partial_c p+U_c U^b \partial_b p=0
+\end{gather*}
+对尘埃（压强为$0$的流体），世界线为测地线
+
+非相对论近似
+\begin{gather*}
+    U^a \approx \left(\pt{}{t}\right)^a + u^a,\quad p \ll \mu
+    \\
+    \intertext{代入第二式}
+    \left(\pt{}{t}\right)^a \partial_a \mu + u^a \partial_a \mu + \mu \partial_a u^a=\pt{\mu}{t} + \nabla \cdot (\mu \bm{u})=0
+    \\
+    \intertext{$\left(\pt{}{x^i}\right)^c$与第三式缩并}
+    \mu \left(\pt{u_i}{t}+u^a \partial_a u_i\right)+\pt{p}{x^i}+u^i \pt{p}{t}+u_i u^j \pt{p}{x^j}
+    \\
+    \intertext{考虑到}
+    u_i \pt{p}{t} \ll \pt{p}{x^i},\quad u_i u^j \pt{p}{x^j} \ll \pt{p}{x^i}
+    \\
+    \mu \left(\pt{\bm{u}}{t}+(\bm{u} \cdot \nabla) \bm{u}\right)=-\nabla p
+\end{gather*}
+
+\section{电动力学}
+
+取Gauss单位制
+
+电磁场张量$F_{ab}$
+
+对瞬时观者$(p,Z^a)$，电磁场
+\begin{gather*}
+    E_a=F_{ab} Z^b
+    \\
+    B_a=-\star F_{ab} Z^a
+    \\
+    F_{ab} \to 
+    \begin{bmatrix}
+      0 & -E_1 & -E_2 & -E_3 \\
+      E_1 & 0 & B_3 & -B_2 \\
+      E_2 & -B_3 & 0 & B_1 \\
+      E_3 & B_2 & -B_1 & 0
+   \end{bmatrix}
+\end{gather*}
+对于$p$点两个$2$、$3$分量坐标基矢相同的瞬时观者，电磁场变换式
+\begin{gather*}
+    \begin{cases}
+        E'_1=E_1
+        \\
+        E'_2=\gamma(E_2-vB_3)
+        \\
+        E'_3=\gamma(E_3+vB_2)
+    \end{cases}
+    \begin{cases}
+        B'_1=B_1
+        \\
+        B'_2=\gamma(B_2+vE_3)
+        \\
+        B'_3=\gamma(B_3-vE_2)
+    \end{cases}
+\end{gather*}
+不要求为惯性系
+
+4维电流密度
+\begin{gather*}
+    J^a=\rho_0 U^a
+    \\
+    \intertext{分解}
+    J^a=\rho Z^a+j^a
+\end{gather*}
+
+Maxwell方程组
+\begin{gather*}
+    \partial^a F_{ab}=-4\pi J_b
+    \\
+    \partial_{[a} F_{bc]}=0
+\end{gather*}
+在惯性系中可导出3维Maxwell方程组
+
+Lorentz力
+\begin{gather*}
+    F^a=q{F^a}_b U^b
+\end{gather*}
+
+能动张量
+\begin{align*}
+    T_{ab}&=\frac{1}{4\pi}(F_{ac} {F_b}^c-\frac{1}{4} \eta_{ab} F_{cd} F_{cd})
+    \\
+    &=\frac{1}{8\pi}(F_{ac}{F_b}^c+\star F_{ac} \star {F_b}^c)
+\end{align*}
+
+4维矢势$A_a$
+\begin{gather*}
+    F_{ab}=\partial_a A_b-\partial_b A_a
+    \\
+    \intertext{分解}
+    A_a=-\phi(\d t)_a + a_a
+    \\
+    \intertext{Maxwell方程组}
+    \partial^a \partial_a A_b-\partial_b \partial^a A_a=-4\pi J_b
+    \\
+    \intertext{选取Lorentz规范}
+    \partial^a A_a=0
+    \\
+    \partial^a \partial_a A_b=-4\pi J_b
+\end{gather*}
+
+单色平面电磁波：$A_b=C_b\e^{\i \theta}$，偏振矢量$C^b$为常矢量，相位$\theta$
+\begin{gather*}
+    -(\partial^a \theta)(\partial_a \theta)+\i \partial^a \partial_a \theta=0
+    \\
+    \begin{cases}
+        (\partial^a \theta)(\partial_a \theta)=0
+        \\
+        \partial^a \partial_a \theta=0
+    \end{cases}
+    \\
+    \intertext{4维波矢}
+    K^a=\partial^a \theta
+    \\
+    K^a K_a=0,\quad \partial^a K_a=0
+    \\
+    \intertext{对单色平面电磁波，$K^a$为常矢量场}
+    \partial_b K^a=0
+    \\
+    \theta=K_\mu x^{\mu} + \theta_0
+    \\
+    \intertext{分解}
+    K^a=\omega \left(\pt{}{t}\right)^a + k^a
+    \\
+    \theta=-\omega t+k_i x^i
+\end{gather*}
+定义光子的4维动量
+\begin{gather*}
+    P^a=\hbar K^a
+\end{gather*}
+
+Doppler效应\\
+设观者和光源4维速度分别为$U^a$和$V^a$，光在$p$点发出$q$点接收
+\begin{gather*}
+    \intertext{发出时角频率}
+    \omega=\left.-K^a V_a \right|_p
+    \\
+    \intertext{接收时角频率}
+    \omega'=\left.-K^a U_a \right|_q
+    \\
+    \intertext{平直时空可以平移}
+    \omega'=\left.-K^a U_a \right|_p
+    \\
+    \intertext{设}
+    \gamma=-V^a U_a
+    \\
+    K^a=\omega V^a + k^a
+    \\
+    U^a=\gamma V^a+\gamma u^a
+    \\
+    \omega'=\gamma (\omega-k^a u^a)=\gamma(\omega-\bm{k} \cdot \bm{u})
+\end{gather*}

@@ -1,0 +1,249 @@
+\chapter{广义相对论基础}
+
+\section{基本假设}
+
+广义相对论有三点基本假设
+\begin{enumerate}
+    \item 3维空间引力本质是4维时空弯曲
+    \item 自由质点世界线是所在弯曲时空的测地线
+    \item 时空弯曲程度与物质分布有关，由Einstein方程描述
+\end{enumerate}
+
+弯曲时空物理定律服从两个原则
+\begin{enumerate}
+    \item 广义协变性原理\\
+    只有时空度规及其派生量才允许以背景几何量的身份出现在物理定律的表达式中
+    \item 在时空度规为Minkowski度规$\eta_{ab}$时，物理定律回到狭义相对论形式 \emph{或} 服从Einstein等效原理\\
+    $\implies$最小替换法则：将狭义相对论定律中$\eta_{ab}$和$\partial_a$替换为$g_{ab}$和$\nabla_a$可以得到广义相对论中的对应定律
+\end{enumerate}
+
+\section{Fermi移动和无自转观者}
+
+\begin{itemize}
+    \item Fermi-Walker导数算符$\mathrm{D}_{\mathrm{F}}: \mathscr{F}_{G}(k, l) \to \mathscr{F}_{G}(k, l)$：设$G(\tau)$为时空中类时线，
+    \begin{enumerate}
+        \item 线性性
+        \item Leibniz律
+        \item 与缩并可交换顺序
+        \item \begin{gather*}
+            \mathrm{D}_{\mathrm{F}} f=\dt{f}{\tau},\quad \forall f \in \mathscr{F}_{G}(0, 0)
+        \end{gather*}
+        \item \begin{gather*}
+            \mathrm{D}_{\mathrm{F}} v^a=Z^b \nabla_b v^a+(A^a Z^b - Z^a A^b)v_b, \quad \forall v^a \in \mathscr{F}_{G}(1, 0)
+            \\
+            Z^a = \left(\pt{}{\tau}\right)^a, \quad A^a=Z^b \nabla_b Z^a 
+        \end{gather*}
+    \end{enumerate}
+    性质
+    \begin{itemize}
+        \item 若$G(\tau)$为测地线，$\mathrm{D}_{\mathrm{F}} v^a=Z^b \nabla_b v^a$
+        \item $\mathrm{D}_{\mathrm{F}} Z^a=0$
+        \item 若$w^a$是$G(\tau)$上的空间矢量场，则
+        \begin{gather*}
+            \mathrm{D}_{\mathrm{F}} w^a={h^a}_b \mathrm{D}_{\mathrm{F}} w^b
+            \\
+            h_{ab}=g_{ab}+Z_a Z_b
+        \end{gather*}
+        \item \begin{gather*}
+            \mathrm{D}_{\mathrm{F}} g_{ab}=0
+            \\
+            \iff \mathrm{D}_{\mathrm{F}} (g_{ab} v^a u^b)=g_{ab} v^a \mathrm{D}_{\mathrm{F}} u^b+g_{ab} u^b \mathrm{D}_{\mathrm{F}} v^a
+        \end{gather*}
+    \end{itemize}
+    \item 费移的矢量场：$\mathrm{D}_{\mathrm{F}} v^a=0$
+    \begin{itemize}
+        \item $p \in G$和$v^a \in V_p$确定唯一的沿$G(tau)$费移的矢量场
+        \item $G(\tau)$上的空间矢量场$w^a$无空间转动$\iff w^a$沿线费移
+    \end{itemize}
+    \item $v^a$受以$\Omega_{ab}$为角速度的时空转动：
+    \begin{gather*}
+        Z^c \nabla_c v^a = -\Omega^{ab} v_b
+    \end{gather*}
+    $\Omega_{ab}$为时空转动角速度2-形式场
+    \begin{gather*}
+        \Omega_{ab}=\varepsilon_{abc} \omega^c
+    \end{gather*}
+    无时空转动$Z^b \nabla_b v^a=0$
+    \begin{itemize}
+        \item 若$v^a$和$u^a$经受相同时空转动，则$v^a u_a$在$G(\tau)$上为常数
+        \item $Z^a$的时空转动角速度2-形式为$\tilde{\Omega}_{ab}=A_a \wedge Z_b$
+        \item $Z^a$伪转动$\tilde{\Omega}_{ab}$，空间矢量$w^a$时空转动$\Omega_{ab}$，则$\hat{\Omega}_{ab}=\Omega_{ab}-\tilde{\Omega}_{ab}$为纯空间转动
+        \item $G(\tau)$上任一正交归一空间3标架场中的三个基矢场有共同的空间转动角速度，但没有规范自由性
+    \end{itemize}
+\end{itemize}
+
+\section{任意观者的固有坐标系}
+
+$\mu(s)$为$p \in G(\tau)$发出、在$p$点与$G(\tau)$正交的任一类空测地线，$q$为$G(\tau)$附近一点，则必有唯一的$\mu(s)$经过$q$，取$\mu(0)=p$，$T^a=\left(\pt{}{s}\right)^a, w^a=\left.T^a \right|_p$，定义$q$点固有坐标
+\begin{gather*}
+    t(q)=\tau_p,\quad x^i(q)=s_q w^i
+\end{gather*}
+\begin{itemize}
+    \item 固有坐标系在任一点的坐标基矢与观者$G(\tau)$的正交归一4标架一致，因此在固有坐标系分量有$\left.g_{\mu \nu} \right|_p = \eta_{\mu \nu}$
+\end{itemize}
+
+设观者$G$加速度$\hat{A}^a$，自转角速度$\omega^a$，自由质点$L$与$G$的世界线交于$p$点，$L$在$p$点相对于$G$的3速度为$u^a$，则$L$在$p$点相对于$G$的3加速度为
+\begin{gather*}
+    a^a=-\hat{A}^a-2{\varepsilon^a}_{bc} \omega^b u^c+2(\hat{A}_b u^b) u^a
+\end{gather*}
+
+\section{等效原理与局部惯性系}
+
+等效原理
+\begin{itemize}
+    \item 弱等效原理：引力质量等于惯性质量
+    \item Einstein等效原理：对弯曲时空的自由下落无自转观者，一切非引力的物理实验与平直时空的惯性系中相同\\
+    \item 强等效原理：还考虑了自引力
+\end{itemize}
+
+设$G(\tau)$是弯曲时空的自由下落无自转观者，在固有坐标系下，
+\begin{gather*}
+    \left.g_{\mu \nu}\right|_p=\eta_{\mu \nu},\quad \left.{\Gamma^{\sigma}}_{\mu \nu} \right|_p=0,\quad \forall p \in G
+\end{gather*}
+该固有坐标系被称为局部惯性系。类似地，在弯曲时空中，若$p$点在某坐标系下Christoffel符号为$0$，，该坐标系为$p$点的一个局部惯性系
+
+\section{潮汐力与测地偏离方程}
+
+\subsection{Newton引力论}
+
+以地球附近的Einstein电梯为例，$\bm{r}(t)$和$\bm{r}(t)+\bm{\lambda}(t)$分别表示两个小球的位矢，
+\begin{gather*}
+    \dt{^2 x^i}{t^2}=-\left.\pt{\phi}{x^i}\right|_{\bm{r}}
+    \\
+    \dt{^2 (x^i+\lambda^i)}{t^2}=-\left.\pt{\phi}{x^i}\right|_{\bm{r}+\bm{\lambda}} \approx -\left.\pt{\phi}{x^i}\right|_{\bm{r}}-\left.\pt{}{x^j}\pt{\phi}{x^i}\right|_{\bm{r}} \lambda^j
+    \\
+    \dt{^2 \lambda^i}{t^2}=-\left.\pt{}{x^j}\pt{\phi}{x^i}\right|_{\bm{r}} \lambda^j
+\end{gather*}
+
+\subsection{广义相对论}
+
+每一小球均可看作一个自由下落观者，其世界线在时空的开域$U$上构成一族测地线，切矢$Z^a=\left(\pt{}{\tau}\right)^a$，设$\mu_0(s)$是一条横向光滑曲线，$w^a=\left(\pt{}{s}\right)^a$，测地线族中与之相交的测地线为$\gamma_s(\tau)$，设定$\tau$使得每一$\gamma_s(0)=\mu_0(s)$，设$\phi_{\tau}$为$Z^a$对应单参微分同胚局部群的群元，$\mu_{\tau}(s)$为$\mu_0(s)$在$\phi_{\tau}$映射下的像，不同$\tau$对应的所有曲线$\mu_{\tau}(s)$构成2维子流形$\mathscr{S}$
+\begin{itemize}
+    \item 只要选定$\mu_0(s)$与所有$\gamma_s(\tau)$正交，则任一$\mu_{\tau}(s)$都与所有$\gamma_s(\tau)$正交，从而切矢$w^a$为空间矢量
+    \begin{proof}
+        $Z^a$和$w^a$对易
+        \begin{gather*}
+            Z^b \nabla_b w^a-w^b \nabla_b Z^a=0
+        \end{gather*}
+        选$\nabla_a$与度规适配，得到
+        \begin{gather*}
+            Z^b \nabla_b (w^a Z_a)=w_a Z^b \nabla_b Z^a+Z_a Z^b \nabla_b w^a=Z_a Z^b \nabla_b w^a=Z_a w^b \nabla_b Z^a=\frac{1}{2} w^b \nabla_b (Z_a Z^a)=0
+        \end{gather*}
+    \end{proof}
+\end{itemize}
+
+设$\Delta s$为小量，将$\gamma_0(\tau)$称为基准观者，$\lambda^a=w^a \Delta s$，$w^a$称为分离矢量，则相对于基准观者的3速度$\tilde{u}^b=Z^a \nabla_a w^b$，相对于基准观者的3加速度（潮汐加速度）$\tilde{a}^c=Z^a \nabla_a (Z^b \nabla_b w^c)$，都是$\gamma_0(\tau)$上的空间矢量场
+\begin{itemize}
+    \item 测地偏离方程：任一单参类时测地线族内任一基准测地线$\gamma_0(\tau)$测得的潮汐加速度
+    \begin{gather*}
+        a^c=-{R_{abd}}^c Z^a w^b Z^d
+    \end{gather*}
+    对类空和类光测地线族也成立，分离矢量不需要与$Z^a$正交
+\end{itemize}
+
+\section{Einstein场方程}
+
+Einstein场方程
+\begin{gather*}
+    R_{ab}-\frac{1}{2}Rg_{ab}=8\pi T_{ab}
+\end{gather*}
+求迹得
+\begin{gather*}
+    R=-8\pi T
+\end{gather*}
+则真空Einstein场方程等价于
+\begin{gather*}
+    R_{ab}=0
+\end{gather*}
+
+\section{线性近似和Newton极限}
+
+\subsection{线性近似}
+
+弱引力场
+\begin{gather*}
+    g_{ab}=\eta_{ab}+\gamma_{ab}
+\end{gather*}
+在某个惯性系中$|\gamma_{\mu \nu}|\ll 1$
+\begin{gather*}
+    g^{ab}=\eta^{ab}-\gamma^{ab}
+\end{gather*}
+一阶近似，$g_{ab}$在Lorenz系的Christoffel符号
+\begin{gather*}
+    {\Gamma^c}_{ab}=\frac{1}{2}\eta^{cd}(\partial_a \gamma_{bd}+\partial_b \gamma_{ad}-\partial_d \gamma_{ab})
+\end{gather*}
+Riemann张量
+\begin{gather*}
+    R_{acbd}=\partial_d \partial_{[a} \gamma_{c]b}-\partial_b \partial_{[a} \gamma_{c]d}
+\end{gather*}
+Ricci张量
+\begin{gather*}
+    R_{ab}=\partial^c \partial_{(a} \gamma_{b)c}-\frac{1}{2} \partial^c \partial_c \gamma_{ab}-\frac{1}{2}\partial_a \partial_b \gamma
+\end{gather*}
+代入Einstein场方程
+\begin{gather*}
+    \partial^c \partial_{(a} \gamma_{b)c}-\frac{1}{2} \partial^c \partial_c \gamma_{ab}-\frac{1}{2}\partial_a \partial_b \gamma-\frac{1}{2}\eta_{ab}(\partial^c \partial^d \gamma_{cd}-\partial^c \partial_c \gamma)=8\pi T_{ab}
+\end{gather*}
+令
+\begin{gather*}
+    \bar{\gamma}_{ab}=\gamma_{ab}-\frac{1}{2}\eta_{ab} \gamma
+\end{gather*}
+得到
+\begin{gather*}
+    \partial^c \partial_{(a} \bar{\gamma}_{b)c}-\frac{1}{2} \partial^c \partial_c \bar{\gamma}_{ab}-\frac{1}{2}\eta_{ab}\partial^c \partial^d \bar{\gamma}_{cd}=8\pi T_{ab}
+\end{gather*}
+在规范变换下，Einstein场方程不变
+\begin{gather*}
+    \gamma_{ab} \to \tilde{\gamma}_{ab}=\gamma_{ab}+\partial_a \xi_b + \partial_b \xi_a
+\end{gather*}
+只要让$\xi^a$满足
+\begin{gather*}
+    \partial^b \partial_b \xi_a=-\partial^b \bar{\gamma}_{ab}
+\end{gather*}
+变换后的度规便满足Lorenz规范，从而可以选择Lorenz规范
+\begin{gather*}
+    \partial^b \bar{\gamma}_{ab}=0
+\end{gather*}
+Einstein场方程简化为
+\begin{gather*}
+    \partial^c \partial_c \bar{\gamma}_{ab}=-16\pi T_{ab}
+\end{gather*}
+
+\subsection{Newton极限}
+
+弱场低速极限，即
+\begin{enumerate}
+    \item $\gamma_{ab}=g_{ab}-\eta_{ab}$为小量
+    \item 存在$\eta_{ab}$的惯性坐标系，满足
+    \begin{enumerate}
+        \item $T_{ab}=\rho(\d t)_a (\d t)_b$
+        \item 引力场源低速运动，即$\pt{\gamma}{t}$可忽略；物体低速运动，4速度$U^a$近似等于观者4速度$Z^a$
+    \end{enumerate}
+\end{enumerate}
+Einstein场方程化简为
+\begin{gather*}
+    \nabla^2 \bar{\gamma}_{00}=-16\pi \rho
+    \\
+    \nabla^2 \bar{\gamma}_{0i}=\nabla^2 \bar{\gamma}_{ij}=0
+\end{gather*}
+无穷远处表现良好，除$\bar{\gamma}_{00}$外分量为常数，通过规范变换变为$0$，令
+\begin{gather*}
+    \phi=-\frac{1}{4}\bar{\gamma}_{00}
+    \\
+    \bar{\gamma}_{ab}=-4\phi(\d t)_a (\d t)_b
+    \\
+    \bar{\gamma}=4\phi
+    \\
+    \gamma_{ab}=-\phi(4(\d t)_a (\d t)_b+2\eta_{ab})
+    \\
+    \phi=-\frac{1}{4}\bar{\gamma}_{00}=-\frac{1}{2}\gamma_{00}=-\frac{1}{2}(1+g_{00})
+\end{gather*}
+Christoffel符号
+\begin{gather*}
+    {\Gamma^i}_{00}=-\frac{1}{2}\pt{\gamma_{00}}{x_i}
+\end{gather*}
+代入测地线方程
+\begin{gather*}
+    \dt{^2 x^i}{t^2}=-{\gamma^i}_{00}=-\pt{\phi}{x^i}
+\end{gather*}
+回到Newton引力论
